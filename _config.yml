@@ -2,7 +2,7 @@ title: Arend Peter Test
 remote_theme: pmarsceill/just-the-docs
 
 aux_links:
-  "Video version on Udemy",
+  "Video version on Udemy":
     - "//udemy.com"
   "More Arend Peter Courses":
     - "//arendpeter.com"
