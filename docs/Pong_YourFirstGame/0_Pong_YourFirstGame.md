@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Summary
+title: Pong: Your First Game
 nav_order: 2
 has_children: true
 ---
