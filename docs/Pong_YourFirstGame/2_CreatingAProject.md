@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Downloading Game Maker
+title: Creating a Project
 nav_order: 2
 parent: Summary
 ---
