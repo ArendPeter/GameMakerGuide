@@ -1,10 +1,11 @@
 title: Game Maker Basics
 remote_theme: pmarsceill/just-the-docs
 
+color_scheme: custom
+
 aux_links:
   "Video version on Udemy":
     - "//udemy.com"
   "More Arend Peter Courses":
     - "//arendpeter.com"
 
-color_scheme: custom
