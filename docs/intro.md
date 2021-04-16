@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Course Intro
+description: Hello darkness my old friend
 nav_order: 1
 ---
 
