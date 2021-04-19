@@ -1,10 +1,12 @@
 ---
 layout: default
-title: Downloading Game Maker
+title: Downloading and Installing Game Maker Studio
 description: Navigate to the yoyogames website, and download game maker
 nav_order: 1
 parent: Pong | Your First Game
 ---
+
+# Downloading and Installing Game Maker
 
 Here I'll go over how to navigate to the yoyogames website to download and install Game Maker Studio
 
