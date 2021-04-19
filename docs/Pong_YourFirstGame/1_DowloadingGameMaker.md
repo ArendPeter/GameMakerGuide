@@ -59,3 +59,13 @@ Here's how we install Game Maker on Windows (if you're on mac you can skip to th
 ## Installing Game Maker Studio (for Mac)
 
 TODO
+
+## Login
+
+When you open Game Maker for the first time you'll be prompted to login
+
+![](../../assets/images/login.png)
+
+Enter the account information you entered above to continue
+
+This is important for Game Maker to know whether you're on the free trial or using one of Game Maker's other product options
