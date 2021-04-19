@@ -30,8 +30,22 @@ At the moment there are 4 categories of Game Maker products to choose from
 * **Developer**: Export executables for Desktop (which combines windows, mac, and ubuntu), Web, UWP, or Mobile (which includes android and iOS)
 * **Console**: Export executables for Playstation, Xbox, or Switch. This also has an option for Ultimate edition, which includes all platforms
 
-For this course, I recommend starting with **Free Trial**, and then, if you're interested, purchasing one of the **Desktop** options when your trial ends. From there you can expand further if you're interested in making a game for a particular platform.
+For this course, I recommend starting with **Free Trial**, and then, if you're interested, purchasing one of the **Desktop** options when your trial ends. From there you can expand further if you're interested in making a game for a particular platform
 
 ## Download
 
-## Install
+Next we can download Game Maker Studio
+
+![](../../assets/images/download.gif)
+
+1. Login using the account you registered above, this should bring you to "Dashboard Home"
+1. Select "View Downloads" under the download section
+1. Select Windows or Mac depending on your machine
+
+> NOTE: Game Maker is free to download regardless of the product you chose, we'll need to login later for Game Maker to know which version we're using
+
+## Installing Game Maker Studio (for Windows)
+
+Here's how we install Game Maker on Windows (if you're on mac you can skip to the next section)
+
+![](../../assets/images/install_windows.gif)
