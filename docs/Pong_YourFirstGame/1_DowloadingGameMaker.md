@@ -48,4 +48,14 @@ Next we can download Game Maker Studio
 
 Here's how we install Game Maker on Windows (if you're on mac you can skip to the next section)
 
-![](../../assets/images/install_windows.gif)
+![](../../assets/images/windows_install.gif)
+
+1. Double click the installer you downloaded (usually it'll be in your Downloads folder)
+2. If you get a prompt asking to allow the app to make changes "Yes"
+3. If game maker is already installed, hit "Ok" to remove previous version, then select Uninstall
+4. Click through the rest of the install process "I Agree", "Next", "Install", "Next", "Next", "Finish"
+5. Now when you open your start menu and search for Game Maker you should be able to open it
+
+## Installing Game Maker Studio (for Mac)
+
+TODO
