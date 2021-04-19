@@ -66,6 +66,6 @@ When you open Game Maker for the first time you'll be prompted to login
 
 ![](../../assets/images/login.png)
 
-Enter the account information you entered above to continue
+Enter the account information you created during the regitration step to continue
 
 This is important for Game Maker to know whether you're on the free trial or using one of Game Maker's other product options
