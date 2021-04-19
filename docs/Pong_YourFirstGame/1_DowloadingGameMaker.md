@@ -14,7 +14,7 @@ Here I'll go over how to navigate to the yoyogames website to download and insta
 
 Before downloading game maker you'll first need to register for an account
 
-![](assets/images/register.gif)
+![](../../assets/images/register.gif)
 
 1. In your browser navigate to https://yoyogames.com
 1. Click "Get Started"
