@@ -9,6 +9,8 @@ parent: Pong | Your First Game
 
 This step will go into creating a new project, Drag and Drop versus Code, as well as some of the basics about Game Maker's interface and it's resources
 
+To start, name your project ``Pong``, and select **Code** as the project type.
+
 ## Drag and Drop versus Code
 
 To start create a new project called ``Pong``. The first decision you'll need to make is whether to use Drag and Drop, or Code. Here's the difference
@@ -22,6 +24,9 @@ But don't get me wrong, DnD and similar node based game development tools are st
 
 Here's the official series on DnD
 
+[![](https://img.youtube.com/vi/IWXJbUHLYXA/0.jpg)](https://www.youtube.com/watch?v=IWXJbUHLYXA)
+
+
 <iframe width="560" height="315" src="https://www.youtube.com/embed/IWXJbUHLYXA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 Here are some game devs who make their games w/o using code at all (They use Unity and Unreal, please contact me if you know of Game Maker examples I can add here)
@@ -29,3 +34,5 @@ Here are some game devs who make their games w/o using code at all (They use Uni
 <iframe width="560" height="315" src="https://www.youtube.com/embed/Y3Rs1z7it5M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/sF3KGf5MBDo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+## Game Maker Interface
