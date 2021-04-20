@@ -24,13 +24,12 @@ But don't get me wrong, DnD and similar node based game development tools are st
 
 Here's the official series on DnD
 
-
-<iframe width="230" height="100" src="https://www.youtube.com/embed/IWXJbUHLYXA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="100" height="100" src="https://www.youtube.com/embed/IWXJbUHLYXA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 Here are some game devs who make their games w/o using code at all (They use Unity and Unreal, please contact me if you know of Game Maker examples I can add here)
 
-<iframe width="230" height="100" src="https://www.youtube.com/embed/Y3Rs1z7it5M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="100" height="100" src="https://www.youtube.com/embed/Y3Rs1z7it5M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-<iframe width="230" height="100" src="https://www.youtube.com/embed/sF3KGf5MBDo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="100" height="100" src="https://www.youtube.com/embed/sF3KGf5MBDo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## Game Maker Interface
