@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Creating a new project : DnD versus Code
+title: Creating a new project (DnD vs Code)
 nav_order: 2
 parent: Pong | Your First Game
 ---

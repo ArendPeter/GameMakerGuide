@@ -13,7 +13,7 @@ Game Maker has many different resource types to work with, but some are more imp
 
 **Sprites** are essentially pictures / images. In general, the term usually refers to small, 2D, pixel art images, however in Game Maker all images (character art, backgrounds, tilesets, etc), are initially imported as sprites.
 
-## Creating a paddle
+### Creating a paddle
 
 Let's make a paddle for the pong game! Start by right clicking on the sprites folder, and selecting "Create Sprite".
 
@@ -21,8 +21,8 @@ By default, Game Maker will use 64x64 as the sprite size. But we want our paddle
 
 From here we can click edit image, and then fill our
 
-## Sprite Editor
+### Sprite Editor
 
-## Other Pong Sprites
+### Other Pong Sprites
 
-# Reorganizating the Resource Tree
+## Reorganizating the Resource Tree
