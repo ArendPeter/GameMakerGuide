@@ -5,7 +5,7 @@ nav_order: 2
 parent: Pong | Your First Game
 ---
 
-# Creating a new Game Maker Studio Project
+# Creating a new project (DnD vs Code)
 
 This step will go into creating a new project, Drag and Drop versus Code, as well as some of the basics about Game Maker's interface and it's resources
 
