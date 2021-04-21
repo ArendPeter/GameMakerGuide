@@ -9,6 +9,8 @@ parent: Pong | Your First Game
 
 This step will go into creating a new project, Drag and Drop versus Code, as well as some of the basics about Game Maker's interface and it's resources
 
+![](../../assets/images/new_project.gif)
+
 To start, name your project ``Pong``, and select **Code** as the project type.
 
 ## Drag and Drop versus Code
