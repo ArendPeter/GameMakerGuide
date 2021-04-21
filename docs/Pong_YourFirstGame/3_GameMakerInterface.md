@@ -11,7 +11,7 @@ parent: Pong | Your First Game
 
 The **workspace** and the **resource tree**, are the 2 main panels to be aware of.
 
-![](../../assets/images/workspace_and_assets.gif)
+![](../../assets/images/workspace_and_assets.png)
 
 As our project grows, we'll continuously be adding new resources to the resource tree, and then we'll edit the resources in the workspace
 
