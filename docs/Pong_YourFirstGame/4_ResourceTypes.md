@@ -39,12 +39,10 @@ From here we can click "Edit Image", this will open the sprite editor in a new t
 
 For this course, we won't be focusing too much on making the art, since that's not really my skill, but here's a handful of sprite editor tips to help you get by
 
-| Paintbrush Tool | ![](../../assets/images/sprite_editor/paintbrush.gif) | Left and Right click | ![](../../assets/images/sprite_editor/left_right_click.gif) |
-| Brushes | ![](../../assets/images/sprite_editor/brushes.gif) | Change Color | ![](../../assets/images/sprite_editor/change_color.gif) |
-| Filled Rectangle Tool | ![](../../assets/images/sprite_editor/rectangle_filled.gif) | Rectangle Outline Tool | ![](../../assets/images/sprite_editor/rectangle_outline.gif) |
-| Filled Circle Tool | ![](../../assets/images/sprite_editor/circle_filled.gif) | Circle Outline Tool | ![](../../assets/images/sprite_editor/circle_outline.gif) |
-| Erase Tool | ![](../../assets/images/sprite_editor/erase.gif) | Line Tool | ![](../../assets/images/sprite_editor/line.gif) |
-| Select Tool + Delete Key | ![](../../assets/images/sprite_editor/select_delete.gif) |
+| Paintbrush Tool | ![](../../assets/images/sprite_editor/paintbrush.gif) | Left and Right click | ![](../../assets/images/sprite_editor/left_right_click.gif) | Brushes | ![](../../assets/images/sprite_editor/brushes.gif) |
+| Change Color | ![](../../assets/images/sprite_editor/change_color.gif) | Filled Rectangle Tool | ![](../../assets/images/sprite_editor/rectangle_filled.gif) | Rectangle Outline Tool | ![](../../assets/images/sprite_editor/rectangle_outline.gif) |
+| Filled Circle Tool | ![](../../assets/images/sprite_editor/circle_filled.gif) | Circle Outline Tool | ![](../../assets/images/sprite_editor/circle_outline.gif) | Erase Tool | ![](../../assets/images/sprite_editor/erase.gif) |
+| Line Tool | ![](../../assets/images/sprite_editor/line.gif) | Select Tool + Delete Key | ![](../../assets/images/sprite_editor/select_delete.gif) |
 
 
 Add solid and ball as well
