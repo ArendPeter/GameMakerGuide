@@ -1,28 +1,35 @@
 ---
 layout: default
-title: Creating a new project (DnD vs Code)
+title: Creating a new project (DnD vs GML)
 nav_order: 2
 parent: Pong | Your First Game
 ---
 
-# Creating a new project (DnD vs Code)
+# Creating a new project (DnD vs GML)
 
-This step will go into creating a new project, Drag and Drop versus Code, as well as some of the basics about Game Maker's interface and it's resources
+This step will go into creating a new project, Drag and Drop versus GameMaker Language
+
+## Create a new project
+
+Let's make a new project!
 
 ![](../../assets/images/new_project.gif)
 
-To start, name your project ``Pong``, and select **Code** as the project type.
+1. Open Game Maker, this will take you to the start page
+1. Select "New" under the "Getting Started"
+1. Select GameMaker Language
+1. Save the project as "Pong"
 
-## Drag and Drop versus Code
+## Drag and Drop versus GameMaker Language
 
-To start create a new project called ``Pong``. The first decision you'll need to make is whether to use Drag and Drop, or Code. Here's the difference
+Drag and Drop, or GameMaker Language (i.e. code) is first decision you'll need to make whenever you start new projects. Here's the difference
 
 * **Drag and Drop (DnD)** : This simplifies Game Maker's interface, allowing you to create your soling through dragging and dropping blocks, and connecting them to form your logic. Using DnD you can develop your games without ever writing a line of code, however you still have the option insert code snippets if you want
-* **Code** : If you prefer writing code, this option will remove all the DnD windows, and replace them with text editors. Game Maker uses Game Maker Language, which is loosely similar to writing Javascript
+* **GameMaker Language (GML)** : If you prefer writing code, this option will remove all the DnD windows, and replace them with text editors. Game Maker uses Game Maker Language, which is loosely similar to writing Javascript
 
-For my courses we'll be choosing **Code**. DnD is definitely easier to learn if you're trying to pick it up on your own, but Code is also perfectly fine to start with if you're being guided through it. I prefer coding, and for the course I felt it would be smoother for your to start with Code rather than switch to DnD to Code later and relearn the basics.
+For my courses we'll be choosing **GameMaker Language**. DnD is definitely easier to learn if you're trying to pick it up on your own, but GML is also perfectly fine to start with if you're being guided through it. I prefer coding, and for the course I felt it would be smoother for your to start with GML rather than switch to DnD to GML later and relearn the basics.
 
-But don't get me wrong, DnD and similar node based game development tools are still very powerful, and there are many people who make great games without writing code. So I hope you can follow along and find that working with code isn't as bad as it seems, but if it doesn't click with you, there's also no shame in using DnD
+But don't get me wrong, DnD (as well as visual programming tools outside of game maker) is still very powerful, and there are many people who make great games without writing code. I hope you can follow along with this course and find that working with code isn't as bad as it seems, but if it doesn't click with you, there's also no shame in using DnD
 
 Here's the official series on DnD
 

@@ -7,9 +7,11 @@ parent: Pong | Your First Game
 
 # Game Maker Studio Interface
 
-## Panel Types
+Game Makers interface is made up of a bunch of windows, let's dive into them!
 
-The **workspace** and the **resource tree**, are the 2 main panels to be aware of.
+## Window Types
+
+The **workspace** and the **Asset Browser**, are the windows you'll be using most often. There are several other types, and we'll learn about them as we go. By default your Asset Browser will be on the right side with your workspace taking the bulk of the Game Maker window
 
 ![](../../assets/images/workspace_and_assets.png)
 
@@ -21,15 +23,12 @@ As you edit resources, they'll generate more tabs and panes as needed
 
 > TODO: show screen shot w/ examples of sprite editor tab, and room editor tab
 
-## Adjusting the panel layout: Minimize, Move, Add, Remove
+## Adjusting the window layout
 
-You have a lot of flexibility to adjust the layout of the panels. For example you can minimize / maximize them, as well as move them to other positions
-as well as add or remove panels to your liking
+You have a lot of flexibility to adjust the layout of the windows. For example you can minimize/maximize windows, as well as drag them to be either floating or docked
 
 ![](../../assets/images/min_max_drag.gif)
 
-You can also remove panels, but don't worry, if you remove one by accident you can always add it back via the windows menu
+You can also remove windows, but don't worry, if you remove one by accident you can always add it back via the windows menu
 
 ![](../../assets/images/close_reopen_window.gif)
-
-TODO: dig through windows menu to see if there's more I want to highlight
