@@ -28,21 +28,29 @@ So with that said the x and y variables represent where each instance is positio
 
 
 <details>
-<summary> **Where in the room is x = 0, y = 0?** click to see </summary>
+<summary> <b>Where in the room is x = 0, y = 0?</b> click to see </summary>
 
+<p>
 If you said, top left corner, you would be right! Since moving right and down made both variables bigger, that meant that moving left and up makes them smaller, and since x = 0 and y = 0 is the smallest number you can have without going negative (and you can go negative by the way), it makes sense for that to be the top left corner
+</p>
 
+<p>
 This is can be really confusing because it's different from it's different from what you'll learn in your math and physics classes. In school, going up increses y (not down), and the x = 0 and y = 0 point is in the bottom left (not top left). So make sure flip the switch when back to "up is more" when you go back to school, I hate for this course to hurt your grades
+</p>
 
 > TODO: image of the x/y axis from school
 
+<p>
 Another handy trick for viewing x, y is to look at the bottom left of the room editor. There you see 2 numbers (for example ``(841, 592)``). Those represent the x, y position under your mouse cursor, and you can that to again verify the following:
+</p>
 
- * Moving the mouse left decreases x
- * Moving the mouse right increases x
- * Moving the mouse up decreases y
- * Moving the mouse down increases y
- * Moving the mouse to the top left corner of the room gives (0, 0)  
+<ul>
+ <li> Moving the mouse left decreases x </li>
+ <li> Moving the mouse right increases x </li>
+ <li> Moving the mouse up decreases y </li>
+ <li> Moving the mouse down increases y </li>
+ <li> Moving the mouse to (0, 0) is at the right spot </li>
+</ul>
 
 > TODO: gif moving the mouse, along with the numbers in the bottom left
 
