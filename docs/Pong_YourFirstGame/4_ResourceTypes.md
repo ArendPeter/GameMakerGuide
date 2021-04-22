@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Game Maker Studio Resource Types
-nav_order: 3
+nav_order: 4
 parent: Pong | Your First Game
 ---
 
@@ -69,7 +69,9 @@ We'll just use the default room for now. When we click in there, we can drag obj
 
 > TODO: gif demoing adding objects to room
 
-When I add them to the room, they're not technically objects anymore. They're instances. You can see this my double clicking on the instances. You get an instance window, and they have a different name. You can think of objects as a blueprints, and instances as creations (or instantiations) of the blueprints. This distinction is important because we can see each instance has properties, and instances can have different properties despite coming from the same object
+## Objects vs Instances
+
+When I add objects to the room, they're not technically objects anymore. They're instances. You can see this my double clicking on the instances. You get an instance window, and they have a different name. You can think of objects as a blueprints, and instances as creations (or instantiations) of the blueprints. This distinction is important because we can see each instance has properties, and instances can have different properties despite coming from the same object
 
 As an example, let's stretch some walls to span the top and bottom of the room. When we do this you can see the scale properties can be different for each instance.
 
@@ -79,10 +81,28 @@ We'll be digging a lot more into properties as we go, but this is enough for now
 
 > NOTE: Java and many other languages have the concept of static vs non-static. It's very confusing to new students, but the concept is identical to the object vs instance distinction we just made. So if you're learning that in the future, and get confused, feel free to come back here for a refresher ;)
 
+### Layers
+
+We're almost ready to run the game, but before we do I quickly want to highlight room layers. As you're adding resources to your game, you can use the layers to determine what order they're drawn
+
+In this case we can see all the instances are under the Instances layer. You can tell by toggling the visibility on the layer, as well as seeing the instance list under the instance layer properties
+
+> TODO: insert gif w/ visible toggle, and highlight instance layer properties
+
+The other default layer is the Background layer. All this layer does is fill the room with this solid black color. We can change the color if we dig into it's properties, it works pretty much the same as the color selection from the sprite editor
+
+> TODO: gif w/ updating background color
+
+As a test to see the layer order in action, we can swap the order of the Background and the Instances layer. You'll notice that all our instance dissapear because now they're behind the background
+
+> TODO: gif changing layer order
+
+There are several more layer types, and we'll be diving into several of them, but sticking to these 2 will be sufficient for now
+
 ## Run the game
 
 When your room's ready, you can hit the run button in the toolbar (or F5), and then we'll see our level in the game window :D
 
 > TODO: png of game window
 
-This special moment, you just made something, and it's running in real life program on your computer. It's beautiful :')
+This is a special moment, you just made something, and it's running in real life program on your computer. It's beautiful :')
