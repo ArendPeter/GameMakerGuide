@@ -92,13 +92,13 @@ x = 300;
 The above code sets the ball's x to 30. We can run the game to verify this but before we do, try predicting where the ball will show on the screen (maybe you can use the mouse trick I showed you in the x/y axis section?). When you're ready run the game and see if you're right
 
 <details>
-<summary> <b> Where will the ball be placed? </b> Expand to find out
+<summary> <b> Where will the ball be placed? </b> Expand to find out</summary>
 
 <p>
 If you said "center leftish", you'd be right!!
 </p>
 
- > TODO: insert png with the game and the ball position
+> TODO: insert png with the game and the ball position
 
 </details>
 
