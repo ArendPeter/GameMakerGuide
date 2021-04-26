@@ -175,7 +175,7 @@ Here's an example of a comment in our code, try adding it to your ball's create 
 <details>
 <summary><b>What happens?</b> Expand to find out</summary>
 
-<img src="../../images/rickrolled.gif"/>
+<img src="../../assets/images/rickrolled.gif"/>
 
 <p>
 Sorry that was a little mean, nothing actually happens
