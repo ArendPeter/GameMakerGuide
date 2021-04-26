@@ -20,11 +20,11 @@ That's all on this page!! Let's do it!
 
 Let's look back at the instance properties in the room editor. Earlier we modified the scale x property, but there's much more where that came from and we'll quickly become familiar with all of them throughout the course. The most important properties here are the x and y, so dig into those next. You were probabaly wondering what the X by Scale X meant. x and y are pretty much just short hands for horizontal and vertical respectively. So why didn't they call it horizontal scale, and vertical scale instead? Well we refer to x and y so often that they it wouldn't quickly become tedious to always need to say horizontal or vertical.
 
-> TODO: png of instance properties
+![](../../assets/images/inspector_example.png)
 
 So with that said the x and y variables represent where each instance is positioned in the room horizontally and vertically. If you drag one of your instances to the right you can see that the x increases. Similarly if you drag the instance down you see that y increases. I can also set the x and y directly in the instance properties.
 
-> TODO: gif moving instance left/right
+![](../../assets/images/xy_inspector.gif)
 
 If I set it to x = 0, and y = 0, where do you think the instance will move to? (I'm hiding the rest of the section for you to think about it 😉 )
 
@@ -39,7 +39,7 @@ If you said, top left corner, you would be right! Since moving right and down ma
 This is can be really confusing because it's different from it's different from what you'll learn in your math and physics classes. In school, going up increses y (not down), and the x = 0 and y = 0 point is in the bottom left (not top left). So make sure flip the switch when back to "up is more" when you go back to school, I hate for this course to hurt your grades
 </p>
 
-> TODO: image of the x/y axis from school
+<img src="../../assets/images/xy_classic.png"/>
 
 <p>
 Another handy trick for viewing x, y is to look at the bottom left of the room editor. There you see 2 numbers (for example ``(841, 592)``). Those represent the x, y position under your mouse cursor, and you can that to again verify the following:
@@ -53,7 +53,7 @@ Another handy trick for viewing x, y is to look at the bottom left of the room e
  <li> Moving the mouse to (0, 0) is at the right spot </li>
 </ul>
 
-> TODO: gif moving the mouse, along with the numbers in the bottom left
+<img src="../../assets/images/xy_mouse.png"/>
 
 </details>
 
@@ -61,7 +61,7 @@ Another handy trick for viewing x, y is to look at the bottom left of the room e
 
 We're very close to digging into code, but first we need to understand events. Code is our tool to describe "What" should happen, but events show us "When" it should happen. For example, if we go to the ball object, and click "Add Event" we can see lot of options.
 
-> TODO: gif of navigating to the object and addinga n event
+![](../../assets/images/add_event.gif)
 
 Luckily we only usually need a few of these. These are the common ones we'll use today
 
@@ -70,6 +70,8 @@ Luckily we only usually need a few of these. These are the common ones we'll use
  * **Keyboard events**: These are triggered in reseponse to your keyboard inputs
 
 For now, let's add a **Create** event. Once you've done that you should see a text editor pop up for us to start entering a code (the natual "What" that triggers from the "When").
+
+![](../../assets/images/code_editor.png)
 
 There's some default code already in the create event, but go ahead and remove all of it. This way we can start form a clean slate
 
@@ -100,7 +102,7 @@ The above code sets the ball's x to 30. We can run the game to verify this but b
 If you said "center leftish", you'd be right!!
 </p>
 
-> TODO: insert png with the game and the ball position
+<img src="../../assets/images/update_x_pos.png"/>
 
 </details>
 
@@ -173,7 +175,7 @@ Here's an example of a comment in our code, try adding it to your ball's create 
 <details>
 <summary><b>What happens?</b> Expand to find out</summary>
 
- > TODO: insert rick rolled
+<img src="../../images/rickrolled.gif"/>
 
 Sorry that was a little mean, nothing actually happens
 

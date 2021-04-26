@@ -15,11 +15,11 @@ Game Maker has many different resource types to work with, but some are more imp
 
 There's a lot of ways to create sprites, but my prefered method is to right click on the sprites folder and select "Create > Sprite" (if you want to be fancy you can also hit alt + s). This will spawn a sprite resource window in your workspace. We'll name the first sprite ``sPaddle``
 
-> TODO: gif creating a new sprite
+![](../../assets/images/create_sprite.gif)
 
 As a side note, the sprites folder, and folders in general, don't really mean anything. You can drag sprites into other folders, and delete folders as you please. That said I still prefer to keep resources in their corresponding folders. This is why I specifically right click on the folder when creating new sprites.
 
-> TODO: gif moving sprite between folders
+![](../../assets/images/sprite_folders.gif)
 
 ## Naming convention
 
@@ -33,11 +33,11 @@ Let's make a paddle for the pong game!
 
 By default, Game Maker will use 64x64 as the sprite size. But we want our paddle to be tall and skinny so we'll also resize it to 32x128. To do this we'll hit the resize button then adjust the numbers under "Scale Image" before hitting "Apply"
 
-> TODO: gif resizing the image
+![](../../assets/images/resize_sprite.gif)
 
 From here we can click "Edit Image", this will open the sprite editor in a new tab. Then use the fill tool to make the entire image white. This will automatically update the sprite preview
 
-> TODO: insert gif doing the above, also it should highlight the preview update
+![](../../assets/images/first_sprite_editor.gif)
 
 For this course, we won't be focusing too much on making the art ( it's not really my skill), but here's a handful of sprite editor tips to help you get by
 
@@ -49,17 +49,23 @@ For this course, we won't be focusing too much on making the art ( it's not real
 
 To put your skills to the test, go ahead and add sBall (16x16) and sWall (64x64)
 
-> TODO: png of the final sprites in the resource tree
+![](../../assets/images/first_sprites.png)
 
 ## Objects
 
 Next we'll add objects for each of the sprites. You can think of objects as sprites w/ brains. We'll be spending most of the course working inside objects making them smarter, but for now we'll just make empty objects with sprites attached
 
-Similar to the sprites, right click on the folder and select "Create > Object" to create an object (or hit (ALT + O) if you want to show off ). From there we'll name the first one ``oPaddle``, and set the sprite accordingly
+Similar to the sprites, right click on the folder and select "Create > Object" to create an object (or hit (ALT + O) if you want to show off ). From there we'll name the first one ``oPaddle``
 
-> TODO: gif creating the object and setting the sprite
+![](../../assets/images/create_object.gif)
+
+then we can set the sprite accordingly
+
+![](../../assets/images/create_sprite.gif)
 
 Rinse and repeat for ``oBall`` and ``oWall``
+
+![](../../assets/images/first_objects.gif)
 
 ## Rooms
 
@@ -67,7 +73,7 @@ Rooms are essentially levels, it represents what will be shown on the screen. We
 
 We'll just use the default room for now. When we click in there, we can drag objects from our asset browswer into the room. Go ahead and added 2 paddles and a ball
 
-> TODO: gif demoing adding objects to room
+![](../../assets/images/objects_to_room.gif)
 
 ## Objects vs Instances
 
@@ -75,9 +81,12 @@ When I add objects to the room, they're not technically objects anymore. They're
 
 As an example, let's stretch some walls to span the top and bottom of the room. When we do this you can see the scale properties can be different for each instance.
 
+![](../../assets/images/resize_walls.gif)
+
+
 We'll be digging a lot more into properties as we go, but this is enough for now to complete our first level :D. Your room should now look as follows
 
-> TODO: png showing final room
+![](../../assets/images/first_room.png)
 
 > NOTE: Java and many other languages have the concept of static vs non-static. It's very confusing to new students, but the concept is identical to the object vs instance distinction we just made. So if you're learning that in the future, and get confused, feel free to come back here for a refresher ;)
 
@@ -87,15 +96,15 @@ We're almost ready to run the game, but before we do I quickly want to highlight
 
 In this case we can see all the instances are under the Instances layer. You can tell by toggling the visibility on the layer, as well as seeing the instance list under the instance layer properties
 
-> TODO: insert gif w/ visible toggle, and highlight instance layer properties
+![](../../assets/images/toggle_layer.gif)
 
 The other default layer is the Background layer. All this layer does is fill the room with this solid black color. We can change the color if we dig into it's properties, it works pretty much the same as the color selection from the sprite editor
 
-> TODO: gif w/ updating background color
+![](../../assets/images/change_room_background.gif)
 
 As a test to see the layer order in action, we can swap the order of the Background and the Instances layer. You'll notice that all our instance dissapear because now they're behind the background
 
-> TODO: gif changing layer order
+![](../../assets/images/layer_order.png)
 
 There are several more layer types, and we'll be diving into several of them, but sticking to these 2 will be sufficient for now
 
@@ -103,6 +112,20 @@ There are several more layer types, and we'll be diving into several of them, bu
 
 When your room's ready, you can hit the run button in the toolbar (or F5), and then we'll see our level in the game window :D
 
-> TODO: png of game window
+![](../../assets/images/first_game_run.png)
 
 This is a special moment, you just made something, and it's running in real life program on your computer. It's beautiful :')
+
+
+TODO:
+	add section on scrolling and zooming on the interface
+    - ctrl + scroll zoom
+    - middle click pan
+    - different contexts: demo w/ sprite editor
+    - drag windows
+    - laptop control zoom
+    - laptop alt pan
+	add note on "maintain aspect ratio"
+	add hint that ball uses circle tool
+	add note on room grid tool (also note that grid settings is saved per layer)
+![](../../assets/images/room_grid.gif)
