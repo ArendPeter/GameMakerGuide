@@ -61,15 +61,15 @@ Similar to the sprites, right click on the folder and select "Create > Object" t
 
 then we can set the sprite accordingly
 
-![](../../assets/images/create_sprite.gif)
+![](../../assets/images/set_object_sprite.gif)
 
 Rinse and repeat for ``oBall`` and ``oWall``
 
-![](../../assets/images/first_objects.gif)
+![](../../assets/images/first_objects.png)
 
 ## Rooms
 
-Rooms are essentially levels, it represents what will be shown on the screen. We can place a bunch of objects, sprites, and other resources here to form levels and menus. (side note: most other game engines refer to rooms as "Scenes" )
+Rooms are essentially levels, it represents what will be shown on the screen. We can place a bunch of objects, sprites, and other resources here to form levels, menus and any other room we can think of. (side note: most other game engines refer to rooms as "Scenes" )
 
 We'll just use the default room for now. When we click in there, we can drag objects from our asset browswer into the room. Go ahead and added 2 paddles and a ball
 
@@ -81,7 +81,7 @@ When I add objects to the room, they're not technically objects anymore. They're
 
 As an example, let's stretch some walls to span the top and bottom of the room. When we do this you can see the scale properties can be different for each instance.
 
-![](../../assets/images/resize_walls.gif)
+![](../../assets/images/resize_wall.gif)
 
 
 We'll be digging a lot more into properties as we go, but this is enough for now to complete our first level :D. Your room should now look as follows
@@ -104,7 +104,7 @@ The other default layer is the Background layer. All this layer does is fill the
 
 As a test to see the layer order in action, we can swap the order of the Background and the Instances layer. You'll notice that all our instance dissapear because now they're behind the background
 
-![](../../assets/images/layer_order.png)
+![](../../assets/images/layer_order.gif)
 
 There are several more layer types, and we'll be diving into several of them, but sticking to these 2 will be sufficient for now
 
@@ -127,5 +127,8 @@ TODO:
     - laptop alt pan
 	add note on "maintain aspect ratio"
 	add hint that ball uses circle tool
+  add note that instance layer needs to be selected to add instances
 	add note on room grid tool (also note that grid settings is saved per layer)
 ![](../../assets/images/room_grid.gif)
+  insert image of game run button
+  resize classic xy

@@ -53,7 +53,7 @@ Another handy trick for viewing x, y is to look at the bottom left of the room e
  <li> Moving the mouse to (0, 0) is at the right spot </li>
 </ul>
 
-<img src="../../assets/images/xy_mouse.png"/>
+<img src="../../assets/images/xy_mouse.gif"/>
 
 </details>
 
@@ -177,6 +177,7 @@ Here's an example of a comment in our code, try adding it to your ball's create 
 
 <img src="../../images/rickrolled.gif"/>
 
+<p>
 Sorry that was a little mean, nothing actually happens
 
 But that's the beauty of comments, you can enter ``//`` and then fill the rest of the line with whatever you want, and Game Maker won't care!
@@ -184,6 +185,7 @@ But that's the beauty of comments, you can enter ``//`` and then fill the rest o
 I recommend you use these as much as you can (especially when you're starting out). Code can be very confusing, so leverage comments to describe what your code is doing. This way future you can come back to it the code and still be able to understand what your code is doing
 
 ( Also side note, am I dating myself by using that meme? Is rick rolling still a fun thing kids do these days? oh boy :'( )
+</p>
 
 </details>
 
