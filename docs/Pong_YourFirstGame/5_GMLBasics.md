@@ -295,7 +295,7 @@ Great work! Now when we test it, we should be able to move both individually
 
 Feel free to swap out 4 with a different number to find a speed that feels better
 
-<img src="../../assets/images/demo_movement.gif"/>
+<img src="../../assets/images/demo_paddle_move.gif"/>
 
 ## Ball movement (w/ hspeed and vspeed)
 
