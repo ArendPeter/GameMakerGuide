@@ -146,11 +146,11 @@ y = 384;</code>
 </div>
 
 To do this you need to figure out the width/height of the room, and then divide by 2. There are a couple ways you can do this
-
+<br>
 One way is to hover your mouse, or move and object, to figure out what the x,y position is at the bottom right corner of the room. Since the top left is (0, 0) the bottom right will be (width, height) (where you replace width, height with whatever the actual width/height is)
-
+<br>
 Another way is to inspect the room properties (located below the layers and layer properites by default). There you'll see that the default room width and height are 1366, and 768 respectively, but you can change them here if you want to.
-
+<br>
 Yet another way, (and if you got this you're really ahead of the curve, since I haven't taught this yet), is to find the variables for room width and height. Then you can do the math directly in code, and you'll end up with this
 
 <div class="highlight">
@@ -179,11 +179,11 @@ Here's an example of a comment in our code, try adding it to your ball's create 
 
 <p>
 Sorry that was a little mean, nothing actually happens
-
+<br>
 But that's the beauty of comments, you can enter ``//`` and then fill the rest of the line with whatever you want, and Game Maker won't care!
-
+<br>
 I recommend you use these as much as you can (especially when you're starting out). Code can be very confusing, so leverage comments to describe what your code is doing. This way future you can come back to it the code and still be able to understand what your code is doing
-
+<br>
 ( Also side note, am I dating myself by using that meme? Is rick rolling still a fun thing kids do these days? oh boy :'( )
 </p>
 
@@ -220,7 +220,7 @@ We'll use keyboard events for this, there's actually 3 types
 
  * **Key Pressed**: This event triggers once on the exact from that you press the key
  * **Key Released**: This event triggers once on the exact from that you release the key
- * **Key Down**: This event triggers every frame that the key is held down (if I was naming this, I probably would have said **Key Held** instead but yoyogames didn't ask me)
+ * **Key Down**: This event triggers every frame that the key is held down (if I was naming this, I probably would have said Key Held instead but yoyogames didn't ask me)
 
 We're going to simulating vertical movement by repeatedly adjusting our y value a little bit at a time. Which event type do you think we should use?
 
@@ -228,9 +228,9 @@ We're going to simulating vertical movement by repeatedly adjusting our y value 
 <summary> <b>Key Pressed, Key Released, or Key Down?</b> click to see </summary>
 
 <b>Key Down</b>
-
+<br>
 Since it's repeatedly updating every frame, Key Down is the way to go, Key Pressed/Released would have only activated once
-
+<br>
 Go ahead and jump into oPaddle and add events for "Key Down > Up" and "Key Down > Down" (super confusing, again I wish I could say "Key Held > Down" :'( )
 
 </details>
@@ -245,7 +245,12 @@ This is using the same variable assignment structure but there are a few extra c
 
 In this case we want to set the new position **relative** to the old position instead of setting it to a specific number, so that's why we need to include y on the right side
 
-This also further highlights the differences with the mathematical equals sign, since the left/right side are clearly unequal. Instead the GML equals sign is actually saying "set the new y value to be the old y value - 4"
+This also further highlights the differences with the mathematical equals sign, since the left/right side are clearly unequal. Instead the GML equals sign is actually saying "set the new y value to be the old y value - 4". In fact, let's add that as a comment
+
+```
+// set the new y value to be the old y value - 4
+y = y - 4;
+```
 
 When you run this in game, you should see the paddle moving up in response to the up button
 
@@ -267,14 +272,22 @@ It ends up being the same code, just with different events
 <b>Key Down > W</b>
 
 ```
-y = y - 4;
 ```
+
+<div class="highlight">
+<pre class="highlight">
+<code>y = y - 4;</code>
+</pre>
+</div>
+
 
 <b>Key Down > S</b>
 
-```
-y = y + 4;
-```
+<div class="highlight">
+<pre class="highlight">
+<code>y = y + 4;</code>
+</pre>
+</div>
 
 </details>
 
@@ -284,6 +297,75 @@ Feel free to swap out 4 with a different number to find a speed that feels bette
 
 <img src="../../assets/images/demo_movement.gif"/>
 
-## Collision (and functions!)
+## Ball movement (w/ hspeed and vspeed)
+
+Now it's time to get the ball rolling (hehe)
+
+We're using a different movement approach for the ball. Instead of directly setting it's x/y position every frame, we'll set it's speed in the beginning, and then let game maker update it's x/y for us. Add the following to oBall's create event
+
+```
+hspeed = 2;
+vspeed = 2;
+```
+
+The hspeed and vspeed variables, represent how fast the ball is moving in the horizontal and vertical directions respectively. In a more literal sense, it represents how much we want the x/y values to change each frame. That said doing the following in the step event should get you exact same results
+
+```
+// NOTE: don't actually add this to your project, this is just a example
+x = x + 2;
+y = y + 2;
+```
+
+Speaking of results, let's do a pop quiz, what do you think the results will be when we run the code?
+
+<details>
+<summary><b>Which direction will the ball move?</b> Click to find out</summary>
+
+Diagonally down and to the right
+
+Remember positive x and positive y are right and down respectively
+
+Because we're doing both at the same time we end up with a diagonal effect
+
+<img src="../../assets/images/demo_ball_move.gif"/>
+
+</details>
+
+## Collisions
+
+So we've got the ball rolling, but now it just keeps on rolling w/o any respect to walls or physics of any kind. To fix this we need collisions
+
+In ``oBall`` add a collision event w/ ``oWall``. When this happens we to reflect the ball's vertical motion, luckily there's a clever way to do that using the techniques we already know and love (or at least know, love will come w/ time)
+
+```
+vspeed = -vspeed;
+```
+
+Let's think through the cases
+
+ * Going Down to Up: We start with ``vspeed = 2``, meaning the ball is going down. So ``vspeed = -vspeed`` would result in ``vspeed = -2`` ... which is up ... cool ✔
+ * Going Up to Down: Here we have ``vspeed = -2``, meaning the ball is going up. So ``vspeed = -vspeed`` would result in ``vspeed = -(-2)``, and from our math class we know that 2 negatives make a positive (you can punch -1 * -2 in to a calculator to validate). So that would result in ``vspeed = 2`` ... which is down .. cool ✅
+
+So that works!
+
+<details>
+<summary><b>Using the same technique can you add horizontal collisions w/ the paddes?</b> Click to see answer</summary>
+
+Should just be a matter of different collision events w/ using the hspeed variable instead of vspeed
+
+You can add 2 collision events to the ball (one for both paddles) and use the following code for both
+
+<div class="highlight">
+<pre class="highlight">
+<code>hspeed = -hspeed;</code>
+</pre>
+</div>
+
+</details>
+
+<img src="../../assets/images/demo_ball_collisions.gif"/>
+
+## Restarting the game
+
 ## Randomize ball speed
 ## Reset the ball

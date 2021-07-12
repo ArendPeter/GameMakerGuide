@@ -71,7 +71,7 @@ Rinse and repeat for ``oBall``, ``oWall``, and ``oEnemyPaddle`` (enemy paddle wi
 
 Rooms are essentially levels, it represents what will be shown on the screen. We can place a bunch of objects, sprites, and other resources here to form levels, menus and any other room we can think of. (side note: most other game engines refer to rooms as "Scenes" )
 
-We'll just use the default room for now. When we click in there, we can drag objects from our asset browswer into the room. Go ahead and added 2 paddles and a ball
+We'll just use the default room for now. When we click in there, we can drag objects from our asset browser into the room (oh and make sure you have the Instances layer selected, we'll get more into layers later). Go ahead and added the 2 paddles and a ball
 
 ![](../../assets/images/objects_to_room.gif)
 
