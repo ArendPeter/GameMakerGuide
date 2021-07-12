@@ -63,7 +63,7 @@ then we can set the sprite accordingly
 
 ![](../../assets/images/set_object_sprite.gif)
 
-Rinse and repeat for ``oBall`` and ``oWall``
+Rinse and repeat for ``oBall``, ``oWall``, and ``oEnemyPaddle`` (enemy paddle will use the same sprite as ``oPaddle``, and that's ok ;) )
 
 ![](../../assets/images/first_objects.png)
 

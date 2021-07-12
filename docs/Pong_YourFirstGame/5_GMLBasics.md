@@ -11,7 +11,7 @@ The the previous section we just had a BIG first, we ran our game for the first 
 
  * We'll change instance positions with code 😎
  * We'll use keyboard input to make the game interactive 😲
-   * and we add local co-op while we're at it 😵
+   * and we add a local versus mode while we're at it 😵
  * We'll make instance interact with each other 🤯
 
 That's all on this page!! Let's do it!
@@ -202,7 +202,7 @@ I recommend you use these as much as you can (especially when you're starting ou
 x /* <- that's the x variable, and this is a comment I'm inserting in my code */ = 3;
 ```
 
-There's also a 3rd type called a JSDoc comment. We actually saw it when we first made our create event (we immediatly cleared it, but you can see it again by creating a new event)
+There's also a 3rd type called a JSDoc comment. We actually saw it when we first made our create event (we immediately cleared it, but you can see it again by creating a new event)
 
 ```
 /// @description I'm describing the create event within a comment :O
@@ -213,6 +213,77 @@ Using `///` signals to game maker that you're using JSDoc format, and Game Maker
 We won't be using the `///` in this course, I still barely use them on my own, but I wanted to include them here for completeness
 
 ## Keyboard Input
+
+Now we're ready to make our game interactive :D, and in particular we're going to make our paddle move up and down in response to the keyboard buttons
+
+We'll use keyboard events for this, there's actually 3 types
+
+ * **Key Pressed**: This event triggers once on the exact from that you press the key
+ * **Key Released**: This event triggers once on the exact from that you release the key
+ * **Key Down**: This event triggers every frame that the key is held down (if I was naming this, I probably would have said **Key Held** instead but yoyogames didn't ask me)
+
+We're going to simulating vertical movement by repeatedly adjusting our y value a little bit at a time. Which event type do you think we should use?
+
+<details>
+<summary> <b>Key Pressed, Key Released, or Key Down?</b> click to see </summary>
+
+<b>Key Down</b>
+
+Since it's repeatedly updating every frame, Key Down is the way to go, Key Pressed/Released would have only activated once
+
+Go ahead and jump into oPaddle and add events for "Key Down > Up" and "Key Down > Down" (super confusing, again I wish I could say "Key Held > Down" :'( )
+
+</details>
+
+For the up event code we want the y value to be moved a little bit up each frame. Here's the code for that
+
+```
+y = y - 4;
+```
+
+This is using the same variable assignment structure but there are a few extra curve balls here
+
+In this case we want to set the new position **relative** to the old position instead of setting it to a specific number, so that's why we need to include y on the right side
+
+This also further highlights the differences with the mathematical equals sign, since the left/right side are clearly unequal. Instead the GML equals sign is actually saying "set the new y value to be the old y value - 4"
+
+When you run this in game, you should see the paddle moving up in response to the up button
+
+Now you can add the following in the Down event to support both directions
+
+```
+y = y + 4;
+```
+
+## Enemy Controls
+
+Now let's practice this and see if you can add similar controls to ``oEnemyPaddle``. Instead of the arrow keys, let's use WASD
+
+<details>
+<summary> <b>Add Enemy Controls</b> click to see </summary>
+
+It ends up being the same code, just with different events
+
+<b>Key Down > W</b>
+
+```
+y = y - 4;
+```
+
+<b>Key Down > S</b>
+
+```
+y = y + 4;
+```
+
+</details>
+
+Great work! Now when we test it, we should be able to move both individually
+
+Feel free to swap out 4 with a different number to find a speed that feels better
+
+<img src="../../assets/images/demo_movement.gif"/>
+
 ## Collision (and functions!)
 ## Randomize ball speed
 ## Reset the ball
