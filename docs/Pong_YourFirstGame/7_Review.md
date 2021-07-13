@@ -1,6 +1,6 @@
 ---
 layout: default
-title: GML Functions
+title: Review
 nav_order: 7
 parent: Pong | Your First Game
 ---
