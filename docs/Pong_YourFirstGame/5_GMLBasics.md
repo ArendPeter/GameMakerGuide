@@ -381,9 +381,9 @@ Now you should be able to press R in game and the game will restart!
 
 We've got a few things to break down here. First off, what the heck are those `()`?
 
-Well, game_restart is a function, and can always tell functions apparent from variables by seeing if they have the `()` * (sometimes there's more things between the parens, but we'll get to that later)
+Well, game_restart is a function, and can always tell functions apparent from variables by seeing if they have the `()` (sometimes there's more things between the parens, but we'll get to that later)
 
-> * = ahem 🤓, technically you can refer to functions without (), but () is requried to actually "call" the function and make it do things. This distinction probably won't matter to you until years down the line but for some reason I felt the need to make the clarification anyway
+>  ahem 🤓, technically you can refer to functions without (), but () is requried to actually "call" the function and make it do things. This distinction probably won't matter to you until years down the line but for some reason I felt the need to make the clarification anyway
 
 Here's my working definition for functions
 
@@ -488,13 +488,10 @@ But it seems a little odd that it only goes diagonal. We certainly don't want it
 <details>
 <summary> <b>Update the code to have horizontal as possible direction</b> Click for code </summary>
 
-<div class="highlight">
-<pre class="highlight">
-<code>hspeed = choose(-2, 2);
+<pre>
+hspeed = choose(-2, 2);
 vspeed = choose(-2, 0, 2);
-</code>
 </pre>
-</div>
 
 <img src="../../assets/images/ball_random_start_including_hor.gif"/>
 
