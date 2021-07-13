@@ -489,8 +489,8 @@ But it seems a little odd that it only goes diagonal. We certainly don't want it
 <summary> <b>Update the code to have horizontal as possible direction</b> Click for code </summary>
 
 <pre>
-hspeed = choose(-2, 2);
-vspeed = choose(-2, 0, 2);
+<code>hspeed = choose(-2, 2);
+vspeed = choose(-2, 0, 2);<code>
 </pre>
 
 <img src="../../assets/images/ball_random_start_including_hor.gif"/>
