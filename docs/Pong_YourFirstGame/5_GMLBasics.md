@@ -556,18 +556,15 @@ Yes there is, and it's actually a lot simpler too. Can you think of it?
 
 <details>
 <summary> **How to reset the ball w/o destroying it?** Click to find out</summary>
+<pre>
 
 Yep, just use the following code in the outside room event
 
-<div class="highlight">
-<pre class="highlight">
 <code>x = xstart;
 y = ystart;
 hspeed = choose(-2, 2);
 vspeed = choose(-2, 0, 2);
 </code>
-</pre>
-</div>
 
 This just moves the existing ball back to it's starting position, and then it picks a random direction again
 
@@ -575,7 +572,7 @@ Resetting the position is probably the preferred approach, I mainly showed the d
 
 But that said, this highlights the creative side of programming. You only have limited tools, and there's always multiple ways to mix and match to achieve your goals
 
-</details>
+</pre></details>
 
 ## Summary
 
