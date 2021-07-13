@@ -133,7 +133,7 @@ x
 ;
 ```
 
-As another exersize, why don't you setting the x / y in the create event to position to the ball in the exact center of the room? This is a tad open ended, so be ready to do a bit of thinking and tinkering
+As another exercise, why don't you setting the x / y in the create event to position to the ball in the exact center of the room? This is a tad open ended, so be ready to do a bit of thinking and tinkering
 
 <details>
 <summary><b>How do you put it in the exact center?</b> expand to find out</summary>
