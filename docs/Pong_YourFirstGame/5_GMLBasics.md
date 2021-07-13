@@ -302,16 +302,16 @@ Now it's time to get the ball rolling (hehe)
 We're using a different movement approach for the ball. Instead of directly setting it's x/y position every frame, we'll set it's speed in the beginning, and then let game maker update it's x/y for us. Add the following to oBall's create event (new variables, yay!)
 
 ```
-hspeed = 2;
-vspeed = 2;
+hspeed = 4;
+vspeed = 4;
 ```
 
 The hspeed and vspeed variables represent how fast the ball is moving in the horizontal and vertical directions respectively. In a more literal sense, it represents how much we want the x/y values to change each frame. That said doing the following in the step event should get you exact same results
 
 ```
 // NOTE: don't actually add this to your project, this is just a example
-x = x + 2;
-y = y + 2;
+x = x + 4;
+y = y + 4;
 ```
 
 Speaking of results, let's do a pop quiz, what do you think the results will be when we run the code?
@@ -341,8 +341,8 @@ vspeed = -vspeed;
 
 Let's think through the cases
 
- * **Going Down to Up**: We start with ``vspeed = 2``, meaning the ball is going down. So ``vspeed = -vspeed`` would result in ``vspeed = -2`` ... which is up ... cool ✅
- * **Going Up to Down**: Here we have ``vspeed = -2``, meaning the ball is going up. So ``vspeed = -vspeed`` would result in ``vspeed = -(-2)``, and from our math class we know that 2 negatives make a positive (you can punch -1 * -2 in to a calculator to validate). So that would result in ``vspeed = 2`` ... which is down .. cool ✅
+ * **Going Down to Up**: We start with ``vspeed = 4``, meaning the ball is going down. So ``vspeed = -vspeed`` would result in ``vspeed = -4`` ... which is up ... cool ✅
+ * **Going Up to Down**: Here we have ``vspeed = -4``, meaning the ball is going up. So ``vspeed = -vspeed`` would result in ``vspeed = -(-4)``, and from our math class we know that 2 negatives make a positive (you can punch -1 * -2 in to a calculator to validate). So that would result in ``vspeed = 4`` ... which is down .. cool ✅
 
 So that works!
 
@@ -361,7 +361,7 @@ You can add 2 collision events to the ball (one for both paddles) and use the fo
 
 </details>
 
-<img src="../../assets/images/ball_collisions.gif"/>
+<img src="../../assets/images/ball_collide.gif"/>
 
 ## Restarting the game
 
@@ -423,7 +423,7 @@ In this case we're not providing feedback anyway, so Key Press is probably ideal
 
 After playing the game for a while you might notice a bug in the collision system. Specifically, if you move the paddle to hit the ball vertically
 
-<img src="../../assets/images/ball_paddle_vertical_collision_bad.gif"/>
+<img src="../../assets/images/ball_paddle_vertical_collide_bad.gif"/>
 
 The assumption in our collision logic, is that the event will only be triggered once, and that flipping the speed will be enough to ensure the collision doesn't trigger on the next frame
 
@@ -454,7 +454,7 @@ hspeed = -abs(hspeed)
 
 When testing it out, this edge case should be fixed
 
-<img src="../../assets/images/ball_paddle_vertical_collision_good.gif"/>
+<img src="../../assets/images/ball_paddle_vertical_collide_good.gif"/>
 
 
 ## Randomize ball speed (featuring choose())
@@ -464,8 +464,8 @@ So far the ball has been really predictable, it just starts off in the same diag
 Let's add some randomness the start direction, and get some more function practice in while we're add it. Here's the new create event for ``oBall``
 
 ```
-hspeed = choose(-2, 2);
-vspeed = choose(-2, 2);
+hspeed = choose(-4, 4);
+vspeed = choose(-4, 4);
 ```
 
 Introducing the choose function! This takes in a series of inputs, randomly "chooses" one, and then gives it back. So our hspeed and vspeed can both be either -2 or 2
@@ -487,6 +487,7 @@ But it seems a little odd that it only goes diagonal. We certainly don't want it
 
 <details>
 <summary> <b>Update the code to have horizontal as possible direction</b> Click for code </summary>
+
 test
 
 <pre><code>hspeed = choose(-2, 2);
@@ -494,7 +495,7 @@ vspeed = choose(-2, 0, 2);</code></pre>
 
 <img src="../../assets/images/ball_random_start_including_hor.gif"/>
 
-On second thought, I don't like this very much, it's just ... boring 😴
+On second thought, I don't like this very much, it's just ... boring 😴 (but good job on figuring it out 😉 )
 
 </details>
 
