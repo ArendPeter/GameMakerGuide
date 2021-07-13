@@ -15,16 +15,18 @@ Let's review what we learned
 
 ## Game Maker's Interface
 
-* **DnD vs GML**: DnD is a visual programming language, where GML (Game Maker Language), let's you make program games w/ code
+You know the basics of Game Maker's interface
+
+* **DnD vs GML**: DnD (Drag & Drop) is a visual programming language, where as GML (Game Maker Language), let's you make program games w/ code
 * **Window Layout**: You know how to manipulate windows within the Game Maker workspace
 
 ## Resource Types
 
 You know how to create the following resources, how to use them, and how to name them (or least you know how I like to name them)
 
-* **Sprites**: basically images
-* **Objects**: defining brains you can attach to the images
-* **Rooms**: level editors where you can place objects
+* **Sprites**: basically images, ex. `sPaddle`
+* **Objects**: defining brains you can attach to the images, ex. `oPaddle`
+* **Rooms**: level editors where you can place objects, ex. rmGame
 
 We learned some other related concepts along the way
 
