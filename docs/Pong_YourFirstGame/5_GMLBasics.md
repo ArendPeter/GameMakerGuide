@@ -564,7 +564,6 @@ Yep, just use the following code in the outside room event
 <code>x = xstart;
 y = ystart;
 hspeed = choose(-2, 2);
-vspeed = choose(-2, 2);
 vspeed = choose(-2, 0, 2);
 </code>
 </pre>

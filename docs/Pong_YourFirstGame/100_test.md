@@ -3,15 +3,19 @@
 
 <div class="highlight">
 <pre class="highlight">
-<code>hspeed = choose(-2, 2);
-vspeed = choose(-2, 0, 2);<code>
+<code>x = xstart;
+y = ystart;
+</code>
 </pre>
 </div>
 
-<pre>
-<code>hspeed = choose(-2, 2);
-vspeed = choose(-2, 0, 2);<code>
-</pre>
 
+<div >
+<pre >
+<code>x = xstart;
+y = ystart;
+</code>
+</pre>
+</div>
 
 </details>
