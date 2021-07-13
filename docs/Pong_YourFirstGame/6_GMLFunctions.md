@@ -15,30 +15,30 @@ It's function time!!
 
 Right now, you can "win", but that just means that the ball goes off the screen, and you and your friend are just stuck waiting for the rest of eternity. There are more elegant ways to handle this, but for now let's add a restart button as a quick fix
 
-Just add Key Press event for the letter R to ``oBall`` (this can be any object, but we're already in ``oBall`` so why not). Then add the following code
+Just add a **Key Press** event for the letter R to ``oBall`` (this can be any object, but we're already in ``oBall`` so why not). Then add the following code
 
 ```
-game_restart()
+game_restart();
 ```
 
 Now you should be able to press R in game and the game will restart!
 
 We've got a few things to break down here. First off, what the heck are those `()`?
 
-Well, game_restart is a function, and can always tell functions apart from variables by seeing if they have the `()` (sometimes there's more things between the parens, but we'll get to that later)
+Well, `game_restart` is a function, and can always tell functions apart from variables by seeing if they have the `()` (sometimes there's more things between the parens, but we'll get to that later)
 
->  ahem 🤓, technically you can refer to functions without (), but () is requried to actually "call" the function and make it do things. This distinction probably won't matter to you until years down the line but for some reason I felt the need to make the clarification anyway
+>  ahem 🤓, technically you can refer to functions without (), but () are required to actually "call" the function and make it do things. This distinction probably won't matter to you until years down the line but for some reason I felt the need to make the clarification anyway
 
-Here's my working definition for functions
+Here's my working definition for functions:
 
 > **function**: a command that does 1 or more of the following
 1. Takes inputs
 2. Performs an action
 3. Gives back outputs
 
-In our case game_restart performs an action (it restarts the game), but it does so without taking inputs or giving back outputs
+In our case `game_restart` performs an action (it restarts the game), but it does so without taking inputs or giving back outputs
 
-Here's a general form for a function that does all 3
+Here's a general form for a function that does all 3:
 
 ```
 output = function_name(input1, input2, input3)
@@ -46,20 +46,30 @@ output = function_name(input1, input2, input3)
 
 We'll see plenty of examples for this later, so don't worry if it's confusing
 
-On a smaller note, why did I choose Key Press instead of one of the other key events? Think about it first, there's not necessarily a right answer
+On a smaller note, why did I choose **Key Press** instead of one of the other key events? Think about it first, there's not necessarily a right answer
 
 <details>
 <summary>but that said click here for an answer</summary>
 
+<p>
 In this case you could use any of the 3 w/o noticing much of a difference
-<br>
+</p>
+
+<p>
 Key Down would be a little weird. Remember key down triggers on every frame where the key is held down. This would be an odd choice, since we only need to restart the game once, but there's no harm in multiple restarts I suppose
-<br>
+</p>
+
+<p>
 For Key Press vs Key Released, there's an argument for both. Key Press will trigger faster, but sometimes I'll use Key Released if I want to communicate what you're interacting with before the action occurs.
-<br>
+</p>
+
+<p>
 For example, if I setup the spacebar to be a keyboard shortcut for a play button, I might use Key Released, and then also use Key Down to perform a short hover animation on the button. This way you can see which button you're trigger before it triggers
-<br>
+</p>
+
+<p>
 In this case we're not providing feedback anyway, so Key Press is probably ideal
+</p>
 
 </details>
 
@@ -69,28 +79,28 @@ After playing the game for a while you might notice a bug in the collision syste
 
 <img src="../../assets/images/ball_paddle_vertical_collide_bad.gif"/>
 
-The assumption in our collision logic, is that the event will only be triggered once, and that flipping the speed will be enough to ensure the collision doesn't trigger on the next frame
+Our collision logic assumes that the event will only be triggered once, but in reality a collision in game maker is synonymous w/ "overlap". So if it's still overlapping on the next frame the event could continue to trigger long after the initial contact
 
-Thing is, a collision in game maker is synonymous w/ "overlap", so if it's still overlapping the event will continue to trigger long after the initial contact. So in our example the horizontal direction is continuously being flipped, and the ball is stuck
+In our example the flipping horizontal direction on vertical collisions isn't enough un-collide the ball on the next frame. As a result the horizontal speed gets continuously flipped, and the ball stalls horizontally untile the collision/overlap ends
 
 To fix this, I'll update the logic to force collisions with ``oPaddle``, and ``oEnemyPaddle``, to explicitly force the ball to move right and left respectively.
 
-oBall's collision event w/ oEnemyPaddle
+Here's oBall's collision event w/ oEnemyPaddle:
 
 ```
 hspeed = abs(hspeed)
 ```
 
-This uses abs() to take the existing hspeed, and then output a positive version. Effectively forcing the ball to move to the right regardless of the current hspeed. Here's some more formal abs() documentation
+This uses abs() which takes the existing hspeed, and then outputs a positive version, Effectively forcing the ball to move to the right regardless of the current hspeed. Here's some more formal abs() documentation
 
 > **abs()**: Short for "absolute value", it returns the positive version of the number
 * Input: an input number
 * Action: if the number if negative, multiply it by -1 (2 negatives make a positive 😉), otherwise leave it unchanged
 * Ouptut: positive version of the number
 
-Then we can use similar same logic to for it to the left on the players paddle
+Then we can use similar same logic to force left movement when the ball hits the player's paddle
 
-oBall's collision event w/ oPaddle
+Here's oBall's collision event w/ oPaddle:
 
 ```
 hspeed = -abs(hspeed)
@@ -105,7 +115,7 @@ When testing it out, this edge case should be fixed
 
 So far the ball has been really predictable, it just starts off in the same diagonal direction regardless of how many times you restart
 
-Let's add some randomness the start direction, and get some more function practice in while we're add it. Here's the new create event for ``oBall``
+Let's add some randomness to the start direction, and get some more function practice in while we're add it. Here's the new create event for ``oBall``:
 
 ```
 hspeed = choose(-4, 4);
@@ -114,14 +124,14 @@ vspeed = choose(-4, 4);
 
 Introducing the choose function! This takes in a series of inputs, randomly "chooses" one, and then gives it back. So our hspeed and vspeed can both be either -4 or 4
 
-Here's a more formal definition using the my earlier specification
+Here's a more formal definition:
 
 > **choose()**: randomly chooses from the inputs
 * Input: 1 or more parameters representing the choices
 * Action: Randomly chooses among the input parameters
 * Output: The chosen parameter
 
-Also node how we're using variable assignment and functions together in the same line. We're taking the output from choose, and then using the assignment operator to direct that output toward one of our variables
+Also note how we're using variable assignment and functions together in the same line. We're taking the output from choose, and then using the assignment operator to direct that output toward one of our variables
 
 Now here's what it looks like when we press restart
 
@@ -147,7 +157,7 @@ The restart button is nice, but as I mentioned earlier it's certainly not the be
 
 There are lots of ways to do this, but since we're on function streak, let's run with that
 
-Add the following code in the outside room event for ``oBall``:
+Add the following code in the **Outside Room** event for ``oBall``:
 
 ```
 instance_create_layer(xstart, ystart, layer, oBall);
@@ -156,7 +166,7 @@ instance_destroy();
 
 woah, new event, new variables AND new functions 😨. Take a deep breath, let's break it down
 
-First, here's the english translation
+First, here's the English translation
 
 ```
 When I (meaning me the ball), go outside the room:
@@ -166,26 +176,26 @@ When I (meaning me the ball), go outside the room:
 
 For the event, outside room should be pretty self explanatory. It'll be triggered once x/y value of the instance goes out the dimensions of the room
 
-Here are the new variables
+Here are the new variables:
 
-> **xstart**: the x position where the instance was first created
+> ``xstart``: the x position where the instance was first created
 
-> **ystart**: (you guessed it 😉) the y position where the instance was first created
+> ``ystart``: (you guessed it 😉) the y position where the instance was first created
 
-> **layer**: represents the current layer of the object (so far that's always been the "Instances" layer, but we can just refer to the layer variable in case that changes)
+> ``layer``: represents the current layer of the object (so far that's always been the "Instances" layer, but we can just refer to the layer variable in case that changes)
 
 > **Fun Fact**: I guess oBall is technically a variable? But you should think of it as a asset. And as a fun fact, you can refert to any of the assets in the asset browser in code. Here we used oBall, but if you type out any of the other ones (like sPaddle?) they should all be highlighted the same
 
-and here's the functions
+and here's the functions:
 
-> **instance_create_layer()**: Creates an instance at a specified layer / position
+> ``instance_create_layer()``: Creates an instance at a specified layer / position
 * Input: x/y/layer for the new instance, as well as the object you want to create an instance of
 * Action: create an instance using the specified parameters as properties for the instance
 * Output: the id of the new instance (but you don't need to worry about this, we're not using it)
 
-> **instance_destroy()**: Destroys the current instance, no more events, it's over
+> ``instance_destroy()``: Destroys the current instance, no more events, it's over
 * Input: nothing
-* Action: Destroys the current instance (technically 🤓 it won't get destroyed until the current frame is completed. I guarantee you'll forget this and then relearn it the hard way when you hit a weird bug, but I figured I'd mention it anyway)
+* Action: Destroys the current instance (ahem 🤓, technically it won't get destroyed until the current frame is completed. I guarantee you'll forget this and then relearn it the hard way when you hit a weird bug, but I figured I'd mention it anyway)
 * Ouptut: nadda
 
 Testing this out should work, when a ball leaves the room, it will destroy it's self and new ball will show up at the start allowing the game to continue
@@ -207,10 +217,16 @@ hspeed = choose(-2, 2);
 vspeed = choose(-2, 0, 2);
 </code></pre>
 
+<p>
 This just moves the existing ball back to it's starting position, and then it picks a random direction again
-<br>
+</p>
+
+<p>
 Resetting the position is probably the preferred approach, I mainly showed the destroy/recreate approach since I wanted to teach you more functions 🤫
-<br>
+</p>
+
+<p>
 But that said, this highlights the creative side of programming. You only have limited tools, and there's always multiple ways to mix and match to achieve your goals
+</p>
 
 </details>
