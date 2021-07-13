@@ -488,10 +488,9 @@ But it seems a little odd that it only goes diagonal. We certainly don't want it
 <details>
 <summary> <b>Update the code to have horizontal as possible direction</b> Click for code </summary>
 test
-<pre>
-<code> hspeed = choose(-2, 2);
-vspeed = choose(-2, 0, 2);<code>
-</pre>
+
+<pre><code>hspeed = choose(-2, 2);
+vspeed = choose(-2, 0, 2);</code></pre>
 
 <img src="../../assets/images/ball_random_start_including_hor.gif"/>
 
@@ -555,7 +554,7 @@ But that's kind of morbid don't you think? Does it have to die? Is there a way w
 Yes there is, and it's actually a lot simpler too. Can you think of it?
 
 <details>
-<summary> **How to reset the ball w/o destroying it?** Click to find out</summary>
+<summary> <b>How to reset the ball w/o destroying it?</b> Click to find out</summary>
 
 Yep, just use the following code in the outside room event
 
