@@ -12,12 +12,19 @@ y = ystart;
 </div>
 
 
-<div >
-<pre >
+<div>
+<pre>
 <code>x = xstart;
 y = ystart;
 </code>
 </pre>
 </div>
+
+
+<pre>
+<code>x = xstart;
+y = ystart;
+</code>
+</pre>
 
 </details>
