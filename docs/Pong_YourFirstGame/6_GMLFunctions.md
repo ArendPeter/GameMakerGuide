@@ -5,7 +5,7 @@ nav_order: 6
 parent: Pong | Your First Game
 ---
 
-## GML Functions
+# GML Functions
 
 At this point, I've milked variable assignments as much as I can and now it's time to move on
 
@@ -52,13 +52,13 @@ On a smaller note, why did I choose Key Press instead of one of the other key ev
 <summary>but that said click here for an answer</summary>
 
 In this case you could use any of the 3 w/o noticing much of a difference
-
+<br>
 Key Down would be a little weird. Remember key down triggers on every frame where the key is held down. This would be an odd choice, since we only need to restart the game once, but there's no harm in multiple restarts I suppose
-
+<br>
 For Key Press vs Key Released, there's an argument for both. Key Press will trigger faster, but sometimes I'll use Key Released if I want to communicate what you're interacting with before the action occurs.
-
+<br>
 For example, if I setup the spacebar to be a keyboard shortcut for a play button, I might use Key Released, and then also use Key Down to perform a short hover animation on the button. This way you can see which button you're trigger before it triggers
-
+<br>
 In this case we're not providing feedback anyway, so Key Press is probably ideal
 
 </details>
@@ -84,9 +84,9 @@ hspeed = abs(hspeed)
 This uses abs() to take the existing hspeed, and then output a positive version. Effectively forcing the ball to move to the right regardless of the current hspeed. Here's some more formal abs() documentation
 
 > **abs()**: Short for "absolute value", it returns the positive version of the number
-Input: an input number
-Action: if the number if negative, multiply it by -1 (2 negatives make a positive 😉), otherwise leave it unchanged
-Ouptut: positive version of the number
+* Input: an input number
+* Action: if the number if negative, multiply it by -1 (2 negatives make a positive 😉), otherwise leave it unchanged
+* Ouptut: positive version of the number
 
 Then we can use similar same logic to for it to the left on the players paddle
 
@@ -112,14 +112,14 @@ hspeed = choose(-4, 4);
 vspeed = choose(-4, 4);
 ```
 
-Introducing the choose function! This takes in a series of inputs, randomly "chooses" one, and then gives it back. So our hspeed and vspeed can both be either -2 or 2
+Introducing the choose function! This takes in a series of inputs, randomly "chooses" one, and then gives it back. So our hspeed and vspeed can both be either -4 or 4
 
-Here's a more formal definition using the my earlier specificaion
+Here's a more formal definition using the my earlier specification
 
 > **choose()**: randomly chooses from the inputs
-Input: 1 or more parameters representing the choices
-Action: Randomly chooses among the input parameters
-Output: The chosen parameter
+* Input: 1 or more parameters representing the choices
+* Action: Randomly chooses among the input parameters
+* Output: The chosen parameter
 
 Also node how we're using variable assignment and functions together in the same line. We're taking the output from choose, and then using the assignment operator to direct that output toward one of our variables
 
@@ -131,8 +131,6 @@ But it seems a little odd that it only goes diagonal. We certainly don't want it
 
 <details>
 <summary> <b>Update the code to have horizontal as possible direction</b> Click for code </summary>
-
-test
 
 <pre><code>hspeed = choose(-2, 2);
 vspeed = choose(-2, 0, 2);</code></pre>
@@ -181,14 +179,14 @@ Here are the new variables
 and here's the functions
 
 > **instance_create_layer()**: Creates an instance at a specified layer / position
-Input: x/y/layer for the new instance, as well as the object you want to create an instance of
-Action: create an instance using the specified parameters as properties for the instance
-Output: the id of the new instance (but you don't need to worry about this, we're not using it)
+* Input: x/y/layer for the new instance, as well as the object you want to create an instance of
+* Action: create an instance using the specified parameters as properties for the instance
+* Output: the id of the new instance (but you don't need to worry about this, we're not using it)
 
 > **instance_destroy()**: Destroys the current instance, no more events, it's over
-Input: nothing
-Action: Destroys the current instance (technically 🤓 it won't get destroyed until the current frame is completed. I guarantee you'll forget this and then relearn it the hard way when you hit a weird bug, but I figured I'd mention it anyway)
-Ouptut: nadda
+* Input: nothing
+* Action: Destroys the current instance (technically 🤓 it won't get destroyed until the current frame is completed. I guarantee you'll forget this and then relearn it the hard way when you hit a weird bug, but I figured I'd mention it anyway)
+* Ouptut: nadda
 
 Testing this out should work, when a ball leaves the room, it will destroy it's self and new ball will show up at the start allowing the game to continue
 
@@ -210,9 +208,9 @@ vspeed = choose(-2, 0, 2);
 </code></pre>
 
 This just moves the existing ball back to it's starting position, and then it picks a random direction again
-
+<br>
 Resetting the position is probably the preferred approach, I mainly showed the destroy/recreate approach since I wanted to teach you more functions 🤫
-
+<br>
 But that said, this highlights the creative side of programming. You only have limited tools, and there's always multiple ways to mix and match to achieve your goals
 
 </details>

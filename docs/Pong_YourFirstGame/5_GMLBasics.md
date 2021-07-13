@@ -7,7 +7,7 @@ parent: Pong | Your First Game
 
 # Getting started with GML
 
-The the previous section we just had a BIG first, we ran our game for the first time :D. This section will be a rapid fire of more BIG firsts. Here's the list
+In the previous section we just had a BIG first, we ran our game for the first time 😀. This section will be a rapid fire of more BIG firsts. Here's the list
 
  * We'll change instance positions with code 😎
  * We'll use keyboard input to make the game interactive 😲
@@ -18,7 +18,9 @@ That's all on this page!! Let's do it!
 
 ## x / y axis
 
-Let's look back at the instance properties in the room editor. Earlier we modified the scale x property, but there's much more where that came from and we'll quickly become familiar with all of them throughout the course. The most important properties here are the x and y, so dig into those next. You were probabaly wondering what the X by Scale X meant. x and y are pretty much just short hands for horizontal and vertical respectively. So why didn't they call it horizontal scale, and vertical scale instead? Well we refer to x and y so often that they it wouldn't quickly become tedious to always need to say horizontal or vertical.
+Let's look back at the instance properties in the room editor. Earlier we modified the scale x property, but there's much more where that came from and we'll quickly become familiar with all of them throughout the course. The most important properties here are the x and y, so we'll dig into those next.
+
+You were probably wondering what the X by Scale X meant. x and y are pretty much just short hands for horizontal and vertical respectively. So why didn't they call it horizontal scale, and vertical scale instead? Well we refer to horizontal and vertical so often that it quickly becomes tedious to type, so we end of w/ x and y instead (can't be much shorter than that!)
 
 ![](../../assets/images/inspector_example.png)
 
@@ -36,13 +38,13 @@ If you said, top left corner, you would be right! Since moving right and down ma
 </p>
 
 <p>
-This is can be really confusing because it's different from it's different from what you'll learn in your math and physics classes. In school, going up increses y (not down), and the x = 0 and y = 0 point is in the bottom left (not top left). So make sure flip the switch when back to "up is more" when you go back to school, I hate for this course to hurt your grades
+This is can be really confusing because it's different from what you'll learn in your math and physics classes. In school, going up increases y (not down), and the x = 0 and y = 0 point is in the bottom left (not top left). So make sure flip the switch back to "up is more" when you go back to school, I'd hate for this course to hurt your grades
 </p>
 
 <img src="../../assets/images/xy_classic.png"/>
 
 <p>
-Another handy trick for viewing x, y is to look at the bottom left of the room editor. There you see 2 numbers (for example ``(841, 592)``). Those represent the x, y position under your mouse cursor, and you can that to again verify the following:
+Another handy trick for viewing x, y is to look at the bottom left of the room editor. There you see 2 numbers (for example (841, 592)). Those represent the x, y position under your mouse cursor, and you can that to again verify the following:
 </p>
 
 <ul>
@@ -63,13 +65,13 @@ We're very close to digging into code, but first we need to understand events. C
 
 ![](../../assets/images/add_event.gif)
 
-Luckily we only usually need a few of these. These are the common ones we'll use today
+Luckily we only usually need a few of these. Here are the common ones we'll use today
 
  * **Create**: This is triggered when the instance is first created
  * **Step**: This is triggered every frame of the game (by default 30 times per second, but this can be tweaked)
- * **Keyboard events**: These are triggered in reseponse to your keyboard inputs
+ * **Keyboard events**: These are triggered in response to your keyboard inputs
 
-For now, let's add a **Create** event. Once you've done that you should see a text editor pop up for us to start entering a code (the natual "What" that triggers from the "When").
+For now, let's add a **Create** event. Once you've done that you should see a text editor pop up for us to start entering code (the natural "What" that triggers from the "When").
 
 ![](../../assets/images/code_editor.png)
 
@@ -93,7 +95,7 @@ Example
 x = 300;
 ```
 
-The above code sets the ball's x to 30. We can run the game to verify this but before we do, try predicting where the ball will show on the screen (maybe you can use the mouse trick I showed you in the x/y axis section?). When you're ready run the game and see if you're right
+The above code sets the ball's x to 300. We can run the game to verify this but before we do, try predicting where the ball will show on the screen (maybe you can use the mouse trick I showed you in the x/y axis section?). When you're ready run the game and see if you're right
 
 <details>
 <summary> <b> Where will the ball be placed? </b> Expand to find out</summary>
@@ -108,9 +110,9 @@ If you said "center leftish", you'd be right!!
 
 Before we move on to adjusting more variables, I have some more details to share on assigning variables
 
- * **Assignment Operator**: In code, we call `=` the Assignment OperatorWe can think of the variable name on the left as a box, the assignment variable moves the value on the right into the box. Unlike math there's no rule that the contents of the box has to be the same as the value for the statement to be valid (although they will be the same once the value is moved into the box). For now these differences are subtle, but they'll be important to understand later
- * **Semi Colons**: The semi colon, `;`, marks the end of the statement, think of it like the period at the end of a sentence, it represents the end of a complete thought 😊. We use them here for the assignment statement, but we'll also need it on all future statements. Interestingly, you can actually remove semi colons, and your code will probably still work fine. However there's some specific situations where things could break, and if you hit those situtations, it will be VERY hard to find the issue. For this reason yoyogames STRONGLY recommends using semi colons, so this is a good habit to keep.
- * **Spacing**: I included a single space on either side of the equal sign, but I don't have a space before the semi colon. I almost always do it this way to keep things consistent, but Game Maker doens't actually care at all. You can add as many spaces, tabs, or even new lines around you code, and Game Maker will handle it the same. This will be particularly useful when we start getting into functions later. Below are some examples with our assignment statement.
+ * **Assignment Operator**: In code, we call `=` the Assignment Operator. We can think of the variable name on the left as an empty box, and the assignment variable moves the value on the right into the box on the left. Unlike math there's no rule that the left side has start out with the same value as the right (although they will be the same once the assignment has been completed). For now these differences are subtle, but they'll be important to understand later
+ * **Semi Colons**: The semi colon `;` marks the end of the statement, think of it like the period at the end of a sentence, it represents the end of a complete thought 😊. We use them here for the assignment statement, but we'll also need it on all future statements. Interestingly, you can actually remove semi colons, and your code will probably still work fine. However there's some specific situations where things could break, and if you hit those situations, it will be VERY hard to find the issue. For this reason yoyogames STRONGLY recommends using semi colons, so this is a good habit to keep
+ * **Spacing**: I included a single space on either side of the equal sign, but I don't have a space before the semi colon. I almost always do it this way to keep things consistent, but Game Maker doesn't actually care at all. You can add as many spaces, tabs, or even new lines around you code, and Game Maker will handle it the same. This will be particularly useful when we start getting into functions later. Below are some examples of how we could rewrite our assignment statement
 
 ```
 x = 30;
@@ -138,27 +140,22 @@ As another exersize, why don't you setting the x / y in the create event to posi
 
 Here it is!
 
-<div class="highlight">
-<pre class="highlight">
-<code>x = 683;
-y = 384;</code>
-</pre>
-</div>
+<pre><code>x = 683;
+y = 384;</code></pre>
 
 To do this you need to figure out the width/height of the room, and then divide by 2. There are a couple ways you can do this
 <br>
-One way is to hover your mouse, or move and object, to figure out what the x,y position is at the bottom right corner of the room. Since the top left is (0, 0) the bottom right will be (width, height) (where you replace width, height with whatever the actual width/height is)
+<br>
+One way is to hover your mouse, or move an object, to figure out the x,y position at the bottom right corner of the room. Since the top left is (0, 0) the bottom right will be (width, height) (where you replace width, height with whatever the actual width/height is)
+<br>
 <br>
 Another way is to inspect the room properties (located below the layers and layer properites by default). There you'll see that the default room width and height are 1366, and 768 respectively, but you can change them here if you want to.
 <br>
+<br>
 Yet another way, (and if you got this you're really ahead of the curve, since I haven't taught this yet), is to find the variables for room width and height. Then you can do the math directly in code, and you'll end up with this
 
-<div class="highlight">
-<pre class="highlight">
-<code>x = room_width/2;
-y = room_height/2;</code>
-</pre>
-</div>
+<pre><code>x = room_width/2;
+y = room_height/2;</code></pre>
 
 </details>
 
@@ -179,17 +176,23 @@ Here's an example of a comment in our code, try adding it to your ball's create 
 
 <p>
 Sorry that was a little mean, nothing actually happens
-<br>
-But that's the beauty of comments, you can enter ``//`` and then fill the rest of the line with whatever you want, and Game Maker won't care!
-<br>
-I recommend you use these as much as you can (especially when you're starting out). Code can be very confusing, so leverage comments to describe what your code is doing. This way future you can come back to it the code and still be able to understand what your code is doing
-<br>
-( Also side note, am I dating myself by using that meme? Is rick rolling still a fun thing kids do these days? oh boy :'( )
+</p>
+
+<p>
+But that's the beauty of comments, you can enter // and then fill the rest of the line with whatever you want, and Game Maker won't care!
+</p>
+
+<p>
+I recommend you use these as much as you can (especially when you're starting out). Code can be very confusing, so leverage comments to describe what your code is doing. This way future-you can come back to the code and still understand what it's doing
+</p>
+
+<p>
+( Also side note, am I dating myself by using that meme? Is rick rolling still a fun thing kids do these days? oh boy 😢 )
 </p>
 
 </details>
 
-``//`` is just one type of comment, another helpful format is ``/* comment */`` this lets you specify both the beginning and the end of a comment. This is helpful for for if you want the comment to span multiple lines, or if you want the comment to end before the end of a line
+``//`` is just one type of comment, another helpful format is ``/* comment */`` this lets you specify both the beginning and the end of a comment. This is helpful for if you want the comment to span multiple lines, or if you want the comment to end before the end of a line
 
 ```
 /*
@@ -214,24 +217,27 @@ We won't be using the `///` in this course, I still barely use them on my own, b
 
 ## Keyboard Input
 
-Now we're ready to make our game interactive :D, and in particular we're going to make our paddle move up and down in response to the keyboard buttons
+Now we're ready to make our game interactive 😀, and in particular we're going to make our paddle move up and down in response to the keyboard buttons
 
 We'll use keyboard events for this, there's actually 3 types
 
- * **Key Pressed**: This event triggers once on the exact from that you press the key
- * **Key Released**: This event triggers once on the exact from that you release the key
+ * **Key Pressed**: This event triggers once on the exact frame that you press the key
+ * **Key Released**: This event triggers once on the exact frame that you release the key
  * **Key Down**: This event triggers every frame that the key is held down (if I was naming this, I probably would have said Key Held instead but yoyogames didn't ask me)
 
-We're going to simulating vertical movement by repeatedly adjusting our y value a little bit at a time. Which event type do you think we should use?
+We're going to be simulating vertical movement by repeatedly adjusting our y value a little bit at a time. Which event type do you think we should use?
 
 <details>
 <summary> <b>Key Pressed, Key Released, or Key Down?</b> click to see </summary>
 
 <b>Key Down</b>
-<br>
+<p>
 Since it's repeatedly updating every frame, Key Down is the way to go, Key Pressed/Released would have only activated once
-<br>
-Go ahead and jump into oPaddle and add events for "Key Down > Up" and "Key Down > Down" (super confusing, again I wish I could say "Key Held > Down" :'( )
+</p>
+
+<p>
+Go ahead and jump into oPaddle and add events for "Key Down > Up" and "Key Down > Down" (super confusing, again I wish I could say "Key Held > Down" 😭 )
+</p>
 
 </details>
 
@@ -245,7 +251,7 @@ This is using the same variable assignment structure but there are a few extra c
 
 In this case we want to set the new position **relative** to the old position instead of setting it to a specific number, so that's why we need to include y on the right side
 
-This also further highlights the differences with the mathematical equals sign, since the left/right side are clearly unequal. Instead the GML equals sign is actually saying "set the new y value to be the old y value - 4". In fact, let's add that as a comment
+This also further highlights the differences with the mathematical equals sign, since the left/right side are clearly unequal. The GML equals sign is actually saying "set the new y value to be the old y value - 4". In fact, let's add that as a comment
 
 ```
 // set the new y value to be the old y value - 4
@@ -272,20 +278,13 @@ It ends up being the same code, just with different events
 <br>
 <b>Key Down > W</b>
 
-<div class="highlight">
-<pre class="highlight">
-<code>y = y - 4;</code>
-</pre>
+<pre><code>y = y - 4;</code></pre>
 </div>
 
 
 <b>Key Down > S</b>
 
-<div class="highlight">
-<pre class="highlight">
-<code>y = y + 4;</code>
-</pre>
-</div>
+<pre><code>y = y + 4;</code></pre>
 
 </details>
 
@@ -319,19 +318,24 @@ Speaking of results, let's do a pop quiz, what do you think the results will be 
 <details>
 <summary><b>Which direction will the ball move?</b> Click to find out</summary>
 
+<p>
 Diagonally down and to the right
+</p>
 
+<p>
 Remember positive x and positive y are right and down respectively
+</p>
 
+<p>
 Because we're doing both at the same time we end up with a diagonal effect
-
+</p>
 <img src="../../assets/images/ball_move.gif"/>
 
 </details>
 
 ## Collisions
 
-So we've got the ball rolling, but now it just keeps on rolling w/o any respect to walls or physics of any kind. To fix this we need collisions
+So we've got the ball rolling, but now it just keeps on rolling forever w/o any respect to walls or physics of any kind. To fix this we need collisions
 
 In ``oBall`` add a collision event w/ ``oWall``. When this happens we want to reflect the ball's vertical motion, luckily there's a clever way to do that using the techniques we already know and love (or at least know, love will come w/ time)
 
@@ -342,22 +346,22 @@ vspeed = -vspeed;
 Let's think through the cases
 
  * **Going Down to Up**: We start with ``vspeed = 4``, meaning the ball is going down. So ``vspeed = -vspeed`` would result in ``vspeed = -4`` ... which is up ... cool ✅
- * **Going Up to Down**: Here we have ``vspeed = -4``, meaning the ball is going up. So ``vspeed = -vspeed`` would result in ``vspeed = -(-4)``, and from our math class we know that 2 negatives make a positive (you can punch -1 * -2 in to a calculator to validate). So that would result in ``vspeed = 4`` ... which is down .. cool ✅
+ * **Going Up to Down**: Here we have ``vspeed = -4``, meaning the ball is going up. So ``vspeed = -vspeed`` would result in ``vspeed = -(-4)``, and from our math classes we know that 2 negatives make a positive (you can punch -1 * -2 in to a calculator to validate). So that would result in ``vspeed = 4`` ... which is down .. cool ✅
 
 So that works!
 
 <details>
 <summary><b>Using the same technique can you add horizontal collisions w/ the paddes?</b> Click to see</summary>
 
-Should just be a matter of different collision events w/ using the hspeed variable instead of vspeed
+<p>
+Should just be a matter of different collision events using the hspeed variable instead of vspeed
+</p>
 
+<p>
 You can add 2 collision events to the ball (one for both paddles) and use the following code for both
+</p>
 
-<div class="highlight">
-<pre class="highlight">
-<code>hspeed = -hspeed;</code>
-</pre>
-</div>
+<pre><code>hspeed = -hspeed;</code></pre>
 
 </details>
 
