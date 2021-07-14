@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Unlock
+nav_exclude: true
 ---
 
 <script>
