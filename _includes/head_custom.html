@@ -31,7 +31,7 @@ is_paywalled = document.title.includes("UI")
 console.log("is_paywalled");
 console.log(is_paywalled);
 console.log("purchased");
-getCookie("purchased");
+console.log(getCookie("purchased"));
 if(is_paywalled && !getCookie("purchased")){
     window.location.replace("https://arendpeter.github.io/GameMakerGuide/docs/paywall.html");
 }
