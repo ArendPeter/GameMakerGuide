@@ -1,3 +1,8 @@
+---
+layout: default
+title: Unlock
+---
+
 <script>
   // check g
   function myFunction(){
