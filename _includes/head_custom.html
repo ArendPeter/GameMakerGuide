@@ -2,4 +2,8 @@
 console.log("custom head");
 console.log("is paywalled");
 console.log(document.title.includes("UI"));
+console.log("cookie");
+document.cookie = "username=John Smith; expires=Thu, 18 Dec 2013 12:00:00 UTC; path=/";
+document.cookie = "lastname=Smith; expires=Thu, 18 Dec 2013 12:00:00 UTC; path=/";
+console.log(document.cookie)
 </script>
