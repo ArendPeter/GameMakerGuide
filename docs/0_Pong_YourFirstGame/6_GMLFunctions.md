@@ -214,7 +214,7 @@ Yep, just use the following code in the outside room event
 <pre><code>x = xstart;
 y = ystart;
 hspeed = choose(-2, 2);
-vspeed = choose(-2, 0, 2);
+vspeed = choose(-2, 2);
 </code></pre>
 
 <p>
@@ -230,3 +230,17 @@ But that said, this highlights the creative side of programming. You only have l
 </p>
 
 </details>
+
+## Preview function names and inputs
+
+Now that our function names are getting longer w/ more inputs, it'll probably get hard to remember the exact names and inputs
+
+Game Maker has some tricks to help us with this, for example as you're typing a function name it'll try to predict which function you're looking for (this should happen automatically, but if not you can hit `ctrl + space`). This is really helpful if you only remember part of the function name
+
+![](../../assets/images/function_autocomplete.png)
+
+Then if you see the one you're looking for, you can just click on it (or use the arrow keys to navigate down to the one you're want and then press enter)
+
+Also once you've entered the function, you can put your cursor between the parenthesis preview the input order
+
+![](../../assets/images/preview_function_inputs.png)

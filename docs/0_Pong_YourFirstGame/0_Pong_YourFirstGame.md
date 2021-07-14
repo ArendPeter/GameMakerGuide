@@ -1,7 +1,6 @@
 ---
 layout: default
 title: Pong | Your First Game
-description: In this module we'll be creating Pong, your first Game Maker game
 nav_order: 2
 has_children: true
 ---
