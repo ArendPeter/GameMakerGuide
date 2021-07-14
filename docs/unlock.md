@@ -1,4 +1,5 @@
 <script>
+  // check g
   function myFunction(){
     console.log("hi")
   }
