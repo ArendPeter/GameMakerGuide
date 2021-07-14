@@ -4,11 +4,8 @@ title: Unlock
 nav_exclude: true
 ---
 
-<script>
-  // check g
-  function myFunction(){
-    console.log("hi")
-  }
-</script>
+<p onload="setCookie('purchased', true)">
+Thanks for paying!
+</p>
 
-<button onclick="myFunction()">Click me</button>
+<button onclick="eraseCookie('purchased')">Reset cookie</button>
