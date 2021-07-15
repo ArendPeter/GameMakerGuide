@@ -86,6 +86,8 @@ x
 ;
 ```
 
+We also learned how we can use this to apply tabbing to our code, and also covered the tabs vs spaces debate as a side tangent
+
 ## Comments
 
 We learned about the different comment types
@@ -103,3 +105,32 @@ We learned many functions, and how to call them
 * ``choose(...)``: Randomly chooses between one of the inputs
 * ``instance_create_layer(...)``: Creates a new instance of an object (at the specified x/y/layer)
 * ``instance_destroy()``: Self destructs current instance
+
+## If statements
+
+We learned what if statements were and how to use them
+
+```
+if( condition ){
+  code
+}
+```
+
+and along with the if statements we learned about comparison operators. These help us form the conditions for our if statements
+
+| Operator | Definition |
+|--|--|
+|< |less than|
+|> |greater than|
+|<=|less than or equal to|
+|>=|greater than or equal to|
+|==|equal to|
+|!=|not equal to|
+
+## Variable Scope and the Dot operator
+
+We also chatted a bit about variable scope, and how we can use the dot operator to access variables in different scopes
+
+**Variable Scope**: By default variables are scoped to the instance (i.e. instance variables). So for example, using x refers to the x variable of the current instance, instead of some other instance
+
+**Dot Operator**: When variables are in different scopes, you can use the dot operator to access them (very similar to 's in english). For example, oBall.x would give you the x position of the ball, even when you're running the code from the oPaddle object

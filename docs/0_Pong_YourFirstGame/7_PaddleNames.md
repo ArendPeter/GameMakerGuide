@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Adding Paddle Names
-nav_order: 1
+nav_order: 7
 parent: Pong | UI
 ---
 
@@ -110,7 +110,10 @@ draw_text(x, y-20, name);
 
 </details>
 
-Some of you will have hit errors along the way (I'm actually hoping that some of you did, that's the best way to learn :) )
+
+## Variable scope and "not set before reading" errors
+
+Some of you probably have hit errors on that previous assignment (I'm actually hoping that some of you did, that's the best way to learn :) )
 
 Here's one popular crash (please keep reading even if you didn't see it, you'll definitely see it eventually)
 
@@ -139,7 +142,7 @@ This brings up **Initialization** vs **Usage/Reference**
 
 The most important thing about **Initialization** vs **Usage/Reference** is **ALWAYS INITIALIZE BEFORE YOU REFERENCE**, otherwise game maker will have no idea what to do with the reference variable
 
-Most of you probably just forgot to copy the create event code, but some of you may have expected `oEnemyPaddle` to reference the variable initilized by `oPaddle`. This brings up variable scope. When you create variables, they only exist for that particular object (i.e. their scoped to the object). So creating a name variable in oPaddle, means it can only be used in oPaddle. If oEnemyPaddle wants a name, then it'll need to make it's own
+Most of you probably just forgot to copy the create event code, but some of you may have expected `oEnemyPaddle` to reference the variable initilized by `oPaddle`. This brings up variable scope. When you create variables, they only exist for that particular instance (they're instance variables, which means they're scoped to the instance, ). So creating a name variable in oPaddle, means it can only be used in oPaddle. If oEnemyPaddle wants a name, then it'll need to make it's own. One of the nice things about variable scope, is you can reuse the same variable names all you want. As long as the duplicate variable names, are in different scopes then you're fine
 
 ## Variable Definitions
 
