@@ -74,7 +74,7 @@ We just have a tiny pong game, but in RPGs it's very common to let players speci
 
 In larger games, the name could be referenced 1000s of times across the whole experience, at that point entering the string directly into our functions will become tedious. It would be nice if we could set the name in one spot and then refer back to it whenever we need it...
 
-That's what variables are for! Previously we've only used built in variables (x, xstart, etc), but now we'll need to define a custom variable of our own. It's fairly straight forward, we can just use the same variable assignment syntax, and then we can name the variable whatever we want
+That's what variables are for! Previously we've only used built in variables (x, xstart, etc), but now we'll need to define a custom variable of our own. It's fairly straight forward, we can just use the same variable assignment format, and then we can name the variable whatever we want
 
 ```
 // oPaddle Create Event
