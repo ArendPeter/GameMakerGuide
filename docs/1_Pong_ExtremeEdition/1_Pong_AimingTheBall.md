@@ -212,11 +212,11 @@ Wait what 😲, what's ``+=``? Ah mb, ``+=`` is a handy short hand when you want
 And there is equivalent sytaxes for the other operations
 
 | Operation | New Syntax | Old Syntax |
-| --- | --- | --- |
-| Addition | ``<variable> += <some number>`` | ``<variable> = <variable> + <some number>; |
-| Subtraction | ``<variable> -= <some number>`` | ``<variable> = <variable> - <some number>; |
-| Multiplication | ``<variable> *= <some number>`` | ``<variable> = <variable> * <some number>; |
-| Division | ``<variable> /= <some number>`` | ``<variable> = <variable> / <some number>; |
+| --- | --- | -- |
+| Addition | ``<variable> += <some number>`` | ``<variable> = <variable> + <some number>;`` |
+| Subtraction | ``<variable> -= <some number>`` | ``<variable> = <variable> - <some number>;`` |
+| Multiplication | ``<variable> *= <some number>`` | ``<variable> = <variable> * <some number>;`` |
+| Division | ``<variable> /= <some number>`` | ``<variable> = <variable> / <some number>;`` |
 
 > WHAT'S SYNTAX MEAN! oh, I guess this is the first time I used that word. Syntaxes are the rules that define the structure of your code. It's pretty much the programming equivalent of grammar. Isn't it annoying that programmers have to make up new words for everything 😢
 
