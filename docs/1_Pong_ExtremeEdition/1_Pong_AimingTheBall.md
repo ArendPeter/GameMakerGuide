@@ -212,7 +212,7 @@ Wait what 😲, what's ``+=``? Ah mb, ``+=`` is a handy short hand when you want
 And there is equivalent sytaxes for the other operations
 
 | Operation | New Syntax | Old Syntax |
-| -- | -- | -- |
+| --- | --- | --- |
 | Addition | ``<variable> += <some number>`` | ``<variable> = <variable> + <some number>; |
 | Subtraction | ``<variable> -= <some number>`` | ``<variable> = <variable> - <some number>; |
 | Multiplication | ``<variable> *= <some number>`` | ``<variable> = <variable> * <some number>; |

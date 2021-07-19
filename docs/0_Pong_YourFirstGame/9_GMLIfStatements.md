@@ -64,7 +64,7 @@ Let's look into ``x < 0``
 There are several ways to format conditions for our if statements. A common approach is to use comparison operators, so in this case we're checking to see if the ball is on the left side by checking if "x is less than 0". Here's a full list of comparison operators for future reference:
 
 | Operator | Definition |
-|--|--|
+|---|---|
 |< |less than|
 |> |greater than|
 |<=|less than or equal to|
