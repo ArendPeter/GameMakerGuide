@@ -70,7 +70,7 @@ Now it works as you'd expect, crisis averted 😪
 
 We just have a tiny pong game, but in RPGs it's very common to let players specify a custom name
 
-![](../../assets/images/name_selection_ff7.png)
+![](../../assets/images/name_select_ff7.png)
 
 In larger games, the name could be referenced 1000s of times across the whole experience, at that point entering the string directly into our functions will become tedious. It would be nice if we could set the name in one spot and then refer back to it whenever we need it...
 

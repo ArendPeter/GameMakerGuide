@@ -53,7 +53,7 @@ instance_destroy();
 
 When we test it, we should see the score go up when the player scores 😄
 
-![](player_scoring.gif)
+![](../../assets/images/player_scoring.gif)
 
 Awesome! Now we have a couple things to break on that new code addition
 
