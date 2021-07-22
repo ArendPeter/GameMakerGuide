@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Aiming The Ball
-nav_order: 7
+nav_order: 1
 parent: Pong | Extreme Edition
 ---
 
@@ -14,27 +14,27 @@ To start we'll allow paddles to "aim" the ball. In particular we want the ball t
 
 ## Introducing direction/speed (and Cartesian vs Polar)
 
-Before we get into that, I want to chat a bit about different ways to represent 2d space, and how it applies to the game maker representations.
+Before we get into that, I want to chat a bit about different ways to represent 2d space, and how it applies to the Game Maker representations.
 
 So far we've done this by representing our postition/speed in terms of it's horitzontal and vertical components (x, y, hspeed, vspeed). This system is called Cartesian
 
-> Quick side story, the cartesian (x/y) coordinate system was invented a French Mathematician named René Descartes (get it, **Cart**esian, Des**cart**es). Supposedly he invented it while lying in bed. He saw a fly on the ceiling and was trying to figure out how he could represent the fly's position on the ceiling (what a nerd)
+> **Quick side story** the cartesian (x/y) coordinate system was invented a French Mathematician named René Descartes (get it, *Cart*esian, Des*cart*es). Supposedly he invented it while lying in bed. He saw a fly on the ceiling and was trying to figure out how he could represent the fly's position on the ceiling (what a nerd)
 
 Polar is a different system. Here we represent using an angle and a distance. As an example think of if your friend was giving you directions. If you're in NY City, they might say walk 5 blocks east, and 2 blocks north (the cartesian method). But if you're on a open field, they might say look toward that mountain in the distance (angle), and walk a half mile (distance).
 
-In math, angle and distance are represented with r and θ, but this isn't used for postition in game maker. Currently x/y represents how much you would have to walk horizontally and vertically from the (0,0) point to reach your current position. A r/θ system for position would be harder to work with
+In math, angle and distance are represented with r and θ, but this isn't used for postition in Game Maker. Currently x/y represents how much you would have to walk horizontally and vertically from the (0,0) point to reach your current position. A r/θ system for position would be harder to work with
 
-> Fun Fact, for me the coolest thing about polar coordinates, is the pretty pictures you get when you start plotting polar functions. For example sin curves looking kind of boring using a cartesian plot, but they turn into pretty flowers on polar plots. Something to look forward to when you get to your math classes in late high school / early college ;)
+> **Fun Fact** for me the coolest thing about polar coordinates, is the pretty pictures you get when you start plotting polar functions. For example sin curves looking kind of boring using a cartesian plot, but they turn into pretty flowers on polar plots. Something to look forward to when you get to your math classes in late high school / early college ;)
 
 ![](../../assets/images/wolfram_polar.png)
 
-So position is weird, but speed is a different story. hspeed/vspeed represents our horizontal and vertical velocity, but that actually isn't super intuitive. If your friend asks how fast your driving have you ever said "I'm driving 20 mph to the east, and 20 mph north". NO! You'd say "I'm going 28(ish) mph, and I know this wasn't part of your question, but that's in the the north east direction in case you're curious". Game maker has the speed/direction vartiables for this purpuse
+So position is weird, but speed is a different story. hspeed/vspeed represents our horizontal and vertical velocity, but that actually isn't super intuitive. If your friend asks how fast your driving, have you ever said "I'm driving 20 mph to the east, and 20 mph north". NO! You'd say "I'm going 28(ish) mph, and I know this wasn't part of your question, but that's in the the north east direction in case you're curious". Game Maker has the speed/direction vartiables for this purpuse
 
 Sorry I kind of geeked out there, all you really needed to know is that direction and speed are new variables you can use instead of x/y
 
 ## Start ball at random direction
 
-Cool, let's get back to coding! Update the create event as follows (note that I'm using comments to disable the old code, this way we can keep it around for you to reference later
+Cool, let's get back to coding! Update the ball's create event as follows (note that I'm using comments to disable the old code, this way we can keep it around for you to reference later)
 
 ```
 // oBall Create Event (updated)
@@ -49,7 +49,7 @@ direction = random(360);
 speed = 6;
 ```
 
-First we set direction randomly between 0 and 360. For function documentation, I'm going to start letting you use the official game maker documentation instead of writing out simplified versions everytime
+First we set direction randomly between 0 and 360. For function documentation, I'm going to start letting you use the official Game Maker documentation instead of writing out simplified versions everytime
 
 Here are 2 ways to access the documentation
 1. Type the function name in the editor (for example ``random``), then ``right click + Keyword help`` on the code
@@ -212,12 +212,12 @@ Wait what 😲, what's ``+=``? Ah mb, ``+=`` is a handy short hand when you want
 And there is equivalent sytaxes for the other operations
 
 | Operation | New Syntax | Old Syntax |
-| --- | --- | -- |
-| Addition | ``<variable> += <some number>`` | ``<variable> = <variable> + <some number>;`` |
-| Subtraction | ``<variable> -= <some number>`` | ``<variable> = <variable> - <some number>;`` |
-| Multiplication | ``<variable> *= <some number>`` | ``<variable> = <variable> * <some number>;`` |
-| Division | ``<variable> /= <some number>`` | ``<variable> = <variable> / <some number>;`` |
+| --- | --- | --- |
+| Addition | ``<variable> += <some number>;`` | ``<variable> = <variable> + <some number>;`` |
+| Subtraction | ``<variable> -= <some number>;`` | ``<variable> = <variable> - <some number>;`` |
+| Multiplication | ``<variable> *= <some number>;`` | ``<variable> = <variable> * <some number>;`` |
+| Division | ``<variable> /= <some number>;`` | ``<variable> = <variable> / <some number>;`` |
 
-> WHAT'S SYNTAX MEAN! oh, I guess this is the first time I used that word. Syntaxes are the rules that define the structure of your code. It's pretty much the programming equivalent of grammar. Isn't it annoying that programmers have to make up new words for everything 😢
+> **WHAT'S SYNTAX MEAN!** oh, I guess this is the first time I used that word. Syntaxes are the rules that define the structure of your code. It's pretty much the programming equivalent of grammar. Isn't it annoying that programmers have to make up new words for everything 😢
 
 Anyway, if you test the game now you should see the ball speed up over time
