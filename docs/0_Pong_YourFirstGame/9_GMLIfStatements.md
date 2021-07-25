@@ -169,14 +169,12 @@ Another question you might ask is what type of spacing should you use? Tabs or S
 
 > NOTE: To play devil's advocate 🤓, a spaces fan would say that you can disable the "Keep Tabs" setting in preferences and effectively get the best of both worlds. In that case you can press tab, and then it will automatically insert 4 spaces (depending on what you have the tab size set to). A space advocate would also say that using spaces ensures to code looks consistent across all systems, since different people can set their tab size to different values. All of that said "Keep Tabs" is the default setting, so it's probably safe to say that the vast majority of Game Maker users just use tab
 
-TODO: consider including silicon valley clip
-
 ## Increasing Enemy Score
 
 Now you should be able to apply that knowledge to add scoring for the enemy as well
 
 <details>
-<summary><b>How do you add scoring for the enemy?</b>Click to see</summary>
+<summary><b>How do you add scoring for the enemy?</b> Click to see</summary>
 
 <pre><code>// oBall Outside Room Event (updated)
 
