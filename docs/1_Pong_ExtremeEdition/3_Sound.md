@@ -30,7 +30,7 @@ Now the music is in Game Maker, but we need to add a line of code to actually pl
 ```
 // oBall Create Event
 
-// INSERT PREVIOUS CODE HERE
+... // INSERT PREVIOUS CODE HERE
 
 // play music
 audio_play_sound(sndMusic, 0, true);
@@ -58,4 +58,63 @@ Now we can just drag them from you desktop into game maker to import the sounds.
 
 TODO: figure out how to officially credit everyone, the sfx are creative commons, but some of them still require attribution
 
-Now let's 
+Now let's add a some audio lines for winning and losing points
+
+```
+// oBall Outside Room Event (updated)
+
+// if the ball is on the left side of the room then increase the oScoreBoards's player_score variable
+if( x < 0 ) {
+  oScoreBoard.player_score = oScoreBoard.player_score + 1;
+  audio_play_sound(sndWin, 0, false); // <- new
+}
+
+// if the ball is on the right side of the room then increase the oScoreBoards's enemy_score variable
+if( x > 1366 ) { // 1366 is the width of the room
+  oScoreBoard.enemy_score = oScoreBoard.enemy_score + 1;
+  audio_play_sound(sndWin, 0, false); // <- new
+}
+
+...
+```
+
+Again, this is pretty much the same as the music except that we don't want to make the sfx loop
+
+<details>
+<summary><b>Can you figure out how to add the bounce sound?</b> Click to see</summary>
+
+It's just once line of code, but we're bouncing with a lot of things so we need to tag it onto a lot of events
+
+<pre><code>
+// oBall collision w/ oWall Event  
+...
+audio_play_sound(sndBounce, 0, false); // <- new
+
+// oBall collision w/ oPaddle Event
+...
+audio_play_sound(sndBounce, 0, false); // <- new
+
+// oBall collision w/ oEnemyPaddle Event
+...
+audio_play_sound(sndBounce, 0, false); // <- new
+</code></pre>
+
+</details>
+
+Now when you play the game, you should hear sound effects as well as the music
+
+## Sound Mixing
+
+As you play the game longer, you may start to feel like some sounds are too loud or too soft
+
+In particular, I thought **TODO** seemed too loud. To fix this, just double click on the **TODO**, then you can drag the audio slider to adjust the volume and hit play to test it
+
+**TODO**
+![](../../assets/images/tweak audio_volume.gif)
+
+Testing it might be a bit tricky, sometimes it's hard to know whether a sound is too loud or soft without hearing it together with all the other sounds. To make this easier you can use the sound mixer. Click the **sound group mixer** button, then select the default audio group
+
+**TODO**
+![](../../assets/images/sound_mixer.gif)
+
+Now you can tweak all the volumes at the same time
