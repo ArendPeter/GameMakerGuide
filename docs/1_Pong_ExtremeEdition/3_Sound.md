@@ -54,7 +54,7 @@ Now we can just drag them from you desktop into game maker to import the sounds.
 
 ![](../../assets/images/import_sfx.gif)
 
-> **Note on copyright:** Whenever you use sounds from other people assets, make sure you have their permission. I got Juli's permission to use her music, and all the sound files are creative commons (meaning they can be used freely without permission)
+> **Note on copyright:** Whenever you use sounds from other people assets, make sure you have their permission. I got Juli's permission to use her music, and all the sound effect files are creative commons
 
 TODO: figure out how to officially credit everyone, the sfx are creative commons, but some of them still require attribution
 
