@@ -88,6 +88,10 @@ Again, this is pretty much the same as the music except that we don't want to ma
 **Hi**
 </div>
 
+<details summary="123">
+**HI**
+</details>
+
 <details markdown="1">
 <summary><b>Can you figure out how to add the bounce sound?</b> Click to see</summary>
 

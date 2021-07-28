@@ -92,11 +92,9 @@ The above code sets the ball's x to 300. We can run the game to verify this but 
 <details>
 <summary> <b> Where will the ball be placed? </b> Expand to find out</summary>
 
-<p>
 If you said "center leftish", you'd be right!!
-</p>
 
-<img src="../../assets/images/update_x_pos.png"/>
+![]("../../assets/images/update_x_pos.png")
 
 </details>
 
