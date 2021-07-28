@@ -88,7 +88,7 @@ Again, this is pretty much the same as the music except that we don't want to ma
 **Hi**
 </div>
 
-<details data-summary="123">
+<details markdown="1" data-summary="123">
 **HI**
 </details>
 
