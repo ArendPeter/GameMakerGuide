@@ -32,9 +32,9 @@ function isPaywalled() {
 
 function updateDetails(){
     console.log("update");
-    console.log(document.getElementsByTagName("body")[0]);
-    console.log(document.getElementsByTagName("body")[0].getElementById("top"));
-    var mainElement = document.getElementsByTagName("body")[0].getElementById("top").getElementById("main-content-wrap").getElementById("main-content");
+    console.log(document.body);
+    console.log(document.body.getElementById("top"));
+    var mainElement = document.body.getElementById("top").getElementById("main-content-wrap").getElementById("main-content");
     var detailsElements = mainElement.getElementsByTagName('details');
     console.log(detailsElements.length);
     for(var i = 0; i < detailsElements.length; i++){
@@ -51,6 +51,6 @@ function onLoad(){
   }
 }
 
-onLoad();
+window.onload = onLoad();
 
 </script>
