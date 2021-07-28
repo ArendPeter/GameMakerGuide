@@ -30,32 +30,24 @@ So with that said the x and y variables represent where each instance is positio
 
 If I set it to x = 0, and y = 0, where do you think the instance will move to? (I'm hiding the rest of the section for you to think about it 😉 )
 
-<details>
+<details markdown="1">
 <summary> <b>Where in the room is x = 0, y = 0?</b> click to see </summary>
 
-<p>
 If you said, top left corner, you would be right! Since moving right and down made both variables bigger, that meant that moving left and up makes them smaller, and since x = 0 and y = 0 is the smallest number you can have without going negative (and you can go negative by the way), it makes sense for that to be the top left corner
-</p>
 
-<p>
 This is can be really confusing because it's different from what you'll learn in your math and physics classes. In school, going up increases y (not down), and the x = 0 and y = 0 point is in the bottom left (not top left). So make sure flip the switch back to "up is more" when you go back to school, I'd hate for this course to hurt your grades
-</p>
 
-<img src="../../assets/images/xy_classic.png"/>
+![]("../../assets/images/xy_classic.png")
 
-<p>
 Another handy trick for viewing x, y is to look at the bottom left of the room editor. There you see 2 numbers (for example (841, 592)). Those represent the x, y position under your mouse cursor, and you can that to again verify the following:
-</p>
 
-<ul>
- <li> Moving the mouse left decreases x </li>
- <li> Moving the mouse right increases x </li>
- <li> Moving the mouse up decreases y </li>
- <li> Moving the mouse down increases y </li>
- <li> Moving the mouse to (0, 0) is at the right spot </li>
-</ul>
+ * Moving the mouse left decreases x </li>
+ * Moving the mouse right increases x </li>
+ * Moving the mouse up decreases y </li>
+ * Moving the mouse down increases y </li>
+ * Moving the mouse to (0, 0) is at the right spot </li>
 
-<img src="../../assets/images/xy_mouse.gif"/>
+![]("../../assets/images/xy_mouse.gif")
 
 </details>
 
