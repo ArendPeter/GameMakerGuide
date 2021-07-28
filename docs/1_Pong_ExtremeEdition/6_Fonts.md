@@ -41,7 +41,7 @@ I started out with color since it fit my painter analogy best, but in Game Maker
 
 > **But I'm still confused, google said 0xFFFF00 is yellow**: Ah yes, this is kind of a sad story 😢. So we figured out how to represent 3 numbers in one using the hex format. But then people still need to decide which parts of the hex number corresponded to which color channel. Game Maker decided that the first 2 hex digits should be blue, the next 2 should be green, and the final 2 should be red (so bbggrr). But literally everyone else decided on rrggbb, that's why google says yellow, because red=255, green==255, blue=0 corresponds to yellow. I have no idea why Game Maker decided to go against the grain, it's quite annoying
 
-``room_width/2-50``: You'll also notice that I updated the code to remove the hardcoded numbers and instead do some math on ``room_width``/``room_height``. The old ``700`` and ``800`` were meant to signify "a little to the left of the center", and "a little right of the center". Well now we're referring to the center more directly by doing ``room_width/2`` and then I'm doing ``+/- 50`` to handle the "little to the left"/"little to the right" logic. Even though I'm still using math/numbers, this variation looks a lot closer to English, and it makes our code more readable
+``room_width/2-50``: You'll also notice that I updated the code to remove the hardcoded numbers and instead do some math on ``room_width``/``room_height``. The old ``700`` and ``800`` were meant to signify *"a little to the left of the center"*, and *"a little right of the center"*. Well now we're referring to the center more directly by doing ``room_width/2`` and then I'm doing ``+/- 50`` to handle the *"little to the left"*/*"little to the right"* logic. Even though I'm still using math/numbers, this variation looks a lot closer to English, and it makes our code more readable
 
 ![](../../assets/images/all_text_aqua.png)
 
@@ -51,7 +51,7 @@ Wait a second! I thought we were only changing the score color. Why is it also c
 
 Let me reemphasize my previous ``draw_set_color`` description. "... since you're reusing the brush, **all** future ``draw_text()`` calls will use the same". I literally mean ALL other ``draw_text()`` calls, even those that are happening in other instances. So once ``oScoreBoard`` sets the color, that color will also continue to be used for ``oPaddle`` and ``oEnemyPaddle`` when they draw their names
 
-To fix this we can either have ``oScoreBoard`` reset back to the default color (the "clean up after yourself" mentality), or we can have ``oPaddle`` and ``oEnemyPaddle`` set to white before drawing text (the "every man (or woman or person) to himself (or herself or themselves)" mentality). I'll go with "everybody to themselves" for this one
+To fix this we can either have ``oScoreBoard`` reset back to the default color (the *"clean up after yourself"* mentality), or we can have ``oPaddle`` and ``oEnemyPaddle`` set to white before drawing text (the *"every man (or woman or person) to himself (or herself or themselves)"* mentality). I'll go with *"everybody to themselves"* for this one
 
 ```
 // oPaddle Draw Event
@@ -72,5 +72,48 @@ There, this fixes the issue
 > **Why did you use "everybody to themselves"? Wouldn't "clean up after yourself" have been easier?**: Ah yes, that would be better but thus is the tragedy of the commons 😢. But seriously, there isn't really a right answer here. It actually depends 🤓. If there's a clear "default" option for my situation and most things use that default, then I use "clean up after yourself". That way I don't have to waste lines of code resetting to the default, I can just clean up after myself in the 1% of cases where I don't need the default. If there isn't a clear default, I go with "everybody to themselves". In this case, it would be hard to know the "default" reset value for "clean up after yourself", even if we did, it would have limited value if most other objects will be resetting again to a non default anyway. Color is an example of "everybody to themselves", because most objects tend to use different colors (Although, pong may be an exception). Alpha (or transparency), is an example of "clean up after yourself", because the vast majority of draw calls are opaque (alpha=1). So I just reset back to 1 when I'm done for the cases where I have a non-zero alpha
 
 ## Font Resources
+
+So far we've been drawing all our text using the ugly default font. Let's make a better one ourselves. To get started, right click on the fonts folder and select *"Create > Font"*
+
+![](../../assets/images/create_font.gif)
+
+Then go ahead and configure the font the way you want it. I named it ``fScore`` since I'll use this as the score. I also set the font to impact, set the font size to 80 (should be pretty massive), and left the rest at the default. But that said, I'm not usually the person to select fonts on the team, so take my recommendation w/ a grain of salt
+
+![](../../assets/images/font_settings.png)
+
+Now we need to actually set the font in our code. It's very similar to the ``draw_set_color()`` pattern
+
+```
+// oScoreBoard Draw Event (updated)
+draw_set_font(fScore);
+draw_set_color(c_aqua);
+draw_text(room_width/2 - 50, 93, enemy_score);
+draw_text(room_width/2 + 50, 93, player_score);
+```
+
+``draw_set_font(fScore)``: So we just call ``draw_set_font()`` and then all future ``draw_text()`` calls will use that font.
+
+![](../../assets/images/global_font_demo.png)
+
+oh geez, something went wrong here 😲. Why are the paddle names so massive!? Actually, I think you might know why 😉, but it might still require some googling to fix it, I believe in you
+
+<summary>
+<details><b>How to make the paddles use the old font?</b> Click to see</details>
+
+<pre>
+<code>
+// oScoreBoard Draw Event (updated)
+draw_set_font(fScore);
+draw_set_color(c_aqua);
+draw_text(room_width/2 - 50, 93, enemy_score);
+draw_text(room_width/2 + 50, 93, player_score);
+</code>
+</pre>
+
+
+``draw_set_font(-1)``: And again, I mean ALL. So we need to reset it back to default if don't want it affect the paddle names (although that would look kind of funny )
+
+![](../../assets/images/score_font_demo.png)
+
 
 ## Alignment
