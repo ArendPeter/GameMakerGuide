@@ -32,6 +32,8 @@ function isPaywalled() {
 
 function updateDetails(){
     console.log("update");
+    console.log(document.body);
+    console.log(document.body.getElementById("top"));
     var mainElement = document.body.getElementById("top").getElementById("main-content-wrap").getElementById("main-content");
     var detailsElements = mainElement.getElementsByTagName('details');
     console.log(detailsElements.length);
