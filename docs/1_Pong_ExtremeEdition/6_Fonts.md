@@ -100,18 +100,16 @@ oh geez, something went wrong here 😲. Why are the paddle names so massive!? A
 <summary>
 <details><b>How to make the paddles use the old font?</b> Click to see</details>
 
-<pre>
-<code>
+```
 // oScoreBoard Draw Event (updated)
 draw_set_font(fScore);
 draw_set_color(c_aqua);
 draw_text(room_width/2 - 50, 93, enemy_score);
 draw_text(room_width/2 + 50, 93, player_score);
-</code>
-</pre>
+draw_set_font(-1);
+```
 
-
-``draw_set_font(-1)``: And again, I mean ALL. So we need to reset it back to default if don't want it affect the paddle names (although that would look kind of funny )
+``draw_set_font(-1)``: Same as with colors, ``draw_set_font`` sets the font across all objects, so we need to reset. In this case I'm using the "clean up after yourself" pattern, so I'm resetting at the end of ``oScoreBoard``. 
 
 ![](../../assets/images/score_font_demo.png)
 
