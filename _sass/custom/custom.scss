@@ -2,8 +2,7 @@
   display: none;
 }
 
-details{
-  background: $details-background-color;
+details{ background: #363636; // not sure why, but details-background-color doesn't seem to work
   //border: 2px solid $link-color;
   padding: 20px;
 }
