@@ -85,7 +85,7 @@ Again, this is pretty much the same as the music except that we don't want to ma
 
 It's just once line of code, but we're bouncing with a lot of things so we need to tag it onto a lot of events
 
-<pre class="highlight"><code>
+<div class="highlight"><pre class="highlight"><code>
 // oBall collision w/ oWall Event  
 ...
 audio_play_sound(sndBounce, 0, false); // <- new
@@ -97,7 +97,7 @@ audio_play_sound(sndBounce, 0, false); // <- new
 // oBall collision w/ oEnemyPaddle Event
 ...
 audio_play_sound(sndBounce, 0, false); // <- new
-</code></pre>
+</code></pre></div>
 
 </details>
 
