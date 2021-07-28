@@ -80,12 +80,20 @@ if( x > 1366 ) { // 1366 is the width of the room
 
 Again, this is pretty much the same as the music except that we don't want to make the sfx loop
 
-<details>
+<div>
+**Hi**
+</div>
+
+<div markdown="1">
+**Hi**
+</div>
+
+<details markdown="1">
 <summary><b>Can you figure out how to add the bounce sound?</b> Click to see</summary>
 
 It's just once line of code, but we're bouncing with a lot of things so we need to tag it onto a lot of events
 
-<div class="highlight"><pre class="highlight"><code>
+```
 // oBall collision w/ oWall Event  
 ...
 audio_play_sound(sndBounce, 0, false); // <- new
@@ -97,7 +105,7 @@ audio_play_sound(sndBounce, 0, false); // <- new
 // oBall collision w/ oEnemyPaddle Event
 ...
 audio_play_sound(sndBounce, 0, false); // <- new
-</code></pre></div>
+```
 
 </details>
 
