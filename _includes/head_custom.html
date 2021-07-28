@@ -38,8 +38,9 @@ function updateDetails(){
     console.log(detailsElements.length);
     for(var i = 0; i < detailsElements.length; i++){
         detailsElements[i].markdown = "1";
-        console.log(detailsElements[i].dataset.summary);
-        console.log(detailsElements[i].innerHTML);
+        var summary = document.createElement("summary");
+        summary.innerHTML = "<b>" + detailsElements[i].dataset.summary + "</b> Click to see";
+        detailsElements[i].appendChild(summary);
     }
 }
 
