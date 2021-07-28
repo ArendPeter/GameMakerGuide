@@ -32,7 +32,8 @@ function isPaywalled() {
 
 function updateDetails(){
     console.log("update");
-    var detailsElements = document.getElementsByTagName('div');
+    var mainElement = document.body.getElementById("top").getElementById("main-content-wrap").getElementById("main-content");
+    var detailsElements = mainElement.getElementsByTagName('div');
     console.log(detailsElements.length);
     for(var i = 0; i < detailsElements.length; i++){
         detailsElements[i].markdown = "1";
