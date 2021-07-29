@@ -70,6 +70,8 @@ Here's some examples of how different sprite origins will impact our game (the p
 
 ![](../../assets/images/sprite_offset.png)
 
+So you'll recall from the text alignment that the alignment represents which section of the text corresponds to the x/y position of the text (ex. an alignment of center-bottom means that x/y you choose in ``draw_text()`` corresponds to the center bottom of the text). The sprite origin is similar, when you set the sprite origin, you're saying that the position you draw the sprite at corresponds to the selected origin on the sprite (since we're using ``draw_self()`` it's just using the x/y of the object, but we could be passing a different x/y if we were using ``draw_sprite`` or ``draw_sprite_ext()``). The sprite origin is more powerful that text alignment, because you can choose ANY x/y value, not just along the corners/edges/center. Although that said I still usually place my sprite origin along the corners/edges/center
+
 In this case top center is probably the best for complementing our text alignment, so I'll go with that
 
 ![](../../assets/images/demo_text_and_sprite_alignment.png)
