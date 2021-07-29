@@ -31,15 +31,11 @@ function isPaywalled() {
 }
 
 function updateDetails(){
-    console.log("update");
-    console.log(document.getElementById("main-content"));
     var mainElement = document.getElementById("main-content");
     var detailsElements = mainElement.getElementsByTagName('details');
-    console.log(detailsElements.length);
     for(var i = 0; i < detailsElements.length; i++){
-        detailsElements[i].markdown = "1";
         var summary = document.createElement("summary");
-        summary.innerHTML = "<b>" + detailsElements[i].dataset.summary + "</b> Click to see";
+        summary.innerHTML = "**" + detailsElements[i].dataset.summary + "** Click to see";
         detailsElements[i].appendChild(summary);
     }
 }

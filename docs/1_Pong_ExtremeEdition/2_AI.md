@@ -102,19 +102,19 @@ So if ``y`` corresponds with the top of the paddle, and the paddle's sprite is 1
 
 But I've got another challenge for you, right now the logic is ``is my center below the ball's top``, but to makes this even smoother we could update this to ``is my center below the ball's center``, how would you update that?
 
-<details>
-<summary><b>Update the AI to use the balls center</b> click to see</summary>
+<details data-summary="Update the AI to use the balls center" markdown="1">
 
-The ball's sprite is 16 pixels tall, so the ball's center is <pre><code>oBall.y + 8</code></pre>
+The ball's sprite is 16 pixels tall, so the ball's center is ``oBall.y + 8``
 
-<pre><code>// oEnemyPaddle Step Event
+```// oEnemyPaddle Step Event
 if(is_ai == true){
 	if( y + 64 > oBall.y + 8){ // ball is below the paddle's center
 		y -= 6; // move up
 	}else{
 		y += 6; // move down
 	}
-}</code></pre>
+}
+```
 
 </details>
 

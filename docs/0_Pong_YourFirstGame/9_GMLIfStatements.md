@@ -173,10 +173,10 @@ Another question you might ask is what type of spacing should you use? Tabs or S
 
 Now you should be able to apply that knowledge to add scoring for the enemy as well
 
-<details>
-<summary><b>How do you add scoring for the enemy?</b> Click to see</summary>
+<details data-summary="How do you add scoring for the enemy?" markdown="1">
 
-<pre><code>// oBall Outside Room Event (updated)
+```
+// oBall Outside Room Event (updated)
 
 // if the ball is on the left side of the room then increase the oScoreBoards's player_score variable
 if( x < 0 ) {
@@ -191,4 +191,6 @@ if( x > 1366 ) { // 1366 is the width of the room
 // reset the ball
 instance_create_layer(xstart, ystart, layer, oBall);
 instance_destroy();
+```
+
 </details>

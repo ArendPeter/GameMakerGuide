@@ -30,8 +30,7 @@ So with that said the x and y variables represent where each instance is positio
 
 If I set it to x = 0, and y = 0, where do you think the instance will move to? (I'm hiding the rest of the section for you to think about it 😉 )
 
-<details markdown="1">
-<summary> <b>Where in the room is x = 0, y = 0?</b> click to see </summary>
+<details data-summary="Where in the room is x = 0, y = 0?" markdown="1">
 
 If you said, top left corner, you would be right! Since moving right and down made both variables bigger, that meant that moving left and up makes them smaller, and since x = 0 and y = 0 is the smallest number you can have without going negative (and you can go negative by the way), it makes sense for that to be the top left corner
 
@@ -41,11 +40,11 @@ This is can be really confusing because it's different from what you'll learn in
 
 Another handy trick for viewing x, y is to look at the bottom left of the room editor. There you see 2 numbers (for example (841, 592)). Those represent the x, y position under your mouse cursor, and you can that to again verify the following:
 
- * Moving the mouse left decreases x </li>
- * Moving the mouse right increases x </li>
- * Moving the mouse up decreases y </li>
- * Moving the mouse down increases y </li>
- * Moving the mouse to (0, 0) is at the right spot </li>
+ * Moving the mouse left decreases x
+ * Moving the mouse right increases x
+ * Moving the mouse up decreases y
+ * Moving the mouse down increases y
+ * Moving the mouse to (0, 0) is at the right spot
 
 ![]("../../assets/images/xy_mouse.gif")
 
@@ -89,8 +88,8 @@ x = 300;
 
 The above code sets the ball's x to 300. We can run the game to verify this but before we do, try predicting where the ball will show on the screen (maybe you can use the mouse trick I showed you in the x/y axis section?). When you're ready run the game and see if you're right
 
-<details>
-<summary> <b> Where will the ball be placed? </b> Expand to find out</summary>
+
+<details data-summary="Where will the ball be placed?" markdown="1">
 
 If you said "center leftish", you'd be right!!
 
@@ -125,27 +124,27 @@ x
 
 As another exercise, why don't you setting the x / y in the create event to position to the ball in the exact center of the room? This is a tad open ended, so be ready to do a bit of thinking and tinkering
 
-<details>
-<summary><b>How do you put it in the exact center?</b> expand to find out</summary>
+<details data-summary="How do you put it in the exact center?" markdown="1">
 
 Here it is!
 
-<pre><code>x = 683;
-y = 384;</code></pre>
+```
+x = 683;
+y = 384;
+```
 
 To do this you need to figure out the width/height of the room, and then divide by 2. There are a couple ways you can do this
-<br>
-<br>
+
 One way is to hover your mouse, or move an object, to figure out the x,y position at the bottom right corner of the room. Since the top left is (0, 0) the bottom right will be (width, height) (where you replace width, height with whatever the actual width/height is)
-<br>
-<br>
+
 Another way is to inspect the room properties (located below the layers and layer properites by default). There you'll see that the default room width and height are 1366, and 768 respectively, but you can change them here if you want to.
-<br>
-<br>
+
 Yet another way, (and if you got this you're really ahead of the curve, since I haven't taught this yet), is to find the variables for room width and height. Then you can do the math directly in code, and you'll end up with this
 
-<pre><code>x = room_width/2;
-y = room_height/2;</code></pre>
+```
+x = room_width/2;
+y = room_height/2;
+```
 
 </details>
 
@@ -159,26 +158,17 @@ Here's an example of a comment in our code, try adding it to your ball's create 
 // This is a comment
 ```
 
-<details>
-<summary><b>What happens?</b> Expand to find out</summary>
+<details data-summary="What happens?" markdown="1">
 
-<img src="../../assets/images/rickrolled.gif"/>
+![]("../../assets/images/rickrolled.gif")
 
-<p>
 Sorry that was a little mean, nothing actually happens
-</p>
 
-<p>
 But that's the beauty of comments, you can enter // and then fill the rest of the line with whatever you want, and Game Maker won't care!
-</p>
 
-<p>
 I recommend you use these as much as you can (especially when you're starting out). Code can be very confusing, so leverage comments to describe what your code is doing. This way future-you can come back to the code and still understand what it's doing
-</p>
 
-<p>
 ( Also side note, am I dating myself by using that meme? Is rick rolling still a fun thing kids do these days? oh boy 😢 )
-</p>
 
 </details>
 
@@ -217,17 +207,13 @@ We'll use keyboard events for this, there's actually 3 types
 
 We're going to be simulating vertical movement by repeatedly adjusting our y value a little bit at a time. Which event type do you think we should use?
 
-<details>
-<summary> <b>Key Pressed, Key Released, or Key Down?</b> click to see </summary>
+<details data-summary="Key Pressed, Key Released, or Key Down?" markdown="1">
 
-<b>Key Down</b>
-<p>
+**Key Down**
+
 Since it's repeatedly updating every frame, Key Down is the way to go, Key Pressed/Released would have only activated once
-</p>
 
-<p>
 Go ahead and jump into oPaddle and add events for "Key Down > Up" and "Key Down > Down" (super confusing, again I wish I could say "Key Held > Down" 😭 )
-</p>
 
 </details>
 
@@ -260,21 +246,21 @@ y = y + 4;
 
 Now let's practice this and see if you can add similar controls to ``oEnemyPaddle``. Instead of the arrow keys, let's use WASD
 
-<details>
-<summary> <b>Add Enemy Controls</b> click to see </summary>
+<details data-summary="Add Enemy Controls" markdown="1">
 
 It ends up being the same code, just with different events
 
-<br>
-<b>Key Down > W</b>
+**Key Down > W**
 
-<pre><code>y = y - 4;</code></pre>
-</div>
+```
+y = y - 4;
+```
 
+**Key Down > S**
 
-<b>Key Down > S</b>
-
-<pre><code>y = y + 4;</code></pre>
+```
+y = y + 4;
+```
 
 </details>
 
@@ -282,7 +268,7 @@ Great work! Now when we test it, we should be able to move both individually
 
 Feel free to swap out 4 with a different number to find a speed that feels better
 
-<img src="../../assets/images/paddle_move.gif"/>
+![]("../../assets/images/paddle_move)
 
 ## Ball movement (w/ hspeed and vspeed)
 
@@ -306,7 +292,7 @@ y = y + 4;
 Speaking of results, let's do a pop quiz, what do you think the results will be when we run the code?
 
 <details>
-<summary><b>Which direction will the ball move?</b> Click to find out</summary>
+<summary>**Which direction will the ball move?** Click to find out</summary>
 
 <p>
 Diagonally down and to the right
@@ -319,7 +305,7 @@ Remember positive x and positive y are right and down respectively
 <p>
 Because we're doing both at the same time we end up with a diagonal effect
 </p>
-<img src="../../assets/images/ball_move.gif"/>
+![]("../../assets/images/ball_move)
 
 </details>
 
@@ -341,7 +327,7 @@ Let's think through the cases
 So that works!
 
 <details>
-<summary><b>Using the same technique can you add horizontal collisions w/ the paddes?</b> Click to see</summary>
+<summary>**Using the same technique can you add horizontal collisions w/ the paddes?** Click to see</summary>
 
 <p>
 Should just be a matter of different collision events using the hspeed variable instead of vspeed
@@ -351,10 +337,10 @@ Should just be a matter of different collision events using the hspeed variable 
 You can add 2 collision events to the ball (one for both paddles) and use the following code for both
 </p>
 
-<pre><code>hspeed = -hspeed;</code></pre>
+```hspeed = -hspeed;```
 
 </details>
 
-<img src="../../assets/images/ball_collide.gif"/>
+![]("../../assets/images/ball_collide)
 
 The game is looking great, you can actually sort of play a game against someone now 😮. And this is all using only events and variable assignments 🤯, it's really cool how much you can make in game maker with so little

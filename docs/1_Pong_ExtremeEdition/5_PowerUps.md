@@ -31,12 +31,11 @@ Download them, and make sprites (maybe you can try importing them by dragging fr
 
 Now make objects for each of the sprites (``oBiggerBall``, ``oMultiBall``, ``oFasterPaddle``). And then, to start out, we want to program each of them to die as soon as they hit the ball. Can you do that?
 
-<summary>
-<details><b>Make the power ups die when they hit the ball</b> Click to see</details>
+<details data-summary="Make the power ups die when they hit the ball" markdown="1">
 
 Just gotta add instance_destroy() to the ball collision event
 
-<pre><code>
+```
 // oBiggerBall Collision w/ oBall Event
 instance_destroy()
 
@@ -45,11 +44,11 @@ instance_destroy()
 
 // oFasterPaddle Collision w/ oBall Event
 instance_destroy()
-</code></pre>
+```
 
-Hopefully you remember us using <pre><code>instance_destroy()</code></pre> in the previous chapter 😉, if not don't worry about it, fluency will come w/ time
+Hopefully you remember us using ```instance_destroy()``` in the previous chapter 😉, if not don't worry about it, fluency will come w/ time
 
-</summary>
+</details>
 
 TODO: change music to only play in the player paddle (can't do ball anymore since there's going to be multiple)
 TODO: maybe also add explanation of the oControl/oPersistent pattern
@@ -140,12 +139,11 @@ Anyway, this was all a long way of saying, that I won't hold back on you all any
 
 Now back to coding our power ups! We can just add little code snippets to each of them. For ExtraBall I think you can already handle it, so why don't you try it first
 
-<summary>
-<details><b>Click to see how extra balls are implemented</b></details>
+<details data-summary="How are extra balls are implemented?" markdown="1">
 
-Just another <pre><code>instance_create_layer</code></pre> call 😉
+Just another ``instance_create_layer()`` call 😉
 
-<pre><code>
+```
 // oExtraBall Collision w/ oBall Event
 instance_create_layer(
   oBall.xstart,
@@ -153,11 +151,10 @@ instance_create_layer(
   layer,
   oBall
 )
-</code></pre>
-
+```
 
 You could have done this using a collision event in ``oBall`` instead, I just figured I'd do it in the power up, since ``oBall`` is starting to get cluttered (also this code also seems more closely rlated to the power up)
-</summary>
+</details>
 
 ![](../../assets/images/extra_ball.gif)
 
@@ -249,14 +246,13 @@ I'd like to start working on the power ups to make the paddles faster, but right
 
 It would be much better if we had a variable that our power up could adjust. Can you add a variable called max_speed to each of the paddles, and then refer to that when you move the paddle?
 
-<summary>
-<details><b> Adding a max_speed variable to the paddles</b> Click to see</details>
+<details data-summary="Adding a max_speed variable to the paddles" markdown="1">
 
 Luckily our paddles don't have too many events, but there's still a decent amount of refactoring to be done
 
 I also opted to change our math logic to the superiour `+=` 😉
 
-<pre><code>
+```
 // oPaddle Create
 max_speed = 4;
 
@@ -278,9 +274,9 @@ if(is_ai == false){
 if(is_ai == false){
   y += max_speed;
 }
-</code></pre>
+```
 
-</summary>
+</details>
 
 > **Why not just say speed instead of max_speed?** Well, max_speed is more correct, because the paddles can have 0 speed if they're not moving. But I also specifically avoided speed because it's a builtin variable. We saw with the ball logic, that setting speed will cause the instance to automatically move in accordance with the direction logic. The paddles don't use to the speed/direction approach and to ensure it stays that way I need to avoid setting speed/direction
 
@@ -309,10 +305,9 @@ Aside from that the code should be pretty simple. Most of the effort really was 
 
 After playing with power ups for a bit, you may have noticed that the power ups sometimes spawn in awkward places. How about you try fixing that? (Hint: try looking at [random_range](https://manual.yoyogames.com/GameMaker_Language/GML_Reference/Maths_And_Numbers/Number_Functions/random_range.htm))
 
-<summary>
-<details><b>Reducing power up spawn positions</b> Click to see</details>
+<details data-summary="Reducing power up spawn positions" markdown="1">
 
-<pre><code>
+```
 //oPaddle Alarm 0 Event (updated)
 instance_create_layer(
 	random_range(200, room_width-200),
@@ -321,11 +316,11 @@ instance_create_layer(
 	choose(oBiggerBall, oExtraBall, oPaddleSpeed),
 );
 alarm[0] = 10 * room_speed;
-</code></pre>
+```
 
 Now I've got a 200 pixel margin along the edges where power ups won't spawn
 
 Note that in the spirit of reducing magic numbers, I'm still using room_width/room_height to ensure the margin adjusts to different room sizes even though it requires some extra math
-</summary>
+</details>
 
 And there you go, power ups! This made our little pong game a lot more interesting 😎

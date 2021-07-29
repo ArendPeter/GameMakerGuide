@@ -97,8 +97,7 @@ draw_text(room_width/2 + 50, 93, player_score);
 
 oh geez, something went wrong here 😲. Why are the paddle names so massive!? Actually, I think you might know why 😉, but it might still require some googling to fix it, I believe in you
 
-<summary>
-<details><b>How to make the paddles use the old font?</b> Click to see</details>
+<details data-summary="How to make the paddles use the old font?" markdown="1">
 
 ```
 // oScoreBoard Draw Event (updated)
@@ -109,9 +108,10 @@ draw_text(room_width/2 + 50, 93, player_score);
 draw_set_font(-1);
 ```
 
-``draw_set_font(-1)``: Same as with colors, ``draw_set_font`` sets the font across all objects, so we need to reset. In this case I'm using the "clean up after yourself" pattern, so I'm resetting at the end of ``oScoreBoard``. 
+``draw_set_font(-1)``: Same as with colors, ``draw_set_font`` sets the font across all objects, so we need to reset. In this case I'm using the "clean up after yourself" pattern, so I'm resetting at the end of ``oScoreBoard``.
 
 ![](../../assets/images/score_font_demo.png)
+</details>
 
 
 ## Alignment

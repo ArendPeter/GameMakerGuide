@@ -80,21 +80,7 @@ if( x > 1366 ) { // 1366 is the width of the room
 
 Again, this is pretty much the same as the music except that we don't want to make the sfx loop
 
-<div>
-**Hi**
-</div>
-
-<div markdown="1">
-**Hi**
-</div>
-
-<details markdown="1" data-summary="123">
-**HI**
-</details>
-
-<details markdown="1">
-<summary><b>Can you figure out how to add the bounce sound?</b> Click to see</summary>
-
+<details data-summary="Can you figure out how to add the bounce sound?" markdown="1">
 It's just once line of code, but we're bouncing with a lot of things so we need to tag it onto a lot of events
 
 ```
@@ -110,7 +96,6 @@ audio_play_sound(sndBounce, 0, false); // <- new
 ...
 audio_play_sound(sndBounce, 0, false); // <- new
 ```
-
 </details>
 
 Now when you play the game, you should hear sound effects as well as the music

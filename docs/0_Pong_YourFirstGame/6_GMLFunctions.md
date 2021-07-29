@@ -48,28 +48,17 @@ We'll see plenty of examples for this later, so don't worry if it's confusing
 
 On a smaller note, why did I choose **Key Press** instead of one of the other key events? Think about it first, there's not necessarily a right answer
 
-<details>
-<summary>but that said click here for an answer</summary>
+<details data-summary="But here's an answer anyway" markdown="1">
 
-<p>
 In this case you could use any of the 3 w/o noticing much of a difference
-</p>
 
-<p>
 Key Down would be a little weird. Remember key down triggers on every frame where the key is held down. This would be an odd choice, since we only need to restart the game once, but there's no harm in multiple restarts I suppose
-</p>
 
-<p>
 For Key Press vs Key Released, there's an argument for both. Key Press will trigger faster, but sometimes I'll use Key Released if I want to communicate what you're interacting with before the action occurs.
-</p>
 
-<p>
 For example, if I setup the spacebar to be a keyboard shortcut for a play button, I might use Key Released, and then also use Key Down to perform a short hover animation on the button. This way you can see which button you're trigger before it triggers
-</p>
 
-<p>
 In this case we're not providing feedback anyway, so Key Press is probably ideal
-</p>
 
 </details>
 
@@ -77,7 +66,7 @@ In this case we're not providing feedback anyway, so Key Press is probably ideal
 
 After playing the game for a while you might notice a bug in the collision system. Specifically, if you move the paddle to hit the ball vertically
 
-<img src="../../assets/images/ball_paddle_vertical_collide_bad.gif"/>
+![]("../../assets/images/ball_paddle_vertical_collide_bad)
 
 Our collision logic assumes that the event will only be triggered once, but in reality a collision in game maker is synonymous w/ "overlap". So if it's still overlapping on the next frame the event could continue to trigger long after the initial contact
 
@@ -108,7 +97,7 @@ hspeed = -abs(hspeed)
 
 When testing it out, this edge case should be fixed
 
-<img src="../../assets/images/ball_paddle_vertical_collide_good.gif"/>
+![]("../../assets/images/ball_paddle_vertical_collide_good)
 
 
 ## Randomize ball speed (featuring choose())
@@ -135,17 +124,18 @@ Also note how we're using variable assignment and functions together in the same
 
 Now here's what it looks like when we press restart
 
-<img src="../../assets/images/ball_random_start.gif"/>
+![]("../../assets/images/ball_random_start)
 
 But it seems a little odd that it only goes diagonal. We certainly don't want it to go vertical (that would be a VERY long wait), but maybe horizontal? Why don't you give it a try?
 
-<details>
-<summary> <b>Update the code to have horizontal as possible direction</b> Click for code </summary>
+<details data-summary="Update the code to have horizontal as possible direction" markdown="1">
 
-<pre><code>hspeed = choose(-2, 2);
-vspeed = choose(-2, 0, 2);</code></pre>
+```
+hspeed = choose(-2, 2);
+vspeed = choose(-2, 0, 2);
+```
 
-<img src="../../assets/images/ball_random_start_including_hor.gif"/>
+![]("../../assets/images/ball_random_start_including_hor)
 
 On second thought, I don't like this very much, it's just ... boring 😴 (but good job on figuring it out 😉 )
 
@@ -200,34 +190,28 @@ and here's the functions:
 
 Testing this out should work, when a ball leaves the room, it will destroy it's self and new ball will show up at the start allowing the game to continue
 
-<img src="../../assets/images/ball_outside_room.gif"/>
+![]("../../assets/images/ball_outside_room)
 
 But that's kind of morbid don't you think? Does it have to die? Is there a way we can reuse the same ball?
 
 Yes there is, and it's actually a lot simpler too. Can you think of it?
 
-<details>
-<summary> <b>How to reset the ball w/o destroying it?</b> Click to find out</summary>
+<details data-summary="How to reset the ball w/o destroying it?" markdown="1">
 
 Yep, just use the following code in the outside room event
 
-<pre><code>x = xstart;
+```
+x = xstart;
 y = ystart;
 hspeed = choose(-2, 2);
 vspeed = choose(-2, 2);
-</code></pre>
+```
 
-<p>
 This just moves the existing ball back to it's starting position, and then it picks a random direction again
-</p>
 
-<p>
 Resetting the position is probably the preferred approach, I mainly showed the destroy/recreate approach since I wanted to teach you more functions 🤫
-</p>
 
-<p>
 But that said, this highlights the creative side of programming. You only have limited tools, and there's always multiple ways to mix and match to achieve your goals
-</p>
 
 </details>
 

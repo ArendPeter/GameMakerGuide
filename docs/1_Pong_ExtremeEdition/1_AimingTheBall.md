@@ -122,12 +122,11 @@ Now we actually need to set the ball direction (currently I only have comments i
 
 ![](../../assets/images/direction_circle.png)
 
-<details>
-<summary><b>Update our collision code to set the direction for each case</b> Click to see </summary>
+<details data-summary="Update our collision code to set the direction for each case" markdown="1">
 
 Here are the numbers I used, but they can definitely use some more tweaking (I used 45, but you may want to use sharper angles)
 
-<pre><code>
+```
 // oBall Collision w/ oEnemy Paddle
 col_y = oBall.y - y;
 if(col_y < 32){
@@ -137,7 +136,7 @@ if(col_y < 32){
 }else{
     direction = -45; // NOTE: this is identical to 315
 }
-</code></pre>
+```
 
 Since adding 360 to your direction takes the direction in a full circle, there's a lot of numbers you can use. I opted for -45 for down-right, but you add or subtract 360 to reach many other numbers. So 315 is also fine, and you could even go up do 1395 (not sure why you would, but you could)
 
@@ -151,12 +150,11 @@ At the end it should look something like this
 
 Now try doing the same thing for the player paddle collisions. I don't think you need me for this on 😉
 
-<details>
-<summary><b>Write collision code for the ball/player</b> Click to see</summary>
+<details data-summary="Write collision code for the ball/player" markdown="1">
 
 Should be the same as the enemy code, just using different numbers
 
-<pre><code>
+```
 // oBall Collision w/ oPaddle
 col_y = y - oPaddle.y;
 if(col_y < 32){
@@ -166,19 +164,18 @@ if(col_y < 32){
 }else{
     direction = 225; // left-down
 }
-</code></pre>
+```
 </details>
 
 ## Add more cases
 
 Currently we only have 3 cases, but you can add more to make things more interesting. Maybe you want to add regions closer to the edges for more extreme angles? Or maybe you want to make the central region smaller? (becuase moving straight is boring)
 
-<details>
-<summary><b>Add more cases to the collisions</b> Click to see</summary>
+<details data-summary="Add more cases to the collisions" markdown="1">
 
 Here's an example of the oEnemyPaddle collision w/ 5 cases
 
-<pre><code>
+```
 // oBall Collision w/ oEnemyPaddle
 col_y = y - oEnemyPaddle.y;
 if(col_y < 16){
@@ -192,7 +189,7 @@ if(col_y < 16){
 }else{
     direction = -60; // sharp right-down
 }
-</code></pre>
+```
 </details>
 
 ## Speed up the ball

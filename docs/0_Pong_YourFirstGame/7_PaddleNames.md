@@ -91,22 +91,22 @@ Awesome! In general taking advantage of variables in cases like these makes your
 
 Now see if you can add a name to the oEnemyPaddle as well :)
 
-<details>
-<summary><b>oEnemyPaddle implementation</b> Click to see</summary>
+<details data-summary="oEnemyPaddle implementation" markdown="1">
 
 It should be pretty much identical to the other implementation
 
 Luckily I have 2 names so I can play against myself :)
 
-<pre><code>// oEnemyPaddle Create Event
+```
+// oEnemyPaddle Create Event
 name = "Arend";
 
 // oEnemyPaddle Draw Event
 draw_self();
 draw_text(x, y-20, name);
-</code></pre>
+```
 
-<img src="../../assets/images/names_on_both_paddles.png"/>
+![]("../../assets/images/names_on_both_paddles)
 
 </details>
 
