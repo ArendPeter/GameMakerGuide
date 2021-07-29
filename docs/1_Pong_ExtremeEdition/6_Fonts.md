@@ -108,10 +108,8 @@ draw_text(room_width/2 + 50, 93, player_score);
 draw_set_font(-1);
 ```
 
-``draw_set_font(-1)``: Same as with colors, ``draw_set_font`` sets the font across all objects, so we need to reset. In this case I'm using the "clean up after yourself" pattern, so I'm resetting at the end of ``oScoreBoard``.
+``draw_set_font(-1)``: Same as with colors, ``draw_set_font()`` sets the font across all objects, so we need to reset. In this case I'm using the "clean up after yourself" pattern, so I'm resetting at the end of ``oScoreBoard``, and we use ``-1`` to represent Game Maker's default font
 
 ![](../../assets/images/score_font_demo.png)
+
 </details>
-
-
-## Alignment
