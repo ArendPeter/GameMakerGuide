@@ -35,7 +35,7 @@ function updateDetails(){
     var detailsElements = mainElement.getElementsByTagName('details');
     for(var i = 0; i < detailsElements.length; i++){
         var summary = document.createElement("summary");
-        summary.innerHTML = "**" + detailsElements[i].dataset.summary + "** Click to see";
+        summary.innerHTML = "<b>" + detailsElements[i].dataset.summary + "</b> Click to see";
         detailsElements[i].appendChild(summary);
     }
 }
