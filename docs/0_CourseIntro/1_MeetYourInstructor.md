@@ -9,18 +9,15 @@ parent: Course Intro
 
 Hi I'm Arend Peter!
 
-![](../../selfie.png)
+![](../../assets/images/selfie.png)
 
 I'm an ex-Amazon Software Engineer, and I'm currently a full time indie game developer as well as a Game Maker Instructor
 
 Game Maker was my first experience with programming, and I've been using and teaching Game Maker now for <span id="years-of-game-maker"></span> years
 
-<script>
-</script
-
 In that time, I've helped release several major titles to pc and mobile, and they've all received some combination of awards and features. All of this was done in Game Maker
 
-![](../../sgg_portfolio.png)
+![](../../assets/images/sgg_portfolio.png)
 
 > Feel free to check out stargardengames.com to see the rest of the projects me and by buddies are working on
 
