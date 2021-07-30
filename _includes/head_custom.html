@@ -41,7 +41,7 @@ function isPaywalled() {
 function updateGMExperience(){
     var age_diff_ms = Date.now() - new Date(2018, 2, 1);
     var age_date = new Date(age_diff_ms);
-    var years_of_gm = Math.abs(ageDate.getUTCFullYear() - 1970);
+    var years_of_gm = Math.abs(age_date.getUTCFullYear() - 1970);
     document.getElementById("years-of-game-maker").innerHTML = years_of_gm;
 }
 

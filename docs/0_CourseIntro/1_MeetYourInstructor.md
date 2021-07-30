@@ -11,7 +11,7 @@ Hi I'm Arend Peter!
 
 ![](../../assets/images/selfie.png)
 
-I'm an ex-Amazon Software Engineer, and I'm currently a full time indie game developer as well as a Game Maker Instructor
+I'm an ex-Amazon Software Engineer, who's currently a full time indie game developer as well as a Game Maker instructor
 
 Game Maker was my first experience with programming, and I've been using and teaching Game Maker now for <span id="years-of-game-maker"></span> years
 
