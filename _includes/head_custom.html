@@ -29,10 +29,14 @@ function eraseCookie(name) {
 }
 
 function isPaywalled() {
-    var parent = document.head.querySelector("[name~=parent][content]").content);
-    var nav_order = parseInt(document.head.querySelector("[name~=nav_order][content]").content));
+    var parent = document.head.querySelector("[name~=parent][content]").content;
+    var nav_order = parseInt(document.head.querySelector("[name~=nav_order][content]").content);
     var is_free = parent == "Pong | Your First Game" || (parent == "" && nav_order <= 1);
-    return !is_free;
+    console.log(parent);
+    console.log(nav_order);
+    console.log(is_free);
+    var purchased = getCookie("purchased");
+    return !is_free && !purchased;
 }
 
 function updateDetails(){
@@ -48,7 +52,7 @@ function updateDetails(){
 function onLoad(){
   updateDetails();
 
-  if(isPaywalled() && !getCookie("purchased")){
+  if(isPaywalled()){
       window.location.replace("https://arendpeter.github.io/GameMakerGuide/docs/paywall.html");
   }
 }
