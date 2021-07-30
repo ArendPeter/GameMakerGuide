@@ -2,6 +2,7 @@
 layout: default
 title: Course Intro
 nav_order: 0
+has_children: true
 ---
 
 Hi, welcome to the Arend Peter Teaches Game Maker course

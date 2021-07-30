@@ -2,7 +2,7 @@
 layout: default
 title: Meet Your Instructor
 nav_order: 1
-parent: Intro
+parent: Course Intro
 ---
 
 # Meet Your Instructor
