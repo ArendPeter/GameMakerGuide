@@ -88,4 +88,4 @@ Adding new systems will naturally require updates to other systems, but's some t
 
 **Why are you telling me this now? I only just learned to make Pong**: I just want you to be aware of this as an over arching goal as you continue following my courses. In addition to showing you how to do cool things in Game Maker, I want to sprinkle in some lessons on coding principles. If we don't use good coding principles, our game could become a complicated mess of code that's impossible to update with new things
 
-![](tech_debt.png)
+![](../../assets/images/tech_debt.png)
