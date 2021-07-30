@@ -1,3 +1,5 @@
+<meta name="parent" content="{{ page.parent }}">
+<meta name="nav_order" content="{{ page.nav_order }}">
 <script>
 function setCookie(name,value,days) {
     var expires = "";
@@ -27,6 +29,8 @@ function eraseCookie(name) {
 }
 
 function isPaywalled() {
+    console.log(document.head.querySelector("[name~=parent][content]").content);
+    console.log(document.head.querySelector("[name~=nav_order][content]").content);
     return document.title.includes("Extreme");
 }
 
