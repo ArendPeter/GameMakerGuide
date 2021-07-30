@@ -52,12 +52,11 @@ function updateDetails(){
 }
 
 function onLoad(){
-    document.getElementById("main-content").hidden=true;
     updateDetails();
+}
 
-    if(isPaywalled()){
-        window.location.replace("https://arendpeter.github.io/GameMakerGuide/docs/paywall.html");
-    }
+if(isPaywalled()){
+    window.location.replace("https://arendpeter.github.io/GameMakerGuide/docs/paywall.html");
 }
 
 window.onload = onLoad;
