@@ -184,6 +184,8 @@ Initially I was setting the scale to 2, but I think it's cooler to add 1. That w
 
 If you play w/ this for a while, you might notice some issues when you get this powerup after already getting the extra ball powerup
 
+**TODO** this is false, see documentation, http://127.0.0.1:51291/index.htm#t=GameMaker_Language%2FGML_Overview%2FAddressing_Variables_In_Other_Instances.htm
+
 In that scenario, the growth only applies to 1 ball, and the ball it chooses is seemingly random
 
 It's not totally clear how these power ups should interact w/ each other, so take a second to think about which option sounds more logical to you
@@ -200,7 +202,7 @@ other.image_yscale += 1;
 ...
 ```
 
-``other`` is a specialy keyword that can be used in collision events as well as a few other places. This let's us refer to the specific ``other`` instance that was involed with the collision. Note other **instance** not other **object**, this means in really is that specific ball, and not the ``oBall`` object in general
+``other`` is a special keyword that can be used in collision events as well as a few other places. This let's us refer to the specific ``other`` instance that was involved with the collision. Note other **instance** not other **object**, this means it really is that specific ball, and not the ``oBall`` object in general
 
 ![](../../assets/images/grow_ball_dot_other.gif)
 
@@ -243,6 +245,8 @@ Now that I've given you a few options, I'll leave it up to you which approach to
 ## Refactor paddle speed
 
 I'd like to start working on the power ups to make the paddles faster, but right now that's kind of hard since we're hard coding the paddle speeds in the paddle code (I'll use the terms hardcoding and magic numbers interchangably, they're pretty much the same for our purposes).
+
+**TODO** insert refactoring definition
 
 It would be much better if we had a variable that our power up could adjust. Can you add a variable called max_speed to each of the paddles, and then refer to that when you move the paddle?
 

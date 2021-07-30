@@ -190,7 +190,7 @@ and here's the functions:
 
 Testing this out should work, when a ball leaves the room, it will destroy it's self and new ball will show up at the start allowing the game to continue
 
-![]("../../assets/images/ball_outside_room)
+![]("../../assets/images/ball_outside_room.gif)
 
 But that's kind of morbid don't you think? Does it have to die? Is there a way we can reuse the same ball?
 
@@ -209,7 +209,9 @@ vspeed = choose(-2, 2);
 
 This just moves the existing ball back to it's starting position, and then it picks a random direction again
 
-Resetting the position is probably the preferred approach, I mainly showed the destroy/recreate approach since I wanted to teach you more functions 🤫
+I'm not sure which approach I'd recommend. I prefer the reset position approach, but the problem is you'll need to rerun all of your create event code from the outside room event. This is fine for now, but it'll get annoying as we continue to make updates to the create event
+
+I have a way around this problem, but you're not ready to learn that yet. So for you I recommend going with the instance create/destroy approach, and this is the approach I'll continue to use in the course. We can talk about the other approach more when we get there 😊
 
 But that said, this highlights the creative side of programming. You only have limited tools, and there's always multiple ways to mix and match to achieve your goals
 

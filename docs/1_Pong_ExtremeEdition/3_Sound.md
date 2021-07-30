@@ -78,6 +78,8 @@ if( x > 1366 ) { // 1366 is the width of the room
 ...
 ```
 
+**TODO** Refactor as +=
+
 Again, this is pretty much the same as the music except that we don't want to make the sfx loop
 
 <details data-summary="Can you figure out how to add the bounce sound?" markdown="1">

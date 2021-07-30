@@ -106,7 +106,8 @@ But I've got another challenge for you, right now the logic is ``is my center be
 
 The ball's sprite is 16 pixels tall, so the ball's center is ``oBall.y + 8``
 
-```// oEnemyPaddle Step Event
+```
+// oEnemyPaddle Step Event
 if(is_ai == true){
 	if( y + 64 > oBall.y + 8){ // ball is below the paddle's center
 		y -= 6; // move up
