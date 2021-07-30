@@ -29,9 +29,10 @@ function eraseCookie(name) {
 }
 
 function isPaywalled() {
-    console.log(document.head.querySelector("[name~=parent][content]").content);
-    console.log(document.head.querySelector("[name~=nav_order][content]").content);
-    return document.title.includes("Extreme");
+    var parent = document.head.querySelector("[name~=parent][content]").content);
+    var nav_order = parseInt(document.head.querySelector("[name~=nav_order][content]").content));
+    var is_free = parent == "Pong | Your First Game" || (parent == "" && nav_order <= 1);
+    return !is_free;
 }
 
 function updateDetails(){
