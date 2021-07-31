@@ -268,7 +268,7 @@ Great work! Now when we test it, we should be able to move both individually
 
 Feel free to swap out 4 with a different number to find a speed that feels better
 
-![]("../../assets/images/paddle_move)
+![]("../../assets/images/paddle_move.gif")
 
 ## Ball movement (w/ hspeed and vspeed)
 
@@ -337,10 +337,10 @@ Should just be a matter of different collision events using the hspeed variable 
 You can add 2 collision events to the ball (one for both paddles) and use the following code for both
 </p>
 
-```hspeed = -hspeed;```
+``hspeed = -hspeed;``
 
 </details>
 
-![]("../../assets/images/ball_collide)
+![]("../../assets/images/ball_collide.gif")
 
 The game is looking great, you can actually sort of play a game against someone now 😮. And this is all using only events and variable assignments 🤯, it's really cool how much you can make in game maker with so little

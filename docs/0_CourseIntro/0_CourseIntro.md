@@ -68,6 +68,6 @@ As I get more feedback I will be updating the text book as well as Udemy to make
 
 ## What next
 
-The first chapter, **Pong | Your First Game**, is available for free on Udemy, as well as in text form. If you like it, you can buy the full course (Udemy will frequently have sales to save you money!), and you'll get all the Udemy videos, as well as the full text book
+The first chapter, **Pong \| Your First Game**, is available for free on Udemy, as well as in text form. If you like it, you can buy the full course (Udemy will frequently have sales to save you money!), and you'll get all the Udemy videos, as well as the full text book
 
 Hope to see you there!
