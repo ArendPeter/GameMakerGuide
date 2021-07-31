@@ -36,7 +36,7 @@ If you said, top left corner, you would be right! Since moving right and down ma
 
 This is can be really confusing because it's different from what you'll learn in your math and physics classes. In school, going up increases y (not down), and the x = 0 and y = 0 point is in the bottom left (not top left). So make sure flip the switch back to "up is more" when you go back to school, I'd hate for this course to hurt your grades
 
-![]("../../assets/images/xy_classic.png")
+![](../../assets/images/xy_classic.png)
 
 Another handy trick for viewing x, y is to look at the bottom left of the room editor. There you see 2 numbers (for example (841, 592)). Those represent the x, y position under your mouse cursor, and you can that to again verify the following:
 
@@ -46,7 +46,7 @@ Another handy trick for viewing x, y is to look at the bottom left of the room e
  * Moving the mouse down increases y
  * Moving the mouse to (0, 0) is at the right spot
 
-![]("../../assets/images/xy_mouse.gif")
+![](../../assets/images/xy_mouse.gif)
 
 </details>
 
@@ -93,7 +93,7 @@ The above code sets the ball's x to 300. We can run the game to verify this but 
 
 If you said "center leftish", you'd be right!!
 
-![]("../../assets/images/update_x_pos.png")
+![](../../assets/images/update_x_pos.png)
 
 </details>
 
@@ -160,7 +160,7 @@ Here's an example of a comment in our code, try adding it to your ball's create 
 
 <details data-summary="What happens?" markdown="1">
 
-![]("../../assets/images/rickrolled.gif")
+![](../../assets/images/rickrolled.gif)
 
 Sorry that was a little mean, nothing actually happens
 
@@ -268,7 +268,7 @@ Great work! Now when we test it, we should be able to move both individually
 
 Feel free to swap out 4 with a different number to find a speed that feels better
 
-![]("../../assets/images/paddle_move.gif")
+![](../../assets/images/paddle_move.gif)
 
 ## Ball movement (w/ hspeed and vspeed)
 
@@ -305,7 +305,7 @@ Remember positive x and positive y are right and down respectively
 <p>
 Because we're doing both at the same time we end up with a diagonal effect
 </p>
-![]("../../assets/images/ball_move)
+![](../../assets/images/ball_move.gif)
 
 </details>
 
@@ -341,6 +341,6 @@ You can add 2 collision events to the ball (one for both paddles) and use the fo
 
 </details>
 
-![]("../../assets/images/ball_collide.gif")
+![](../../assets/images/ball_collide.gif)
 
 The game is looking great, you can actually sort of play a game against someone now 😮. And this is all using only events and variable assignments 🤯, it's really cool how much you can make in game maker with so little
