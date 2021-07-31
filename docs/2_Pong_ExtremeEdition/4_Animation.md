@@ -48,7 +48,7 @@ Now we can edit each frame to form our animation, and hit the play button to pre
 
 ![](../../assets/images/animation_creation.gif)
 
-Cool, so you'll notice that I went with a pretty simple animation. I selected a blue color, and filled the white space w/ it. Then did the same thing on every frame, adjusting the transparency every time. Eventually, I was at transparency 0, and the final frame was white again
+Cool, so you'll notice that I went with a pretty simple animation. I selected a blue color, and filled the white space w/ it. Then did the same thing on every frame, adjusting the saturation closer to white every time. Eventually, I bumped it down enough to be back at white
 
 This is definitely not my strong suit, so feel free to try your own ideas if you don't want to copy mine
 
@@ -69,6 +69,7 @@ Add the following code to the ball to freeze the animation (then we can start it
 
 ...
 
+// freeze animation
 image_speed = 0;
 ```
 
@@ -98,7 +99,7 @@ Now when we test it, it animates on bounce, but then it just keeps animating, hm
 
 ### Stop the Animation once it's done animating
 
-Let's make sure that we go back to normal once the animation stops. The key trick here is the **Animation End Event** this will trigger whenever the current animation get to the end (at the point where it would normally reset)
+Let's make sure that we go back to normal once the animation stops. The key trick here is the **Animation End Event** (which is under **Other** btw) this will trigger whenever the current animation get to the end (at the point where it would normally reset)
 
 ```
 // oBall Animation End Event

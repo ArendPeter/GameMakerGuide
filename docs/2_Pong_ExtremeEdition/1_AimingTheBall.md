@@ -114,7 +114,7 @@ if(<conditionA>){
 }
 ```
 
-For the conditions I'm using col_y. Since x/y values actually correspond to the top left corner of the sprite (this is the default, but it can be changed). We can do this math to determine where on the paddle the ball is. 0 is the top, and 128 is the bottom (if you check sPaddle, you'll see that it's 128 units tall)
+For the conditions I'm using col_y. Since x/y values actually correspond to the top left corner of the sprite (this is the default, but it can be changed). We can do this math to determine where on the paddle the ball is. 0 is the top, and 128 is the bottom (if you check ``sPaddle``, you'll see that it's 128 units tall)
 
 ![](../../assets/images/paddle_3_regions_w_math.png)
 
@@ -127,8 +127,8 @@ Now we actually need to set the ball direction (currently I only have comments i
 Here are the numbers I used, but they can definitely use some more tweaking (I used 45, but you may want to use sharper angles)
 
 ```
-// oBall Collision w/ oEnemy Paddle
-col_y = oBall.y - y;
+// oBall Collision w/ oEnemyPaddle
+col_y = y - oEnemyPaddle.y;
 if(col_y < 32){
     direction = 45;
 }else if(col_y < 96){
@@ -144,9 +144,9 @@ Since adding 360 to your direction takes the direction in a full circle, there's
 
 At the end it should look something like this
 
-![](../../assets/images/direction_circle.png)
+![](../../assets/images/ball_aiming_gameplay.gif)
 
-## oEnemy Paddle Collision
+## oPaddle Collision
 
 Now try doing the same thing for the player paddle collisions. I don't think you need me for this on 😉
 
@@ -158,11 +158,11 @@ Should be the same as the enemy code, just using different numbers
 // oBall Collision w/ oPaddle
 col_y = y - oPaddle.y;
 if(col_y < 32){
-    direction = 135; // left-up
+    direction = 135; // right-up
 }else if(col_y < 96){
-    direction = 180; // left
+    direction = 180; // right
 }else{
-    direction = 225; // left-down
+    direction = 225; // right-down
 }
 ```
 </details>

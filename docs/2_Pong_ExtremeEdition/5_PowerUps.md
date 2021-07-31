@@ -29,17 +29,17 @@ Download them, and make sprites (maybe you can try importing them by dragging fr
 
 ## New Objects
 
-Now make objects for each of the sprites (``oBiggerBall``, ``oMultiBall``, ``oFasterPaddle``). And then, to start out, we want to program each of them to die as soon as they hit the ball. Can you do that?
+Now make objects for each of the sprites (``oGrowBall``, ``oExtraBall``, ``oFasterPaddle``). And then, to start out, we want to program each of them to die as soon as they hit the ball. Can you do that?
 
 <details data-summary="Make the power ups die when they hit the ball" markdown="1">
 
 Just gotta add instance_destroy() to the ball collision event
 
 ```
-// oBiggerBall Collision w/ oBall Event
+// oGrowBall Collision w/ oBall Event
 instance_destroy()
 
-// oMultiBall Collision w/ oBall Event
+// oExtraBall Collision w/ oBall Event
 instance_destroy()
 
 // oFasterPaddle Collision w/ oBall Event
@@ -72,7 +72,7 @@ instance_create_layer(
 	random(1366), // 1366 is the room width
 	random(768), // 768 is the room height
 	layer,
-	choose(oBiggerBall, oExtraBall, oPaddleSpeed),
+	choose(oGrowBall, oExtraBall, oPaddleSpeed),
 );
 alarm[0] = 300; // 10 seconds
 ```
@@ -87,7 +87,7 @@ In the alarm 0 event we spawn a power up, and then reset ``alarm[0]`` to 300. Re
 
 We've got somewhat of a revival of all the functions we've learned. ``instance_create_layer``, ``random``, and ``choose`` functions that we learned back in the GML Functions, **TODO** link, section
 
-Using those functions we can create an instance randomly in the room, and have the instance object be randomly chosen from ``oBiggerBall``, ``oExtraBall``, or ``oPaddleSpeed``
+Using those functions we can create an instance randomly in the room, and have the instance object be randomly chosen from ``oGrowBall``, ``oExtraBall``, or ``oPaddleSpeed``
 
 When you test it out, you should see the power up show up every few seconds 😊
 
@@ -112,7 +112,7 @@ instance_create_layer(
 	random(room_width),
 	random(room_height),
 	layer,
-	choose(oBiggerBall, oExtraBall, oPaddleSpeed),
+	choose(oGrowBall, oExtraBall, oPaddleSpeed),
 );
 alarm[0] = 10 * room_speed;
 ```
@@ -316,7 +316,7 @@ instance_create_layer(
 	random_range(200, room_width-200),
 	random_range(200, room_height-200),
 	layer,
-	choose(oBiggerBall, oExtraBall, oPaddleSpeed),
+	choose(oGrowBall, oExtraBall, oPaddleSpeed),
 );
 alarm[0] = 10 * room_speed;
 ```

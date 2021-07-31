@@ -77,7 +77,7 @@ Here we have **nested if statements**, meaning multiple if statements inside eac
 
 Now when we test it out, it *mostly* works. It probably just looks a bit weird. The enemy paddle is trying to align the top of the paddle, with the ball, but really we'd expect it to align the center with the ball 🤔
 
-![](ai_top_align.gif)
+![](../../assets/images/ai_top_align.gif)
 
 ## Adding an offset
 
@@ -98,7 +98,7 @@ This is just the exact same logic except I've added the ``+ 64``
 
 So if ``y`` corresponds with the top of the paddle, and the paddle's sprite is 128 pixels tall, that means ``y + 64`` corresponds to the center for he paddle. Using this knowledge we can just substitute ``y`` with ``y + 64`` and it should have a much better effect
 
-![](ai_center_align.gif)
+![](../../assets/images/ai_center_align.gif)
 
 But I've got another challenge for you, right now the logic is ``is my center below the ball's top``, but to makes this even smoother we could update this to ``is my center below the ball's center``, how would you update that?
 

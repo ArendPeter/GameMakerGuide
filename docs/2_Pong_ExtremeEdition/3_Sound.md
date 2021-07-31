@@ -112,7 +112,6 @@ In particular, I thought ``sndBounce`` seemed too loud. To fix this, just double
 
 Testing it might be a bit tricky, sometimes it's hard to know whether a sound is too loud or soft without hearing it together with all the other sounds. To make this easier you can use the sound mixer. Click the **sound group mixer** button, then select the default audio group
 
-**TODO**
 ![](../../assets/images/sound_mixer.gif)
 
 Now you can tweak all the volumes at the same time
