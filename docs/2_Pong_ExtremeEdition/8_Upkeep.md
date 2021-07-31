@@ -86,6 +86,8 @@ Adding new systems will naturally require updates to other systems, but's some t
  * **Readable code**: Using logical structure, as well as good variable names, and comments will make your code easier to understand, and thus easier to update (this is why I talked about **Magic Numbers** earlier)
  * **Over Engineering**: All of the above principles are important, but it's also possible to take them to go overboard with them. For example, I mentioned how ``oPaddle`` handles music earlier. In bigger games figuring out which music needs to be played when can be a big task, and in accordance with SRP we might give it it's own object (ex. ``oMusicController``) to handle it. But that said, in our tiny pong game, it's just 1 line of code. In that case breaking it our into ``oMusicController`` would make are code more complicated, not less complicated. So it's better to let the music system grow a bit bigger first. One of the most famous quotes in computing is *"Premature optimization is the root of all evil" -Don Knuth*. Optimization is a separate beast from the principles I've mentioned so far, but it's the same idea
 
+**TODO** Insert tech debt definition, and also recenter the conversation around game architecture
+
 **Why are you telling me this now? I only just learned to make Pong**: I just want you to be aware of this as an over arching goal as you continue following my courses. In addition to showing you how to do cool things in Game Maker, I want to sprinkle in some lessons on coding principles. If we don't use good coding principles, our game could become a complicated mess of code that's impossible to update with new things
 
 ![](../../assets/images/tech_debt.png)

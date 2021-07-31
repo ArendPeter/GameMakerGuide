@@ -1,7 +1,7 @@
 ---
 layout: default
 title: How to follow the course
-nav_order: 1
+nav_order: 2
 parent: Course Intro
 ---
 
