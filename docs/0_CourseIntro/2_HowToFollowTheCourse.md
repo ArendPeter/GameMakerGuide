@@ -11,7 +11,7 @@ So this course exists in video form, as well as text form, and you can mix and m
 
 ## Syntax
 
-Any code snippets will be highlighted ``like this`` and programming concepts and/or glossary terms **like this**
+Any code snippets will be highlighted ``like this`` and programming concepts and/or glossary terms will be bolded **like this**
 
 I'll also include larger code snippets like this
 
