@@ -43,7 +43,7 @@ function updateGMExperience(){
     var age_date = new Date(age_diff_ms);
     var years_of_gm = Math.abs(age_date.getUTCFullYear() - 1970);
     var yog_element = document.getElementById("years-of-game-maker");
-    if(yog != undefined){
+    if(yog_element != undefined){
         yog_element.innerHTML = years_of_gm;
     }
 }
