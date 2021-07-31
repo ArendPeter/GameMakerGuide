@@ -19,18 +19,16 @@ Double click ``sBall``, **Edit Image** so that we can add an animation
 
 Animations are just a series of different drawings (i.e. frames) played one after another. We can see all the frames on the top bar of the sprite editor. Click the **+** icon on that bar to add frames
 
-**TODO**
 ![](../../assets/images/add_animation_frames.gif)
 
 ### Delete Animation Frames
 
 Hmm, but the **+** icon seems to only add empty frames. For this particular case, I think I'd rather have the same frame duplicated as a starting point. To undo try one of the following
 
- * **Delete w/ Mouse**: Right click on the frames we just added and select Delete
+ * **Delete w/ Mouse**: Hover over the top right of the frames, and press the X button that appears
  * **Delete w/ Keyboard**: Left click on the frames we just added and hit the ``Del`` or ``Backspace`` buttons
  * **Undo**: To literally undo you can hit ``Ctrl + Z``
 
-**TODO**
 ![](../../assets/images/delete_animation_frames.gif)
 
 ### Duplicate Animation Frames
@@ -42,14 +40,12 @@ Now let's duplicate the initial ball frame, so that we can use that as a startin
 
  We actually want to hit paste a bunch of times so that we have plenty of frames to work with
 
-**TODO**
 ![](../../assets/images/copy_paste_animation_frames.gif)
 
 Now we can edit each frame to form our animation, and hit the play button to preview. Wonderful!
 
 ### Create Animation
 
-**TODO**
 ![](../../assets/images/animation_creation.gif)
 
 Cool, so you'll notice that I went with a pretty simple animation. I selected a blue color, and filled the white space w/ it. Then did the same thing on every frame, adjusting the transparency every time. Eventually, I was at transparency 0, and the final frame was white again
@@ -58,7 +54,6 @@ This is definitely not my strong suit, so feel free to try your own ideas if you
 
 Now when you test the game you should see the ball animates continuously. Cool 😁! Now let's make it smarter to only animate when it bounces against things
 
-**TODO**
 ![](../../assets/images/animated_gameplay.gif)
 
 ## Animation Logic

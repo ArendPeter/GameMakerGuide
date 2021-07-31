@@ -91,7 +91,6 @@ Using those functions we can create an instance randomly in the room, and have t
 
 When you test it out, you should see the power up show up every few seconds 😊
 
-**TODO**
 ![](../../assets/images/power_up_spawn.gif)
 
 ## Magic Numbers
