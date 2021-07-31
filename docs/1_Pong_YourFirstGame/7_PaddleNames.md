@@ -106,7 +106,7 @@ draw_self();
 draw_text(x, y-20, name);
 ```
 
-![]("../../assets/images/names_on_both_paddles)
+![](../../assets/images/names_on_both_paddles.png)
 
 </details>
 
