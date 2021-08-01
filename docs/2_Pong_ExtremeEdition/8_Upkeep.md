@@ -51,13 +51,13 @@ if(other.y < y){
     }
     vspeed = abs(vspeed);
 }else{
-    if(vspeed < 0){
+    if(vspeed > 0){
         audio_play_sound(sndBounce, 0, false);
     }
     vspeed = -abs(vspeed);
 }
 
-...
+image_speed = 1;
 ```
 </details>
 
