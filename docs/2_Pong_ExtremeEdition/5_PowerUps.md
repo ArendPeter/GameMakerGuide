@@ -37,13 +37,13 @@ Just gotta add instance_destroy() to the ball collision event
 
 ```
 // oGrowBall Collision w/ oBall Event
-instance_destroy()
+instance_destroy();
 
 // oExtraBall Collision w/ oBall Event
-instance_destroy()
+instance_destroy();
 
 // oFasterPaddle Collision w/ oBall Event
-instance_destroy()
+instance_destroy();
 ```
 
 Hopefully you remember us using ```instance_destroy()``` in the previous chapter 😉, if not don't worry about it, fluency will come w/ time
@@ -91,7 +91,7 @@ Using those functions we can create an instance randomly in the room, and have t
 
 When you test it out, you should see the power up show up every few seconds 😊
 
-![](../../assets/images/power_up_spawn.gif)
+![](../../assets/images/power_up_spawn.png)
 
 ## Magic Numbers
 
@@ -149,11 +149,13 @@ instance_create_layer(
   oBall.ystart,
   layer,
   oBall
-)
+);
 ```
 
-You could have done this using a collision event in ``oBall`` instead, I just figured I'd do it in the power up, since ``oBall`` is starting to get cluttered (also this code also seems more closely rlated to the power up)
+You could have done this using a collision event in ``oBall`` instead, I just figured I'd do it in the power up, since ``oBall`` is starting to get cluttered (also this code also seems more closely related to the power up)
 </details>
+
+Here's what it looks like when testing (hint, update the spawn logic to only spawn ``oExtraBall`` to make testing easier )
 
 ![](../../assets/images/extra_ball.gif)
 
@@ -176,16 +178,11 @@ oBall.image_yscale += 1;
 
 Initially I was setting the scale to 2, but I think it's cooler to add 1. That way the ball(s) can keep getting bigger and bigger 😈
 
-**TODO** verify this assumption
-**TODO** Add image
-
 ![](../../assets/images/grow_ball_bad.gif)
 
-If you play w/ this for a while, you might notice some issues when you get this powerup after already getting the extra ball powerup
+If you play w/ this for a while, you might notice that the growth behaviour might not work as you expect. Every power up seems to update ALL balls
 
-**TODO** this is false, see documentation, http://127.0.0.1:51291/index.htm#t=GameMaker_Language%2FGML_Overview%2FAddressing_Variables_In_Other_Instances.htm
-
-In that scenario, the growth only applies to 1 ball, and the ball it chooses is seemingly random
+Remember ``oBall`` is an object not an instance, so changing ``oBall.image_xscale`` changes the scale across all balls. Not only that but retrieving ``oBall.image_xscale`` will still only give you one value. So ``oBall.image_xscale = oBall.image_xscale + 1;`` (the equivalent of ``oBall.image_xscale += 1;``) will retrieve ``oBall.image_xscale`` from a single ``oBall`` instance, add one and then set that across all ``oBall`` instances. So in the example, it happened to use the ``oBall.image_xscale`` from the biggest ball, so everything else skipped several ranks
 
 It's not totally clear how these power ups should interact w/ each other, so take a second to think about which option sounds more logical to you
 
@@ -235,9 +232,9 @@ with(oBall){
 ...
 ```
 
-It looks almost identical, but there is a critical difference. When you pass a object (like ``oBall``) into a ``with`` statement instead of a instance (like ``other``), it actually acts like a loop. The above code will repeat that snippet of code across across all instances of ``oBall``, thus making all of them grow
+It looks almost identical, but there is a critical difference. When you pass a object (like ``oBall``) into a ``with`` statement instead of a instance (like ``other``), it actually acts like a loop. The above code will repeat that snippet of code across across all instances of ``oBall``, thus making all of them grow by one
 
-![](../../assets/images/grow_ball_with_oBal.gif)
+![](../../assets/images/grow_ball_with_oBall.gif)
 
 Now that I've given you a few options, I'll leave it up to you which approach to move foward with. It really only depends on which one you like best for your specific pong game
 
@@ -301,7 +298,6 @@ For speeding up the paddle, I want the paddle that last hit the ball to be the o
 
 Aside from that the code should be pretty simple. Most of the effort really was in refactoring our code to use a max_speed variable
 
-**TODO**
 ![](../../assets/images/paddle_speed_up.gif)
 
 ## Spawn Range
