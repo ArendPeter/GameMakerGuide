@@ -30,7 +30,6 @@ I started out with color since it fit my painter analogy best, but in Game Maker
 
 ``c_aqua``: When I set the color I selected ``c_aqua``, where did this come from? Well computers use an simple number system to represent colors, in particular aqua color is just ``16776960``. Wait did I say simple? I meant to say complicated 😢. It's kind of a neat system but you don't need to understand it just yet. The point is if everyone had to do ``draw_set_color(16776960)`` to make aqua, not many people would do it right? So instead Game Maker included the variable ``c_aqua`` as well as a bunch of other colors, so you can just type those out instead. You can do auto complete on ``c_`` to see other color options
 
-**TODO**
 ![](../../assets/images/color_options.png)
 
 **constants**: These are actually special variables called **constants**. This means they're always a constant value, and you can't change them. This makes sense because ``c_aqua`` should always equal ``16776960``, it would be confusing if you tried to change it. Even if you tried doing ``c_aqua = 5;`` Game Maker would give you an error. Another popular Game Maker constant is ``pi``, this will always be set to ``3.141...``, again it would be very confusing if you tried to change this, so Game Maker doesn't let you

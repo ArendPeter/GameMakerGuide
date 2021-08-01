@@ -115,3 +115,7 @@ Testing it might be a bit tricky, sometimes it's hard to know whether a sound is
 ![](../../assets/images/sound_mixer.gif)
 
 Now you can tweak all the volumes at the same time
+
+## Fix rapidly repeating sounds
+
+**TODO**
