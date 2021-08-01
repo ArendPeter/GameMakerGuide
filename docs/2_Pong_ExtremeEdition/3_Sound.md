@@ -118,4 +118,26 @@ Now you can tweak all the volumes at the same time
 
 ## Fix rapidly repeating sounds
 
-**TODO**
+You might notice that we sometimes get rapid bounce sounds if the balls bounces with the paddle multiple times in a row. We can add a quick if statement to the bounces to make sure that the bounce sound only plays once
+
+```
+// oBall collision w/ oPaddle Event
+if(hspeed > 0){ // if we're moving to the right
+    audio_play_sound(sndBounce, 0, false); // <- new
+}
+
+...
+
+// oBall collision w/ oEnemyPaddle Event
+if(hspeed < 0){ // if we're moving to the left
+    audio_play_sound(sndBounce, 0, false); // <- new
+}
+
+...
+```
+
+``hspeed > 0``: This checks if we're moving to the right, if we hit ``oPaddle`` and we're moving to the right, that means that we haven't bounced back yet (and haven't played the sound yet), so we're clear to play the sound
+
+``...``: I moved the ``...`` from before the if statement to after. Make sure you move the audio sound above your directional logic. Otherwise the direction could update the hspeed before we try playing the audio, and they audio might never play
+
+**TODO** test this

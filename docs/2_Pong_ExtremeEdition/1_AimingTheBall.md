@@ -192,6 +192,10 @@ if(col_y < 16){
 ```
 </details>
 
+## Stuck in walls
+
+When playing w/ these updates for a while. I realized that it's now quite easy for the ball to get stuck into a wall
+
 ## Speed up the ball
 
 Now that we've refactored the ball to use speed direction, we can pretty easily add an adjustment to make the ball get faster on every bounce. Ramp up the intesity as the game progresses 😉

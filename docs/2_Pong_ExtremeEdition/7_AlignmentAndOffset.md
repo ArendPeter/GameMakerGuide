@@ -81,3 +81,11 @@ In this case top center is probably the best for complementing our text alignmen
 > **Why is the default origin in the top left corner?**: ooh, I have a tangent on this one too 🤓. It's consistent with the rooms "origin" ( (0,0) point ) being in the top left corner. That's just how computers store graphics, so many 2D engines tend to use top left as the origin point to be consistent. That said, 3D engines are a different story, in that case engines find it more intuitive to use a center origin for the sprites and rooms (or actually they're called scenes in those engines). This is also why Unity and Godot use center even when making 2D games, it keeps things consistent even when switching back to 3D
 
 ![](../../assets/images/3d_engine_alignment.png)
+
+## Ball Origin
+
+Speaking of origin, it's always kind of bothered me that the ball's origin is in the top left. This is particular clear when watching the AI try to track larger balls. How would you adjust the ball's origin to fix this?
+
+<details data-summary="How would you adjust the ball's sprite origin to make the AI track it better?" markdown="1">
+Setting ``sBall``'s sprite origin to the center greatly improves this 😃
+</details>

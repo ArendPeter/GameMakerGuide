@@ -27,11 +27,45 @@ instance_destroy();
 
 After running the check, and possibly creating a new ball, we destroy ourselves. Since this happens regardless of the results of the if condition, we should see balls die off in all cases, and decrease if we have multiple
 
+## Stuck in walls
+
+If you play the game long enough, you'll notice that the ball sometimes get's stuck in walls 😬
+
+This bug has been around for a while, but it's become more prominent now that there are many balls, and they can grow. Let's fix that
+
+We hit a similar issue w/ the paddles. In that case we just had the ball do different behaviour depending on if it's ``oEnemyPaddle`` or ``oPaddle``. Well now we want to do some same thing. Move down if you're hitting the top wall, move up if you're hitting the bottom wall. But it's harder to distinguish between the top and bottom since they're the same object
+
+Well that was a long time ago, and we didn't know about if statements, or the ``other`` keyword back then. I think you should know enough to solve that now 😉
+
+<details data-summary="Keep the balls from getting stuck in the walls" markdown="1">
+
+If the wall is above the ball, we want to ensure that the new ``vspeed`` is positive, otherwise, we want to ensure that it's negative. That should fix things 😁
+
+I'm also including a ``vspeed`` check to make sure that the audio doesn't play multiple times (it should be the same as audio check for the paddle collisions)
+
+```
+// oBall Collision w/ oWall Event
+if(other.y < y){
+    if(vspeed < 0){
+        audio_play_sound(sndBounce, 0, false);
+    }
+    vspeed = abs(vspeed);
+}else{
+    if(vspeed < 0){
+        audio_play_sound(sndBounce, 0, false);
+    }
+    vspeed = -abs(vspeed);
+}
+
+...
+```
+</details>
+
 ## AI tracking multiple balls
 
 You may have also noticed that the AI logic doesn't work quite right anymore.
 
-![]("../../assets/images/ai_tracking_bug.gif")
+![](../../assets/images/ai_tracking_bug.gif)
 
 The problem is that it uses ``oBall.y`` but this value is unpredictable when there's multiple balls (well I guess you *could* predict it, but it's just confusing and overall a bad idea). What we really want is to use the y value of the ball that's closest to us. Here's how I'd do that
 
@@ -49,7 +83,7 @@ if(is_ai){
     }
 
     // apply AI
-	if( y + 64 > closest_ball_y){
+    if( y + 64 > closest_ball_y){
 		y -= max_speed; // move up
 	}else{
 		y += max_speed; // move down
@@ -65,7 +99,51 @@ By the end of the ``with()``, ``closest_ball_x`` and ``closest_ball_y`` should m
 
 When we test it again, our enemy AI should be smarter 😀
 
-![]("../../assets/images/ai_tracking_fixed.gif")
+![](../../assets/images/ai_tracking_fixed.gif)
+
+Now our AI is a true master 😍
+
+![](../../assets/images/ping_pong_robot.gif)
+
+### Fixing AI spasms
+
+**Boy Scout Rule**: The boy scouts had motto *"Always leave the campground cleaner than you found it"*, programmers stole this and modified it slightly *"Always leave the code you're editing a little better than you found it" - Robert C. Martin*. I'm sure you've noticed that the AI tends to spasm whenever the ball is moving horizontally? Well let's a apply the Boy Scout Rule, and go ahead and fix that while we're here, as well as make some other tweaks
+
+```
+// oEnemyPaddle Step Event
+if(is_ai){
+    // find closest ball position
+    ...
+
+    // apply AI
+    vert_dist = abs(y + sprite_height/2 - closest_ball_y);
+    if(vert_dist > max_speed){
+	    if( y + sprite_height/2 > closest_ball_y){
+    		y -= max_speed; // move up
+    	}else{
+    		y += max_speed; // move down
+    	}
+    }
+}
+```
+
+``sprite_height/2``: Following the anti magic number philosophy, I replaced ``64`` w/ ``sprite_height/2``
+
+``vert_dist``: I essentially don't want the ai paddle to move if it's already really close to it's target position. The goal is for the center for the paddle ``y + sprite_height/2`` to line up w/ the ball ``closest_ball_y``, so we can figure out how close we are to that by taking the difference between the 2 (and I add ``abs()`` to make sure it's a postivie number). Hence ``vert_dist = abs(y + sprite_height/2 - closest_ball_y);``
+
+``if(vert_dist > max_speed)``: Let's say the distance to travel is smaller than the paddle's speed. That means the paddle would overshoot, and then probably overshoot back in the other direction on the next step. If we're that close, then we're probably close *enough* anyway, so may as well not move. To enforce this, I added an additional if statement around the y update logic to make it only apply if the distance left is bigger than the speed
+
+## Game Balance
+
+We've pretty much finished our pong game now (Yay! 🥂), but I wanted to add a quick note on game balance
+
+Games are fun when they feel fair (I guess mario cart is an exception 😜), and the mechanics create interesting situations. You can change the feel of the game significantly just by changing some of the numbers
+
+Take some time to play around with what we've got, here are some questions you can ask yourself to get started
+
+1. Are the powerups too strong or too weak?
+2. Does the AI seem fair? Should it be slower or faster?
+3. How does the aiming feel? Do players feel like they have enough control?
 
 ## Game Architecture (Games as Systems)
 
