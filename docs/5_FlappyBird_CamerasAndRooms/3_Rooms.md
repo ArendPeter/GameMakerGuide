@@ -11,6 +11,8 @@ Now let's add some more levels 😀
 
 ## New Room
 
+**TODO** actually assign a reasonable name
+
 Left click on the existing room and hit ``Ctrl + D`` to duplicate, then open up the duplicated room
 
 To make it visually distinct, I'll just copy and paste all the pipelines so that each gap uses double pipelines
