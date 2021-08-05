@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Flappy Bird | Movement
-nav_order: 0
+nav_order: 4
 has_children: true
 ---
 
@@ -27,7 +27,7 @@ Here are the big topics we'll cover for this game
 
 Game Maker gives you a lot of options for different ways to solve the same problem. DnD versus GML is the best example
 
-**Sometimes, I opt to teach one and not the other**. For DnD versus GML, I opted to only teach you GML, and completely skip DnD. I want to give you what I have to offer
+**Sometimes, I opt to teach one and not the other**. For DnD versus GML, I opted to only teach you GML, and completely skip DnD. I want to give you what I have to offer, and DnD isn't part of that
 
 Similarly, I opted not to teach you art, it's just not a skill that I'm equipped to teach you. I'm good at working with other talented people to make their art come to life, so that's what I'll teach you
 
@@ -36,3 +36,5 @@ Similarly, I opted not to teach you art, it's just not a skill that I'm equipped
  * **Events**: We learned a ton of events in previous chapters, but I'm almost exclusively going to use the create, step, draw events moving forward
 
  So as a warning, a big chunk of this chapter is going to feel like duplicated effort, but rest assured, that it will set you up for bigger better things in the future 😉
+
+ ## TODO: add cheat sheets?

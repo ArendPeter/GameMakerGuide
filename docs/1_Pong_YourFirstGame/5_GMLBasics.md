@@ -5,6 +5,8 @@ nav_order: 5
 parent: Pong | Your First Game
 ---
 
+**TODO** probably want to split this up. GML Basics, Keyboard Event, Move Ball, Collision Event
+
 # Getting started with GML
 
 In the previous section we just had a BIG first, we ran our game for the first time 😀. This section will be a rapid fire of more BIG firsts. Here's the list
@@ -291,20 +293,14 @@ y = y + 4;
 
 Speaking of results, let's do a pop quiz, what do you think the results will be when we run the code?
 
-<details>
-<summary>**Which direction will the ball move?** Click to find out</summary>
+<details data-summary="Which direction will the ball move?" markdown="1">
 
-<p>
 Diagonally down and to the right
-</p>
 
-<p>
 Remember positive x and positive y are right and down respectively
-</p>
 
-<p>
 Because we're doing both at the same time we end up with a diagonal effect
-</p>
+
 ![](../../assets/images/ball_move.gif)
 
 </details>

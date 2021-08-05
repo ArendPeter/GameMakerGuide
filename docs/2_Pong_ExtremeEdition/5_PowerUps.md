@@ -123,6 +123,8 @@ Now we don't have to wonder what 1366 means, it's just room_width, much better ð
 
 Using variables has an additional benefit. Let's say you change room size. Well previously you'd have to find all Magic Numbers related to the room dimensions and update them. Now we can freely change our room size (or even the game's framerate). Using variables will ensure that we're always using the correct value
 
+**TODO** also mention hard coding, it's essentially a synonym
+
 ### Comments to explain Magic Numbers
 
 But wait! What about the comments? Didn't they serve the same purpose? Well yes and no. I have a few beefs with using comments so if the code is clear on it's own I prefer to avoid comments (much of this is personal opinion, you might get different answers if you asked a different Software Engineer). Here are specific issues w/ comments
