@@ -45,7 +45,7 @@ If you test the code, you should see the bird jump when you press space
 
 ``vk_space``: This is a constant, similar to the color constants, there's a whole set of key constants. This way you don't have to memorize numbers 😉. You can type ``vk_`` and then hit ``ctrl + space`` for the whole set of keyboard constants
 
-![](../../assets/images/vk_autocomplete.png)
+![](../../assets/images/pong/vk_autocomplete.png)
 
 
 **Inlined Code**: The ``keyboard_check_pressed()`` pattern is similarly to the one I used for ``place_meeting()`` except I **inlined** ``keyboard_check_pressed()`` into the if statement, whereas I **extracted** ``place_meeting()`` out into the ``colliding_with_pipe`` variable. Which one's better? Think on it and get back to me

@@ -26,7 +26,7 @@ In math, angle and distance are represented with r and θ, but this isn't used f
 
 > **Fun Fact** for me the coolest thing about polar coordinates, is the pretty pictures you get when you start plotting polar functions. For example sin curves looking kind of boring using a cartesian plot, but they turn into pretty flowers on polar plots. Something to look forward to when you get to your math classes in late high school / early college ;)
 
-![](../../assets/images/wolfram_polar.png)
+![](../../assets/images/pong/wolfram_polar.png)
 
 So position is weird, but speed is a different story. hspeed/vspeed represents our horizontal and vertical velocity, but that actually isn't super intuitive. If your friend asks how fast your driving, have you ever said "I'm driving 20 mph to the east, and 20 mph north". NO! You'd say "I'm going 28(ish) mph, and I know this wasn't part of your question, but that's in the the north east direction in case you're curious". Game Maker has the speed/direction vartiables for this purpuse
 
@@ -60,7 +60,7 @@ That should take you to [this page](https://manual.yoyogames.com/GameMaker_Langu
 
 So from reading the manual we see that random will return a random number between 0 and 360. I chose 360, because that's the largest number direction can have, and using random will allow the ball to randomly start in any direction. Here's a chart giving you an idea of how those numbers represent direction
 
-![](../../assets/images/direction_circle.png)
+![](../../assets/images/pong/direction_circle.png)
 
 So direction = 0 would make the ball go right, 90 would make it go up, etc
 
@@ -68,13 +68,13 @@ Then we set to speed to make the ball actually move in that direction (otherwise
 
 When we test this out, we should see more variation in the ball's starting direction
 
-![](../../assets/images/ball_360_move.gif)
+![](../../assets/images/pong/ball_360_move.gif)
 
 ## oEnemy Paddle Collision
 
 When the ball collides the the enemy paddle, let's break it down into multiple scenarios depending on where the ball hit the paddle
 
-![](../../assets/images/paddle_3_regions.png)
+![](../../assets/images/pong/paddle_3_regions.png)
 
 Here's the structure I'll use
 
@@ -116,11 +116,11 @@ if(<conditionA>){
 
 For the conditions I'm using col_y. Since x/y values actually correspond to the top left corner of the sprite (this is the default, but it can be changed). We can do this math to determine where on the paddle the ball is. 0 is the top, and 128 is the bottom (if you check ``sPaddle``, you'll see that it's 128 units tall)
 
-![](../../assets/images/paddle_3_regions_w_math.png)
+![](../../assets/images/pong/paddle_3_regions_w_math.png)
 
 Now we actually need to set the ball direction (currently I only have comments indicating which direction to bounce). Why don't you use the direction circle to try figuring out some reasonable values and get back to me?
 
-![](../../assets/images/direction_circle.png)
+![](../../assets/images/pong/direction_circle.png)
 
 <details data-summary="Update our collision code to set the direction for each case" markdown="1">
 
@@ -144,7 +144,7 @@ Since adding 360 to your direction takes the direction in a full circle, there's
 
 At the end it should look something like this
 
-![](../../assets/images/ball_aiming_gameplay.gif)
+![](../../assets/images/pong/ball_aiming_gameplay.gif)
 
 ## oPaddle Collision
 

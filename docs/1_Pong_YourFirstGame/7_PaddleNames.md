@@ -39,7 +39,7 @@ To ensure that game maker interprets the parameter as text instead of code, we n
 
 When we hit play you should see the text, but wait ... what happened to the paddle!??! 😲
 
-![](../../assets/images/name_wo_paddle.png)
+![](../../assets/images/pong/name_wo_paddle.png)
 
 ## Drawing Self
 
@@ -63,14 +63,14 @@ draw_text(x, y-20, "Arend");
 
 Now it works as you'd expect, crisis averted 😪
 
-![](../../assets/images/name_w_paddle.png)
+![](../../assets/images/pong/name_w_paddle.png)
 
 
 ## Storing name in a custom variable
 
 We just have a tiny pong game, but in RPGs it's very common to let players specify a custom name
 
-![](../../assets/images/name_select_ff7.png)
+![](../../assets/images/pong/name_select_ff7.png)
 
 In larger games, the name could be referenced 1000s of times across the whole experience, at that point entering the string directly into our functions will become tedious. It would be nice if we could set the name in one spot and then refer back to it whenever we need it...
 
@@ -106,7 +106,7 @@ draw_self();
 draw_text(x, y-20, name);
 ```
 
-![](../../assets/images/names_on_both_paddles.png)
+![](../../assets/images/pong/names_on_both_paddles.png)
 
 </details>
 
@@ -150,7 +150,7 @@ Using the assignment operator isn't the only way to initialize variables
 
 If you open up the **Variable Definitions** section of object you can specify the variables there instead
 
-![](../../assets/images/name_as_variable_definition.png)
+![](../../assets/images/pong/name_as_variable_definition.png)
 
 Initializing in Variable Definitions is kind of like using the assignment operator method in a "pre-create" event. So if you use Variable Definitions it's also important that you remove the initialization from the create event. Otherwise it will overwrite whatever you put in Variable Definitions
 

@@ -24,11 +24,11 @@ Let's look back at the instance properties in the room editor. Earlier we modifi
 
 You were probably wondering what the X by Scale X meant. x and y are pretty much just short hands for horizontal and vertical respectively. So why didn't they call it horizontal scale, and vertical scale instead? Well we refer to horizontal and vertical so often that it quickly becomes tedious to type, so we end of w/ x and y instead (can't be much shorter than that!)
 
-![](../../assets/images/inspector_example.png)
+![](../../assets/images/pong/inspector_example.png)
 
 So with that said the x and y variables represent where each instance is positioned in the room horizontally and vertically. If you drag one of your instances to the right you can see that the x increases. Similarly if you drag the instance down you see that y increases. I can also set the x and y directly in the instance properties.
 
-![](../../assets/images/xy_inspector.gif)
+![](../../assets/images/pong/xy_inspector.gif)
 
 If I set it to x = 0, and y = 0, where do you think the instance will move to? (I'm hiding the rest of the section for you to think about it 😉 )
 
@@ -38,7 +38,7 @@ If you said, top left corner, you would be right! Since moving right and down ma
 
 This is can be really confusing because it's different from what you'll learn in your math and physics classes. In school, going up increases y (not down), and the x = 0 and y = 0 point is in the bottom left (not top left). So make sure flip the switch back to "up is more" when you go back to school, I'd hate for this course to hurt your grades
 
-![](../../assets/images/xy_classic.png)
+![](../../assets/images/pong/xy_classic.png)
 
 Another handy trick for viewing x, y is to look at the bottom left of the room editor. There you see 2 numbers (for example (841, 592)). Those represent the x, y position under your mouse cursor, and you can that to again verify the following:
 
@@ -48,7 +48,7 @@ Another handy trick for viewing x, y is to look at the bottom left of the room e
  * Moving the mouse down increases y
  * Moving the mouse to (0, 0) is at the right spot
 
-![](../../assets/images/xy_mouse.gif)
+![](../../assets/images/pong/xy_mouse.gif)
 
 </details>
 
@@ -56,7 +56,7 @@ Another handy trick for viewing x, y is to look at the bottom left of the room e
 
 We're very close to digging into code, but first we need to understand events. Code is our tool to describe "What" should happen, but events show us "When" it should happen. For example, if we go to the ball object, and click "Add Event" we can see lot of options.
 
-![](../../assets/images/add_event.gif)
+![](../../assets/images/pong/add_event.gif)
 
 Luckily we only usually need a few of these. Here are the common ones we'll use today
 
@@ -66,7 +66,7 @@ Luckily we only usually need a few of these. Here are the common ones we'll use 
 
 For now, let's add a **Create** event. Once you've done that you should see a text editor pop up for us to start entering code (the natural "What" that triggers from the "When").
 
-![](../../assets/images/code_editor.png)
+![](../../assets/images/pong/code_editor.png)
 
 There's some default code already in the create event, but go ahead and remove all of it. This way we can start form a clean slate
 
@@ -95,7 +95,7 @@ The above code sets the ball's x to 300. We can run the game to verify this but 
 
 If you said "center leftish", you'd be right!!
 
-![](../../assets/images/update_x_pos.png)
+![](../../assets/images/pong/update_x_pos.png)
 
 </details>
 
@@ -162,7 +162,7 @@ Here's an example of a comment in our code, try adding it to your ball's create 
 
 <details data-summary="What happens?" markdown="1">
 
-![](../../assets/images/rickrolled.gif)
+![](../../assets/images/pong/rickrolled.gif)
 
 Sorry that was a little mean, nothing actually happens
 
@@ -270,7 +270,7 @@ Great work! Now when we test it, we should be able to move both individually
 
 Feel free to swap out 4 with a different number to find a speed that feels better
 
-![](../../assets/images/paddle_move.gif)
+![](../../assets/images/pong/paddle_move.gif)
 
 ## Ball movement (w/ hspeed and vspeed)
 
@@ -301,7 +301,7 @@ Remember positive x and positive y are right and down respectively
 
 Because we're doing both at the same time we end up with a diagonal effect
 
-![](../../assets/images/ball_move.gif)
+![](../../assets/images/pong/ball_move.gif)
 
 </details>
 
@@ -337,6 +337,6 @@ You can add 2 collision events to the ball (one for both paddles) and use the fo
 
 </details>
 
-![](../../assets/images/ball_collide.gif)
+![](../../assets/images/pong/ball_collide.gif)
 
 The game is looking great, you can actually sort of play a game against someone now 😮. And this is all using only events and variable assignments 🤯, it's really cool how much you can make in game maker with so little

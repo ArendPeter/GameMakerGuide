@@ -19,11 +19,11 @@ The first step in each of these sound sections is to import sounds someone else 
 
 Next we can jump into Game Maker and make a sound resource. You can right click on the sound folder and hit add sound (just like all the other resources)
 
-![](../../assets/images/create_sound.gif)
+![](../../assets/images/pong/create_sound.gif)
 
 Then we can name the sound ``sndMusic`` and you can hit "choose sound file" to select the sound file that you downloaded
 
-![](../../assets/images/name_sound.png)
+![](../../assets/images/pong/name_sound.png)
 
 Now the music is in Game Maker, but we need to add a line of code to actually play it. It doesn't really matter where we add that line, but we seem to be doing everything in `oBall` so let's just continue there
 
@@ -52,7 +52,7 @@ That said, I'm going to show you a new trick for importing sound resources (and 
 
 Now we can just drag them from you desktop into game maker to import the sounds. Much faster 😉
 
-![](../../assets/images/import_sfx.gif)
+![](../../assets/images/pong/import_sfx.gif)
 
 > **Note on copyright:** Whenever you use sounds from other people assets, make sure you have their permission. I got Juli's permission to use her music, and all the sound effect files are creative commons
 
@@ -108,11 +108,11 @@ As you play the game longer, you may start to feel like some sounds are too loud
 
 In particular, I thought ``sndBounce`` seemed too loud. To fix this, just double click on ``sndBounce``, then you can drag the audio slider to adjust the volume and hit play to test it
 
-![](../../assets/images/tweak_audio_volume.gif)
+![](../../assets/images/pong/tweak_audio_volume.gif)
 
 Testing it might be a bit tricky, sometimes it's hard to know whether a sound is too loud or soft without hearing it together with all the other sounds. To make this easier you can use the sound mixer. Click the **sound group mixer** button, then select the default audio group
 
-![](../../assets/images/sound_mixer.gif)
+![](../../assets/images/pong/sound_mixer.gif)
 
 Now you can tweak all the volumes at the same time
 

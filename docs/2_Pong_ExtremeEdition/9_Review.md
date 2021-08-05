@@ -7,7 +7,7 @@ parent: Pong | Extreme Edition
 
 # Review: Pong Extreme Edition
 
-![](../../assets/images/extreme_pong.gif)
+![](../../assets/images/pong/extreme_pong.gif)
 
 ## Resource Types
 

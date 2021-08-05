@@ -39,11 +39,11 @@ Add an object name ``oPipe`` and assign the corresponding sprite. Then we can ad
 
 Now we're going to place the pipelines into the rooms, but there's some tricks we can use to make this easier on ourselves
 
-![](../../assets/images/pipe_mirror.gif)
+![](../../assets/images/pong/pipe_mirror.gif)
 
 **Mirroring**: We want both upside down sprites, as well as normal ones. Instead of using a new sprite we can mirror it by resizing the pipe. This is the same as giving it a negative ``image_yscale``
 
-![](../../assets/images/pipe_duplication.gif)
+![](../../assets/images/pong/pipe_duplication.gif)
 
 **Duplication**: We can use some keyboard shortcuts to make duplciation easier, in particular here are the ones I used
 
@@ -54,10 +54,10 @@ Now we're going to place the pipelines into the rooms, but there's some tricks w
 
 I use these shortcuts to select pairs of pairs and duplicate them
 
-![](../../assets/images/pipe_floor.gif)
+![](../../assets/images/pong/pipe_floor.gif)
 
 **Adding a floor**: I also want the bird to die when it's outside the room. I could use the outside room event for this, but I already have the logic setup for the pipes, so may as well have a big pipe placed below the room
 
 Then when we test the game, we should see it restart whenever the bird hits a wall
 
-![](../../assets/images/bird_death.gif)
+![](../../assets/images/pong/bird_death.gif)

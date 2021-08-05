@@ -27,15 +27,15 @@ We'll be making 3 games together, and I'll walk you through every detail
 
 First we'll get all our Game Maker fundamentals down by making Pong
 
-![](../../assets/images/pong_final.gif)
+![](../../assets/images/pong/pong_final.gif)
 
 Second we'll learn to about levels, menus, and win states, by making a Flappy Bird Clone
 
-![](../../assets/images/flappy_bird_final.gif)
+![](../../assets/images/pong/flappy_bird_final.gif)
 
 Lastly we'll put together a polished platformer together, complete with screen shake, and epic flame particles
 
-![](../../assets/images/platformer_final.gif)
+![](../../assets/images/pong/platformer_final.gif)
 
 ## What You'll Make
 
@@ -43,18 +43,18 @@ More importantly, I want to talk about what you'll make. I believe you learn bes
 
 After the we learn Pong, you can try making Ping Pong Juggle and Break Out on your own
 
-![](../../assets/images/ping_pong_juggle_final.gif)
-![](../../assets/images/breakout_final.gif)
+![](../../assets/images/pong/ping_pong_juggle_final.gif)
+![](../../assets/images/pong/breakout_final.gif)
 
 Then once we've made Flappy Bird, you can try making Doodle Jump, and Chip's Challenge on your own
 
-![](../../assets/images/doodle_jump_final.gif)
-![](../../assets/images/chips_challenge_final.gif)
+![](../../assets/images/pong/doodle_jump_final.gif)
+![](../../assets/images/pong/chips_challenge_final.gif)
 
 Then finally once we've made a polish platformer together, you can try making Geometry Dash style auto-runner, and a top down shooting game with waves of enemies
 
-![](../../assets/images/doodle_jump_final.gif)
-![](../../assets/images/chips_challenge_final.gif)
+![](../../assets/images/pong/doodle_jump_final.gif)
+![](../../assets/images/pong/chips_challenge_final.gif)
 
 I've created demos for all 9 of these games (either downloadable or in browser), head over to our itch page to play them
 

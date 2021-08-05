@@ -45,7 +45,7 @@ dy = 0;
 
 If you throw ``oBird`` into a room and test it, you'll see that it moves to the right (similar to the ball when working on the Pong game)
 
-![](../../assets/images/bird_moving_right.gif)
+![](../../assets/images/pong/bird_moving_right.gif)
 
 The only difference with the ``dx`` / ``dy`` technique, is we need to manually apply the speed to our ``x`` / ``y`` every step. ``dx`` is actually short for **delta x** which is the math term for **change in x**, so that's why it represents how much x changes every step
 
@@ -57,7 +57,7 @@ For example, adding a pause feature would be easier with ``dx`` / ``dy``. With `
 
 > **PRO TIP, select + tab**: Sometimes I add the brackets after I've written the code. In this case it can be tedius to insert a tab before each line. As a quick way around this, most editors will let you select code, and hit ``tab`` to tab everything out in one go. Similarly you can hit ``shift + tab`` to go back
 
-![](../../assets/images/code_expansion_shift_tab.gif)
+![](../../assets/images/pong/code_expansion_shift_tab.gif)
 
 ## Gravity
 
@@ -87,7 +87,7 @@ All that said, I usually don't call things ``ddy``, since there are usually mult
 
 When you test the game, we should see the bird "falling" since gravity is increasing the downward velocity over time
 
-![](../../assets/images/bird_falling.gif)
+![](../../assets/images/pong/bird_falling.gif)
 
 What do you think would happen if we decreased the grav variable? Think about it, then test it and get back to me
 
