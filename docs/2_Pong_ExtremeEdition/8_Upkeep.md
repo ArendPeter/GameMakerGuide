@@ -65,7 +65,7 @@ image_speed = 1;
 
 You may have also noticed that the AI logic doesn't work quite right anymore.
 
-![](../../assets/images/pong/ai_tracking_bug.gif)
+![](../../images/pong/ai_tracking_bug.gif)
 
 The problem is that it uses ``oBall.y`` but this value is unpredictable when there's multiple balls (well I guess you *could* predict it, but it's just confusing and overall a bad idea). What we really want is to use the y value of the ball that's closest to us. Here's how I'd do that
 
@@ -99,11 +99,11 @@ By the end of the ``with()``, ``closest_ball_x`` and ``closest_ball_y`` should m
 
 When we test it again, our enemy AI should be smarter 😀
 
-![](../../assets/images/pong/ai_tracking_fixed.gif)
+![](../../images/pong/ai_tracking_fixed.gif)
 
 Now our AI is a true master 😍
 
-![](../../assets/images/pong/ping_pong_robot.gif)
+![](../../images/pong/ping_pong_robot.gif)
 
 ### Fixing AI spasms
 
@@ -168,4 +168,4 @@ Adding new systems will naturally require updates to other systems, but's some t
 
 **Why are you telling me this now? I only just learned to make Pong**: I just want you to be aware of this as an over arching goal as you continue following my courses. In addition to showing you how to do cool things in Game Maker, I want to sprinkle in some lessons on coding principles. If we don't use good coding principles, our game could become a complicated mess of code that's impossible to update with new things
 
-![](../../assets/images/pong/tech_debt.png)
+![](../../images/pong/tech_debt.png)

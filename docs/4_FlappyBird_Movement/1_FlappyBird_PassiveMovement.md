@@ -11,7 +11,7 @@ First I'll go over the passive portion of the flappy bird movement. So that incl
 
 ## Setup Resources
 
-As I mentioned at the top of the chapter, art isn't something I'll be teaching so we'll be using art made by Brad (the Star Garden Games artist) for the remainder of the couse
+As I mentioned at the top of the chapter, art isn't something I'll be teaching so we'll be using art made by Brad (the Star Garden Games artist) for the remainder of the course
 
 Let's just import all our sprites in one go. Navigate to the flappy bird images included with the course, and drag them into game maker to create the sprites. You should end up with the following sprites
 
@@ -34,6 +34,8 @@ Using the techniques from the last chapters, we'd probably just set ``hspeed = 4
 dx = 2;
 dy = 0;
 
+image_speed = 0;
+
 // oBird Step Event
 
 //// APPLY MOVEMENT
@@ -45,7 +47,9 @@ dy = 0;
 
 If you throw ``oBird`` into a room and test it, you'll see that it moves to the right (similar to the ball when working on the Pong game)
 
-![](../../assets/images/pong/bird_moving_right.gif)
+![](../../images/pong/bird_moving_right.gif)
+
+``image_speed = 0;`` : This isn't related to the current task, but the bird sprite is animated, so I'm throwing this in there to disable the animation for now
 
 The only difference with the ``dx`` / ``dy`` technique, is we need to manually apply the speed to our ``x`` / ``y`` every step. ``dx`` is actually short for **delta x** which is the math term for **change in x**, so that's why it represents how much x changes every step
 
@@ -57,7 +61,7 @@ For example, adding a pause feature would be easier with ``dx`` / ``dy``. With `
 
 > **PRO TIP, select + tab**: Sometimes I add the brackets after I've written the code. In this case it can be tedius to insert a tab before each line. As a quick way around this, most editors will let you select code, and hit ``tab`` to tab everything out in one go. Similarly you can hit ``shift + tab`` to go back
 
-![](../../assets/images/pong/code_expansion_shift_tab.gif)
+![](../../images/pong/code_expansion_shift_tab.gif)
 
 ## Gravity
 
@@ -87,7 +91,7 @@ All that said, I usually don't call things ``ddy``, since there are usually mult
 
 When you test the game, we should see the bird "falling" since gravity is increasing the downward velocity over time
 
-![](../../assets/images/pong/bird_falling.gif)
+![](../../images/pong/bird_falling.gif)
 
 What do you think would happen if we decreased the grav variable? Think about it, then test it and get back to me
 

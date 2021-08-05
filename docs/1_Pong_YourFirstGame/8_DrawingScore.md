@@ -37,11 +37,11 @@ To figure out the positions for the score, I used my mouse to check positions in
 
 Of course making the object isn't enough for the score to show up, we also need to add it to the room. Since we're not using the x/y variables in the draw event it doesn't really matter where in the room we put it. Once you've done that, the game should look something like this:
 
-![](../../assets/images/pong/0_0_score.png)
+![](../../images/pong/0_0_score.png)
 
 When you added it to the room, you probably noticed that it looked kind of weird, just a small question mark icon
 
-![](../../assets/images/pong/room_editor_question_mark.png)
+![](../../images/pong/room_editor_question_mark.png)
 
 This happens whenever we don't assign sprites to objects. It shows the question mark as a preview, but that won't show up in game
 
@@ -49,11 +49,11 @@ In this case that's fine since we're not drawing a sprite, but when I'm working 
 
 I'll just make a quick sprite using S for score. I didn't cover using text in the sprite editor back in the resources section, so here's a quick preview of how I did it
 
-![](../../assets/images/pong/sprite_editor_text.gif)
+![](../../images/pong/sprite_editor_text.gif)
 
 There, that looks much better in the room
 
-![](../../assets/images/pong/room_editor_s_marker.png)
+![](../../images/pong/room_editor_s_marker.png)
 
 As a final touch, I want to add a comment to the draw event, to make sure we remeber that skipping ``draw_self()`` was intentional
 

@@ -91,7 +91,7 @@ Using those functions we can create an instance randomly in the room, and have t
 
 When you test it out, you should see the power up show up every few seconds 😊
 
-![](../../assets/images/pong/power_up_spawn.png)
+![](../../images/pong/power_up_spawn.png)
 
 ## Magic Numbers
 
@@ -159,7 +159,7 @@ You could have done this using a collision event in ``oBall`` instead, I just fi
 
 Here's what it looks like when testing (hint, update the spawn logic to only spawn ``oExtraBall`` to make testing easier )
 
-![](../../assets/images/pong/extra_ball.gif)
+![](../../images/pong/extra_ball.gif)
 
 
 ## Grow Ball
@@ -180,7 +180,7 @@ oBall.image_yscale += 1;
 
 Initially I was setting the scale to 2, but I think it's cooler to add 1. That way the ball(s) can keep getting bigger and bigger 😈
 
-![](../../assets/images/pong/grow_ball_bad.gif)
+![](../../images/pong/grow_ball_bad.gif)
 
 If you play w/ this for a while, you might notice that the growth behaviour might not work as you expect. Every power up seems to update ALL balls
 
@@ -202,7 +202,7 @@ other.image_yscale += 1;
 
 ``other`` is a special keyword that can be used in collision events as well as a few other places. This let's us refer to the specific ``other`` instance that was involved with the collision. Note other **instance** not other **object**, this means it really is that specific ball, and not the ``oBall`` object in general
 
-![](../../assets/images/pong/grow_ball_dot_other.gif)
+![](../../images/pong/grow_ball_dot_other.gif)
 
 ### with keyword
 
@@ -236,7 +236,7 @@ with(oBall){
 
 It looks almost identical, but there is a critical difference. When you pass a object (like ``oBall``) into a ``with`` statement instead of a instance (like ``other``), it actually acts like a loop. The above code will repeat that snippet of code across across all instances of ``oBall``, thus making all of them grow by one
 
-![](../../assets/images/pong/grow_ball_with_oBall.gif)
+![](../../images/pong/grow_ball_with_oBall.gif)
 
 Now that I've given you a few options, I'll leave it up to you which approach to move foward with. It really only depends on which one you like best for your specific pong game
 
@@ -300,7 +300,7 @@ For speeding up the paddle, I want the paddle that last hit the ball to be the o
 
 Aside from that the code should be pretty simple. Most of the effort really was in refactoring our code to use a max_speed variable
 
-![](../../assets/images/pong/paddle_speed_up.gif)
+![](../../images/pong/paddle_speed_up.gif)
 
 ## Spawn Range
 

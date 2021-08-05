@@ -19,7 +19,7 @@ Double click ``sBall``, **Edit Image** so that we can add an animation
 
 Animations are just a series of different drawings (i.e. frames) played one after another. We can see all the frames on the top bar of the sprite editor. Click the **+** icon on that bar to add frames
 
-![](../../assets/images/pong/add_animation_frames.gif)
+![](../../images/pong/add_animation_frames.gif)
 
 ### Delete Animation Frames
 
@@ -29,7 +29,7 @@ Hmm, but the **+** icon seems to only add empty frames. For this particular case
  * **Delete w/ Keyboard**: Left click on the frames we just added and hit the ``Del`` or ``Backspace`` buttons
  * **Undo**: To literally undo you can hit ``Ctrl + Z``
 
-![](../../assets/images/pong/delete_animation_frames.gif)
+![](../../images/pong/delete_animation_frames.gif)
 
 ### Duplicate Animation Frames
 
@@ -40,13 +40,13 @@ Now let's duplicate the initial ball frame, so that we can use that as a startin
 
  We actually want to hit paste a bunch of times so that we have plenty of frames to work with
 
-![](../../assets/images/pong/copy_paste_animation_frames.gif)
+![](../../images/pong/copy_paste_animation_frames.gif)
 
 Now we can edit each frame to form our animation, and hit the play button to preview. Wonderful!
 
 ### Create Animation
 
-![](../../assets/images/pong/animation_creation.gif)
+![](../../images/pong/animation_creation.gif)
 
 Cool, so you'll notice that I went with a pretty simple animation. I selected a blue color, and filled the white space w/ it. Then did the same thing on every frame, adjusting the saturation closer to white every time. Eventually, I bumped it down enough to be back at white
 
@@ -54,7 +54,7 @@ This is definitely not my strong suit, so feel free to try your own ideas if you
 
 Now when you test the game you should see the ball animates continuously. Cool 😁! Now let's make it smarter to only animate when it bounces against things
 
-![](../../assets/images/pong/animated_gameplay.gif)
+![](../../images/pong/animated_gameplay.gif)
 
 ## Animation Logic
 
@@ -113,6 +113,6 @@ So updating image_speed to 0 will make it stop animating, but to make sure it st
 
 
 **TODO**
-![](../../assets/images/pong/animate_on_bounce.gif)
+![](../../images/pong/animate_on_bounce.gif)
 
 Now we've got a little ball animation to add some pop to our game 🍾. There are many more animations you could add, but I'll leave that to you. Feel free to experiment to your hearts content 😁

@@ -5,7 +5,7 @@ nav_order: 2
 has_children: true
 ---
 
-![](../../assets/images/pong/extreme_pong.gif)
+![](../../images/pong/extreme_pong.gif)
 
 In this module we'll be building our basic pong project into an EXTREME edition. It should feel like a more fleshed out interesting game when we're done
 

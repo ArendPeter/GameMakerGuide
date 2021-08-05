@@ -7,7 +7,7 @@ parent: Pong | Your First Game
 
 # Review: Your First Game
 
-![](../../assets/images/pong/ball_collide.gif)
+![](../../images/pong/ball_collide.gif)
 
 You've just made your first game in Game Maker! Amazing work 🎉🎈🎊
 

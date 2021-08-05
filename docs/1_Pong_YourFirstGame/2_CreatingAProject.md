@@ -13,7 +13,7 @@ This step will go into creating a new project, Drag and Drop versus GameMaker La
 
 Let's make a new project!
 
-![](../../assets/images/pong/new_project.gif)
+![](../../images/pong/new_project.gif)
 
 1. Open Game Maker, this will take you to the start page
 1. Select "New" under the "Getting Started"

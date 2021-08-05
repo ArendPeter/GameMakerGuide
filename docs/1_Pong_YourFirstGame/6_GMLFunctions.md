@@ -66,7 +66,7 @@ In this case we're not providing feedback anyway, so Key Press is probably ideal
 
 After playing the game for a while you might notice a bug in the collision system. Specifically, if you move the paddle to hit the ball vertically
 
-![](../../assets/images/pong/ball_paddle_vertical_collide_bad.gif)
+![](../../images/pong/ball_paddle_vertical_collide_bad.gif)
 
 Our collision logic assumes that the event will only be triggered once, but in reality a collision in game maker is synonymous w/ "overlap". So if it's still overlapping on the next frame the event could continue to trigger long after the initial contact
 
@@ -97,7 +97,7 @@ hspeed = -abs(hspeed)
 
 When testing it out, this edge case should be fixed
 
-![](../../assets/images/pong/ball_paddle_vertical_collide_good.gif)
+![](../../images/pong/ball_paddle_vertical_collide_good.gif)
 
 
 ## Randomize ball speed (featuring choose())
@@ -124,7 +124,7 @@ Also note how we're using variable assignment and functions together in the same
 
 Now here's what it looks like when we press restart
 
-![](../../assets/images/pong/ball_random_start.gif)
+![](../../images/pong/ball_random_start.gif)
 
 But it seems a little odd that it only goes diagonal. We certainly don't want it to go vertical (that would be a VERY long wait), but maybe horizontal? Why don't you give it a try?
 
@@ -135,7 +135,7 @@ hspeed = choose(-2, 2);
 vspeed = choose(-2, 0, 2);
 ```
 
-![](../../assets/images/pong/ball_random_start_including_hor.gif)
+![](../../images/pong/ball_random_start_including_hor.gif)
 
 On second thought, I don't like this very much, it's just ... boring 😴 (but good job on figuring it out 😉 )
 
@@ -190,7 +190,7 @@ and here's the functions:
 
 Testing this out should work, when a ball leaves the room, it will destroy it's self and new ball will show up at the start allowing the game to continue
 
-![](../../assets/images/pong/ball_outside_room.gif)
+![](../../images/pong/ball_outside_room.gif)
 
 But that's kind of morbid don't you think? Does it have to die? Is there a way we can reuse the same ball?
 
@@ -223,10 +223,10 @@ Now that our function names are getting longer w/ more inputs, it'll probably ge
 
 Game Maker has some tricks to help us with this, for example as you're typing a function name it'll try to predict which function you're looking for (this should happen automatically, but if not you can hit `ctrl + space`). This is really helpful if you only remember part of the function name
 
-![](../../assets/images/pong/function_autocomplete.png)
+![](../../images/pong/function_autocomplete.png)
 
 Then if you see the one you're looking for, you can just click on it (or use the arrow keys to navigate down to the one you're want and then press enter)
 
 Also once you've entered the function, you can put your cursor between the parenthesis preview the input order
 
-![](../../assets/images/pong/preview_function_inputs.png)
+![](../../images/pong/preview_function_inputs.png)

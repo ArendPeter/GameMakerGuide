@@ -13,7 +13,7 @@ Here I'll go over how to navigate to the yoyogames website to download and insta
 
 Before downloading game maker you'll first need to register for an account
 
-![](../../assets/images/pong/register.gif)
+![](../../images/pong/register.gif)
 
 1. In your browser navigate to https://yoyogames.com
 1. Click "Get Started"
@@ -35,7 +35,7 @@ For this course, I recommend starting with **Free Trial**, and then, if you're i
 
 Next we can download Game Maker Studio
 
-![](../../assets/images/pong/download.gif)
+![](../../images/pong/download.gif)
 
 1. Login using the account you registered above, this should bring you to "Dashboard Home"
 1. Select "View Downloads" under the download section
@@ -47,7 +47,7 @@ Next we can download Game Maker Studio
 
 Here's how we install Game Maker on Windows (if you're on mac you can skip to the next section)
 
-![](../../assets/images/pong/windows_install.gif)
+![](../../images/pong/windows_install.gif)
 
 1. Double click the installer you downloaded (usually it'll be in your Downloads folder)
 2. If you get a prompt asking to allow the app to make changes "Yes"
@@ -63,7 +63,7 @@ TODO
 
 When you open Game Maker for the first time you'll be prompted to login
 
-![](../../assets/images/pong/login.png)
+![](../../images/pong/login.png)
 
 Enter the account information you created during the regitration step to continue
 
