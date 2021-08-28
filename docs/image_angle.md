@@ -1,9 +1,3 @@
----
-layout: default
-title: Angle
-nav_order: 3
----
-
 (I'll figure out what to do with this later)
 
 # Angle

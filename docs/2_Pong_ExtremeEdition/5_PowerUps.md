@@ -245,6 +245,7 @@ Now that I've given you a few options, I'll leave it up to you which approach to
 I'd like to start working on the power ups to make the paddles faster, but right now that's kind of hard since we're hard coding the paddle speeds in the paddle code (I'll use the terms hardcoding and magic numbers interchangably, they're pretty much the same for our purposes).
 
 **TODO** insert refactoring definition
+**TODO** mention that hard coding is a broader concept that magic numbers
 
 It would be much better if we had a variable that our power up could adjust. Can you add a variable called max_speed to each of the paddles, and then refer to that when you move the paddle?
 
