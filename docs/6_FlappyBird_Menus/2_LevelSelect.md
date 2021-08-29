@@ -90,3 +90,7 @@ No new code 😁, here's how I set it up in room
 ![](../../images/flappy_bird/level_select_with_oButton.png)
 
 </details>
+
+When we test it out, you should be able to navigate with the buttons to your hearts content
+
+![](../../images/flappy_bird/oButton_gameplay.gif)
