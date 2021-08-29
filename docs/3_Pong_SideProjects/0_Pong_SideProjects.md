@@ -5,4 +5,5 @@ nav_order: 3
 has_children: true
 ---
 
-Side projects!!
+* break out
+* ping pong juggling
