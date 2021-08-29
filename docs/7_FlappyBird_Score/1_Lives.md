@@ -44,7 +44,8 @@ We already have logic for making the bird die, but let's use lives to make it mo
     colliding_with_pipe = place_meeting(x, y, oPipe);
     if(colliding_with_pipe){
         if(oControl.num_lives == 0){
-            game_restart();
+            oControl.num_lives = 3;
+            room_goto(rmMainMenu);
 		}else{
 			oControl.num_lives--; // oControl.num_lives -= 1;
 			room_restart();
@@ -60,7 +61,7 @@ So if we die and we're out of lives, we want the game to restart, otherwise, we 
 
 ``if(oControl.num_lives == 0){``: Here's how we check if we're out of lives. Remeber to use the ``oControl.`` because we're specifically refering to the ``num_lives`` variable that we just defined in ``oControl``
 
-``game_restart();``: We've used this before, it just restarts the game. Note that there's no need to reset the lives to 3. ``game_restart()`` will start us back from ``rmStart``, and the ``oControl`` create event will reset ``num_lives`` from there. However, if we had decided on ``room_goto(rmMainMenu)``, then we would have to worry about reseting ``num_lives``, since the ``oControl`` create event isn't retriggered in that siutation
+``room_goto(rmMainMenu);``: We're going back to the main menu to reset, but since oControl is persistent, we need to make sure to reset the lives. Otherwise we'd start the next level with 0 lives and then we'd immediately be pushed back to the menu again. (NOTE: this is similar to ``game_restat()``, but I specifically opted against it because this approach will make high scores a little easier. I'll talk about it more later)
 
 ``oControl.num_lives--;``: Here we reduce our lives by one. This is equivalent to ``oControl.num_lives -= 1;``, but it turns out that adding and subtracting by 1 is super common, so game maker gave us an quicker way to do it (``oControl.num_lives++;`` would be the addition equivalent)
 
@@ -70,9 +71,7 @@ Cool, now if you test it out, the logic should work, but we can't see our curren
 
 ## Drawing the lives
 
-Now let's draw the lives. Normally, I'd use ``oControl`` for this since it "owns" the lives, but that object exists across all rooms, and I only want it to be drawn as part of the gameplay. So I could make a new ``oGameControl`` object for things like this, or I could do it the easier way and just use ``oBird``. I'm going to do it the easier way
-
-The idea I'm going with here is to draw a number of hearts equal to how ever many lives we have.  If I think about it, here's how I want the hearts to look for each number of lives
+Now let's draw the lives! The idea I'm going with here is to draw a number of hearts equal to how ever many lives we have. If I think about it, here's how I want the hearts to look for each number of lives
 
 * 3 lives: ♥♥♥
 * 2 lives: ♥♥
@@ -84,7 +83,7 @@ So we could say that the far right heart, is only drawn in the 3 lives scenario.
 **Keyboard Shortcuts**: This is a good opportunity to practice your keyboard short cuts from earlier. After writing the first if statement, try copy pasting it, and then use your navigation shortcuts to edit the specific parts that need editing
 
 ```
-// oBird Draw GUI Event
+// oControl Draw GUI Event
 //// LIVES
 if(num_lives >= 1){
     draw_sprite(10, 10, sLife)
