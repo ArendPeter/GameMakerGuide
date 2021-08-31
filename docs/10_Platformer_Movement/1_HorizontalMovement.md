@@ -15,7 +15,7 @@ For ``oPlayer`` you can use ``sPlayerIdle`` for the sprite. For the ``oGround`` 
 
 ![](../../images/platformer/ground_solid.png)
 
-Then populate your room, here's what I came up with
+Then populate your room with objects, and also set the background using ``sBackground``, here's what I came up with
 
 ![](../../images/platformer/initial_room.png)
 
