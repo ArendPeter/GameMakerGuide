@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Flappy Bird | Mobile Teaser
-nav_order: 0
+nav_order: 8
 has_children: true
 ---
 

@@ -9,7 +9,7 @@ has_children: true
 
 The next game we'll make is a Flappy Bird clone 😁
 
-![](../../images/pong/flappy_bird.gif)
+![](../../images/flappy_bird/flappy_bird.gif)
 
 ## What we'll learn
 
