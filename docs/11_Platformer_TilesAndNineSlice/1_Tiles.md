@@ -39,13 +39,21 @@ This let's you add spacing between the tiles, but people almost always set it to
 
 ![](../../images/platformer/tiles_separation.png)
 
+## Make ground invisible
+
+You may have noticed that I made the solid art a boring flat color for this one. That's because I intended to make them invisible. Click into ``oGround`` and uncheck the visible box to do this
+
+Making the ground invisible let's me separate the functionality of the ground from the visuals. I can make the visuals whatever I want using tiles, but at the same time I still have full control over where to place the solids by adding invisible ground objects
+
 ## Placing The Tiles
 
 To place the tiles, go into the room, and make a new tile layer. Then you can select your tile asset
 
-Now you can just click the tiles, and place them on the tile layer 😊. But there's a few more tricks you should know so I'll go over those as well
+Now you can just click the tiles, and place them on the tile layer 😊. Since our ground objects are now invisible, make sure you place tiles under all of the ground objects so that the player doesn't hit any surprises 😉
 
 ![](../../images/platformer/tile_placement.gif)
+
+There's a few more tricks you should know so I'll go over those as well
 
 ### Brush Size
 
@@ -59,6 +67,8 @@ If you want to place a group of tiles, you can select them in the tileset and pl
 
 ![](../../images/platformer/tile_region_selection.gif)
 
-### Final Product
+## Final Product
 
 Here's what I came up with after applying the tiles to my room
+
+![](../../images/platformer/tile_final.png)
