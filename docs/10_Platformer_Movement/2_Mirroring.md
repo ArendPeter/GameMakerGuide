@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Horizontal Movement
+title: Mirroring
 nav_order: 2
 parent: Platformer | Movement
 ---
