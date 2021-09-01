@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Platformer | Tiles and 9 Slice
+title: Platformer | Tiles and Nine Slice
 nav_order: 11
 has_children: true
 ---
