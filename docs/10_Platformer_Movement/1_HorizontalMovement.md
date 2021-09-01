@@ -23,6 +23,8 @@ Then populate your room with objects, and also set the background using ``sBackg
 
 Let's start with a simple left/right. This will use the same technique as pong, but apply the keyboard functions that we learned for flappy bird
 
+**TODO** convert to challenge
+
 ```
 // oPlayer Create Event
 max_dx = 8;
