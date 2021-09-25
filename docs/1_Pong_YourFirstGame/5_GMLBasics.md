@@ -322,16 +322,11 @@ Let's think through the cases
 
 So that works!
 
-<details>
-<summary>**Using the same technique can you add horizontal collisions w/ the paddes?** Click to see</summary>
+<details data-summary="Using the same technique can you add horizontal collisions w/ the paddes?" markdown="1">
 
-<p>
 Should just be a matter of different collision events using the hspeed variable instead of vspeed
-</p>
 
-<p>
 You can add 2 collision events to the ball (one for both paddles) and use the following code for both
-</p>
 
 ``hspeed = -hspeed;``
 

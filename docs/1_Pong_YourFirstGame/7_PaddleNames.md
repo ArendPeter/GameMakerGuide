@@ -113,7 +113,7 @@ draw_text(x, y-20, name);
 
 ## Variable scope and "not set before reading" errors
 
-Some of you probably have hit errors on that previous assignment (I'm actually hoping that some of you did, that's the best way to learn :) )
+Some of you probably have hit errors on that previous assignment (I'm actually hoping that some of you did, that's the best way to learn 😊 )
 
 Here's one popular crash (please keep reading even if you didn't see it, you'll definitely see it eventually)
 
