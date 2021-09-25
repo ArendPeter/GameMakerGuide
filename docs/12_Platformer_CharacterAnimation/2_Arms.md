@@ -7,13 +7,13 @@ parent: Platformer | Character Animation
 
 # Arms
 
-Can you guess the next glaring most flaw in our game? Was it that she doesn't have any arms? Yes, I think so too
+Can you guess the next most glaring flaw in our game? Was it that she doesn't have any arms? Yes, I think so too
 
 So the arms are holding a gun, and we're going to always have the arms/gun point toward the mouse
 
 ## point_direction
 
-The ``point_direction()`` function is at the core piece to this effect. We give it x, y values for 2 points (a total of 4 parameters), and it returns the angle from the first point to the second. Let's use our debugging ``print()`` function again to get some intuition for this
+The ``point_direction()`` function is the core piece to this effect. We give it x, y values for 2 points (a total of 4 parameters), and it returns the angle from the first point to the second. Let's use our debugging ``print()`` function again to get some intuition for this
 
 ```
 // oPlayer Create
@@ -22,8 +22,8 @@ arm_dir = 0;
 // oPlayer Step
 //// ARM
 {
-    arm_dir = point_direction(x, y, mouse_x, mouse_y);
-    print(arm_dir);
+	arm_dir = point_direction(x, y, mouse_x, mouse_y);
+	print(arm_dir);
 }
 ```
 
@@ -55,12 +55,12 @@ arm_y = -32;
 // oPlayer Step
 //// ARM
 {
-    arm_dir = point_direction(x+gun_x, y+gun_y, mouse_x, mouse_y);
-    print(arm_dir);
+	arm_dir = point_direction(x+arm_x, y+arm_y, mouse_x, mouse_y);
+	print(arm_dir);
 }
 ```
 
-``gun_x`` / ``gun_y``: This represents the offset from the feet to the shoulder. Luckily the shoulder is always 32 pixels above the feet for all sprites (if this wasn't the case we'd have to account for ``gun_x`` / ``gun_y`` updates in our animation state logic)
+``arm_x`` / ``arm_y``: This represents the offset from the feet to the shoulder. Luckily the shoulder is always 32 pixels above the feet for all sprites (if this wasn't the case we'd have to account for ``arm_x`` / ``arm_y`` updates in our animation state logic)
 
 When we test the direction again, we get a better angle
 
@@ -73,20 +73,20 @@ Now that we have a good angle, let's draw the arm!
 ```
 //// oPlayer Draw Event
 // back arm
-draw_sprite_ext(sArm, 1, x+gun_x, y+gun_y, image_xscale, image_yscale, arm_angle, image_blend, image_alpha);
+draw_sprite_ext(sArm, 1, x+arm_x, y+arm_y, image_xscale, image_yscale, arm_angle, image_blend, image_alpha);
 // body (essengially draw_self())
 draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, 0, image_blend, image_alpha);
 // front arm / gun
-draw_sprite_ext(sArm, 0, x+gun_x, y+gun_y, image_xscale, image_yscale, arm_angle, image_blend, image_alpha);
+draw_sprite_ext(sArm, 0, x+arm_x, y+arm_y, image_xscale, image_yscale, arm_angle, image_blend, image_alpha);
 ```
 
 ``image_angle``: This variable isn't present in the code, but I wanted to call it out anyway. You can update ``image_angle`` to change the angle of the entire sprite. In this case we want to have the body and the arms use different rotations so ``image_angle`` isn't the right tool for the job
 
 ``//back`` / ``//body`` / ``//front``: Since the body needs to be drawn between the 2 arms, we need to draw this in 3 phases, first the back arm, then the body, then the front arm (which also has the gun)
 
-``//body``: We essentially want to do ``draw_self()`` here, but since the other ones need to use ``draw_sprite_ext()``, we may as well use it here too as a practice run. Normally you'd use ``draw_sprite()`` but that only let's you specify the sprite, frame, and position for the sprite. ``draw_sprite_ext()`` is the extended version. There you can specify the scale, angle, coloration, and transparency. ``draw_self()`` does all these things but it just relies on all the default variables (most of which you know). So the ``draw_self()`` equivalent would be ``draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, image_angle, image_blend, image_alpha);``. For the body the I did differently was change ``image_angle`` to ``0``. I could have left it as is since ``image_angle`` is already ``0``, but I figured this was more clear
+``//body``: We essentially want to do ``draw_self()`` here, but since the other ones need to use ``draw_sprite_ext()``, we may as well use it here too as a practice run. Normally you'd use ``draw_sprite()`` but that only let's you specify the sprite, frame, and position for the sprite. ``draw_sprite_ext()`` is the extended version. There you can specify the scale, angle, coloration, and transparency. ``draw_self()`` does all these things but it just relies on all the default variables (most of which you know). So the ``draw_self()`` equivalent would be ``draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, image_angle, image_blend, image_alpha);``. For the body I did it differently by changing ``image_angle`` to ``0``. I could have left it as is since ``image_angle`` is already ``0``, but I figured this was more clear
 
-``//body`` / ``//front``: The main reason we're using ``draw_sprite_ext()`` is because these guys need to leverage the angle parameter. So instead of ``image_angle``, we use the arm_angle variable we computed in the step event. Then we want to draw the arm at the shoulder, so we do ``x+gun_x, y+gun_y`` for the position, and we want to use ``sArm`` for the sprite. Lastly, the only difference between the front and back arm is the frame, so we use ``1`` for the back arm and ``0`` for the front. Aside from that, all the other parameters use the ``draw_self()`` defaults
+``//back`` / ``//front``: We're using ``draw_sprite_ext()`` here because these guys need to leverage the angle parameter. So instead of ``image_angle``, we use the ``arm_angle`` variable we computed in the step event. Then we want to draw the arm at the shoulder, so we do ``x+arm_x, y+arm_y`` for the position, and we want to use ``sArm`` for the sprite. Lastly, the only difference between the front and back arm is the frame, so we use ``1`` for the back arm and ``0`` for the front. Aside from that, all the other parameters use the ``draw_self()`` defaults
 
 With all that out of the way we should have a gun attached to us (well sort of)
 
@@ -94,7 +94,7 @@ With all that out of the way we should have a gun attached to us (well sort of)
 
 ## Axis of rotation
 
-Ok, so as you may have already guessed, this is an alignment issue. But I wanted to also mention that in addition to handling the position offset, the sprite offset also handles the axis of rotation, and the axis of rotation it a major determinant of how the rotation looks
+Ok, so as you may have already guessed, this is an alignment issue. But I wanted to also mention that, in addition to handling the position offset, the sprite offset also handles the axis of rotation, and the axis of rotation it a major determinant of how the rotation looks
 
 ![](../../images/platformer/axis_of_rotation_example.gif)
 
@@ -106,9 +106,9 @@ After fixing that, our arm looks good (well almost 😅)
 
 ## Mirroring the Arm
 
-Now the arm looks good, except when we rotate the gun backwards, hmmm
+Now the arm looks good .... except when we rotate the gun backwards .... hmmm
 
-Well for one thing, most people's shoulder's don't really bend that way, and for another, if the gun was facing that direction, it should be upside down, it should be mirrored
+Well for one thing, most people's shoulder's don't really bend that way, and for another, if the gun was facing that direction, it shouldn't be upside down, it should be mirrored
 
 For the shoulder flexibility problem, let's make the player face toward the mouse, instead of the direction she's moving. I think you can do this one
 
@@ -118,25 +118,25 @@ For the shoulder flexibility problem, let's make the player face toward the mous
 // oPlayer Step Event
 //// HORIZONTAL
 {
-    if((keyboard_check(vk_left) or keyboard_check(ord("A"))) and place_free(x-max_dx, y)){
-        x -= max_dx;
-        // image_xscale = -1; // old code
-    }
-    if((keyboard_check(vk_right) or keyboard_check(ord("D"))) and place_free(x+max_dx, y)){
-        x += max_dx;
-        // image_xscale = 1; // old code
-    }
+	if((keyboard_check(vk_left) or keyboard_check(ord("A"))) and place_free(x-max_dx, y)){
+		x -= max_dx;
+		// image_xscale = -1; // old code
+	}
+	if((keyboard_check(vk_right) or keyboard_check(ord("D"))) and place_free(x+max_dx, y)){
+		x += max_dx;
+		// image_xscale = 1; // old code
+	}
 }
 //// VERTICAL
 //// ANIMATION
 //// ARM
 //// FACING
 {
-    if(x < mouse_x){
-        image_xscale = 1;
-    }else{
-        image_xscale = -1;
-    }
+	if(x < mouse_x){
+		image_xscale = 1;
+	}else{
+		image_xscale = -1;
+	}
 }
 ```
 
@@ -155,11 +155,11 @@ Now for the upside down gun problem, instead of letting the gun rotate into the 
 ```
 //// oPlayer Draw Event
 // back arm
-draw_sprite_ext(sArm, 1, x+gun_x, y+gun_y, image_xscale, image_yscale, arm_angle+((image_xscale < 0)? 180 : 0), image_blend, image_alpha);
+draw_sprite_ext(sArm, 1, x+arm_x, y+arm_y, image_xscale, image_yscale, arm_angle+((image_xscale < 0)? 180 : 0), image_blend, image_alpha);
 // body (essengially draw_self())
 draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, 0, image_blend, image_alpha);
 // front arm / gun
-draw_sprite_ext(sArm, 0, x+gun_x, y+gun_y, image_xscale, image_yscale, arm_angle+((image_xscale < 0)? 180 : 0), image_blend, image_alpha);
+draw_sprite_ext(sArm, 0, x+arm_x, y+arm_y, image_xscale, image_yscale, arm_angle+((image_xscale < 0)? 180 : 0), image_blend, image_alpha);
 ```
 
 ``((image_xscale < 0)? 180 : 0)``: So we're just adding this term to the angle of both of the arm draw functions. If the player is facing left (meaning the gun is in the 90-270 range), we want to add 180 to bring it back to the other side, otherwise we leave it. And since we're using ``image_xscale`` the fun should mirror along with the player
@@ -197,12 +197,13 @@ If we're walking backwards, we really should have it animate backwards as well, 
 	// walking
 	}else{
 		sprite_index = sPlayerWalk;
-        // walking left
-        if(dx < 0){
-            image_speed = (image_xscale < 0)? 1 : -1;
-        }else{
-            image_speed = (image_xscale > 0)? 1 : -1;
-        }
+
+		// walking left
+		if(dx < 0){
+			image_speed = (image_xscale < 0)? 1 : -1;
+		}else{
+			image_speed = (image_xscale > 0)? 1 : -1;
+		}
 	}
 }
 ```

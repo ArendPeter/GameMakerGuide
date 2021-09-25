@@ -11,12 +11,12 @@ You probably noticed that we have 3 player sprites ``sPlayerJump``, ``sPlayerIdl
 
 ## Animation States
 
-I'll call these 3 sprites animation states, and we need to code up logic to handle each state and also know how to switch between them. Here a little descriptor of how we want each state to animate
+I'll call these 3 sprites "animation states". We need to code up logic to handle each state and also know how to switch between them. Here a little descriptor of how we want each state to animate
 
 | State | When to animate | How to animate |
 |--|--|--|
 | Jump | When player is off the ground | Use frame 0 on the way up, and 1 on the way down |
-| Idle | When player is on the ground, and isn't moving | freeze on first frame |
+| Idle | When player is on the ground, and isn't moving | freeze on frame 0 |
 | Walking | When player is on the ground, and is moving | loop |
 
 > **Why are you calling them states?**: oh because state machines 🤓! State machines come up all the time in game development (animation, AI, UI, etc). You make a state machine by formally breaking down a behaviour into states, and then defining the functionality of each state, as well as how to transition between them. That's essentially what we're doing here so I'm using the terminology, but I felt like a full state machine overview would be out of scope for this course so I didn't want to go any further than that
@@ -87,7 +87,7 @@ Yay! Our player looks much more alive now!
 
 ![](../../images/platformer/animation_with_alignment.gif)
 
-But if you play it long enough, you might still hit some issues
+But if you play it long enough, you might still hit some issues. Can you find them?
 
 ## Collision Masks
 
@@ -111,7 +111,7 @@ Now this issue is gone 😍
 
 ## Terinary Operator
 
-We haven't learned any new Game Maker syntax in a while, and I was itching to use ternary operators in our previous code segment, so do some learning 😜
+We haven't learned any new Game Maker syntax in a while, and I was itching to use ternary operators in our previous code segment, so let's do some learning 😜
 
 A ternary operator is like an if statement compressed on one line, here's an if statement from our animation code, as well as the updated ternary version
 
@@ -160,11 +160,11 @@ if(not place_free(x, y+dy) and dy != 0){
 
 ``(dy > 0)? 270 : 90``: This is the key part. Previously we had to write out the ``move_contact_solid`` twice just to change that one value. Now we can embed that inside a ``move_contact_solid`` statement, all embeded in one line
 
-``and dy != 0``: This part is a little less obvious. Changing to a ternary operator did slightly modify our logic. Previously the ``dy == 0`` wouldn't trigger either of the if statements, and ``move_contact_solid`` would be skipped. With the ternary operator, ``dy == 0`` would fall into the else clause and use 90 degrees. This is extra bad because the [move_contact_solid() documentation](https://manual.yoyogames.com/GameMaker_Language/GML_Reference/Movement_And_Collisions/Movement/move_contact_solid.htm) shoulds that 0 for the second parameter is interpretted as infinite distance. That would leave us open to an edge case where the player flies off into the sky indefinitely 😁 (but that would be kind of funny, hopefully some of you already hit that bug before realizing what was happening). To avoid this scenario I added the ``and dy != 0`` check to ensure that ``dy == 0`` case is still skipped (as a reminder ``!=`` means not equal)
+``and dy != 0``: This part is a little less obvious. Changing to a ternary operator did slightly modify our logic. Previously the ``dy == 0`` wouldn't trigger either of the if statements, and ``move_contact_solid`` would be skipped. With the ternary operator, ``dy == 0`` would fall into the else clause and use 90 degrees. This is extra bad because the [move_contact_solid() documentation](https://manual.yoyogames.com/GameMaker_Language/GML_Reference/Movement_And_Collisions/Movement/move_contact_solid.htm) shows that 0 for the second parameter is interpretted as infinite distance. That would leave us open to an edge case where the player flies off into the sky indefinitely 😁 (but that would be kind of funny, hopefully some of you already hit that bug before realizing what was happening). To avoid this scenario I added the ``and dy != 0`` check to ensure that ``dy == 0`` case is still skipped (as a reminder ``!=`` means not equal)
 
 </details>
 
-> **"So should I always use ternary operator whenever possible?"** hmm 🤓, well you'll need to use your best judgement there. They're much more compact, but they can also be harder to read. So if I think it hurts readability too much, then I'll avoid the ternary operator . I used to go crazy with them, sometimes using ternary operators inside ternary opertators (ex. ) but then at work they told me to stop doing that, and in my older age I've come to my senses
+> **So should I always use ternary operator whenever possible?** hmm 🤓, well you'll need to use your best judgement there. They're much more compact, but they can also be harder to read. So, for me, I avoid them if I think the readability cost is too great. I used to go crazy with them, sometimes even using ternary operators inside ternary opertators but then at work they told me to stop doing that, and in my older age I've come see the sense in that
 
 Here's an example of how not to do ternary operators
 

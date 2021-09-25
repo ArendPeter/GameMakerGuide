@@ -60,3 +60,7 @@ Let's test it out
 ![](../../images/flappy_bird/object_following_large_border.gif)
 
 There's also the horiztontal/vertical speeds for object following. We won't be using these, but if you set them above 0, then this represents the max speed of the view. So if the object it's following is too fast, then the camera would lag behind and slowly catch up. That effect isn't really relevant to flappy bird, so I'll just leave it as is
+
+## Add Parralax Support
+
+TODO: add this by setting horizontal speed for bkg

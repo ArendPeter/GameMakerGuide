@@ -11,7 +11,7 @@ Nine Slice let's you break up your sprites similar to how tilesets break them up
 
 ![](../../images/platformer/nine_slice_example.png)
 
-> Nine Slice are a fairly new addition to Game Maker, it's was made available in the 2.3 release in 2020
+> Nine Slice are a fairly new addition to Game Maker, it's was made available in the 2.3.2 release in April 2021
 
 ## Breaking up the sprite
 
