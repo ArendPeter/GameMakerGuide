@@ -22,13 +22,19 @@ move_speed = 10;
 dx = 0;
 dy = 0;
 
-//// oBullet Step Event
-if(not place_free(x+dx, y+dy)){
-	instance_destroy();
+// oBullet Step Event
+//// WALL COLLISION
+{
+	if(not place_free(x+dx, y+dy)){
+		instance_destroy();
+	}
 }
 
-x += dx;
-y += dy;
+//// APPLY MOVEMENT
+{
+	x += dx;
+	y += dy;
+}
 
 ```
 
@@ -69,6 +75,7 @@ shoulder_to_gun_end_dist = 90;
 }
 ```
 
+
 cartesian vs polar: We're back to the cartesian vs polar discussion. Here want want the bullet to have the direction match the ``arm_angle``, but since the bullet uses ``dx`` / ``dy`` we need to convert from the polar way of thinking to the carteisian. That's where ``lengthdir_x`` and ``lengthdir_y`` come in handy
 
 ``lengthdir_x()`` / ``lengthdir_y()``: This functions take a distance and an angle, and then gives back the cartesian horizontal and vertical components respectively. Below is an example where you're moving 5 pixels away at an angle 38.65 degrees. This is the equivalent of moving 4 to the right, and 3 up, so ``lengthdir_x(5, 38.65)`` and ``lengthdir_y(5, 38.65)`` would give us 4 and 3 respectively
@@ -82,6 +89,10 @@ cartesian vs polar: We're back to the cartesian vs polar discussion. Here want w
 ``x+arm_x+gun_end_x`` / ``y+arm_y+gun_end_y``: We've got lots of relative distances at this point. So we need to add them together to find the room position for the end of the gun
 
 ![](../../images/platformer/bullet_y_parts.png) <!-- Draw lines to visualize the y+arm_y+gun_end_y calculations -->
+
+TODO: add axis of rotation piece, and mention that image_angle is sufficient in this case
+
+![](../../images/platformer/bullet_origin.png)
 
 ``with``/ ``other``: ``with`` let's us execute code in another instance (in this case the bullet), and then we can use ``other`` within that code to refer back to the instance that called ``with`` (which in this case is equivalent to ``oPlayer``. We've used ``with`` and ``other`` before, but it's been a while, feel free to check back at "Pong | Extreme Edition | Power Ups" for more details
 
