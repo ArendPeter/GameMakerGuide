@@ -71,13 +71,16 @@ When we test the direction again, we get a better angle
 Now that we have a good angle, let's draw the arm!
 
 ```
-//// oPlayer Draw Event
-// back arm
-draw_sprite_ext(sArm, 1, x+arm_x, y+arm_y, image_xscale, image_yscale, arm_angle, image_blend, image_alpha);
-// body (essengially draw_self())
-draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, 0, image_blend, image_alpha);
-// front arm / gun
-draw_sprite_ext(sArm, 0, x+arm_x, y+arm_y, image_xscale, image_yscale, arm_angle, image_blend, image_alpha);
+// oPlayer Draw Event
+//// ARMS
+{
+	// back arm
+	draw_sprite_ext(sArm, 1, x+arm_x, y+arm_y, image_xscale, image_yscale, arm_angle, image_blend, image_alpha);
+	// body (essengially draw_self())
+	draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, 0, image_blend, image_alpha);
+	// front arm / gun
+	draw_sprite_ext(sArm, 0, x+arm_x, y+arm_y, image_xscale, image_yscale, arm_angle, image_blend, image_alpha);
+}
 ```
 
 ``image_angle``: This variable isn't present in the code, but I wanted to call it out anyway. You can update ``image_angle`` to change the angle of the entire sprite. In this case we want to have the body and the arms use different rotations so ``image_angle`` isn't the right tool for the job

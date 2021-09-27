@@ -91,6 +91,8 @@ if(is_ai){
 }
 ```
 
+``if(is_ai){..}``: You may have noticed that previous if conditions looked more like this: ``is_ai==true``. Well you actually never have to use ``== true`` when working with booleans. Conditions need to be a true/false statement on their own, with numbers we use comparisons to convert it to true/false (ex. x is a number, but x == 5 is a boolean). Well, ``is_ai`` is already boolean, so we don't really need a comparison operator. ``is_ai==true`` and ``is_ai`` are equivalent, so may as well leave off the ``== true``
+
 ``with(oBall)``: We covered this pattern when we added the power ups, but it's a little tricky so may as well repeat it. ``with()`` let's us run a code snippet within other instances, but if you supply an object it'll exectue the code on all instances of that object. So in this case it's an easy wall to run a snippet of code on all the balls. As we're looping over the balls, we're also updating the ``closest_ball_x`` and ``closest_ball_y`` variables. The idea is that we update those variables every time the with finds a better ball to be the closest ball
 
 ``other``: We've used other before, but that time it was inside a collision event and it referred to the instance you were colliding with. What does it mean outside a collision event? Well, when it's used in ``with()`` other refers to the instance that ``with()`` was called from. So we're calling ``with()`` from ``oEnemyPaddle``, but when we're inside the ``with()`` we're effectively running code within ``oBall`` so we can use other to access variables that belong to ``oEnemyPaddle`` (like ``closest_ball_x`` and ``closest_ball_y``)

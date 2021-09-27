@@ -19,7 +19,7 @@ I'll call these 3 sprites "animation states". We need to code up logic to handle
 | Idle | When player is on the ground, and isn't moving | freeze on frame 0 |
 | Walking | When player is on the ground, and is moving | loop |
 
-> **Why are you calling them states?**: oh because state machines 🤓! State machines come up all the time in game development (animation, AI, UI, etc). You make a state machine by formally breaking down a behaviour into states, and then defining the functionality of each state, as well as how to transition between them. That's essentially what we're doing here so I'm using the terminology, but I felt like a full state machine overview would be out of scope for this course so I didn't want to go any further than that
+> **Why are you calling them states?**: oh because state machines 🤓! State machines come up all the time in game development (animation, AI, UI, etc). You make a state machine by formally breaking down a behaviour into states, and then defining the functionality of each state, as well as how to transition between them. That's essentially what we're doing here so I'm using the terminology, but I felt like a full state machine overview would be too much for now so I didn't want to go any further than that
 
 So with that information can you write up some if statements to check for those states and set the ``sprite_index``, ``image_index``, and ``image_speed`` accordingly?
 
