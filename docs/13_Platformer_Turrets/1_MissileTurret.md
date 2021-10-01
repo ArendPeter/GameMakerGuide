@@ -79,7 +79,7 @@ hp = 3;
 //// WALL COLLISION
 //// APPLY MOVEMENT
 
-// oTurret alarm 0 event
+// oTurret Alarm 0 event
 image_blend = c_white;
 
 // oTurret Step Event
@@ -116,11 +116,11 @@ I'll let you handle the basic missiles first, then I'll take the wheel and help 
 
 ```
 // oTurret Create Event
-alarm[0] = random_range(3*room_speed, 5*room_speed);
+alarm[1] = random_range(3*room_speed, 5*room_speed);
 center_to_turret_end_dist = 64;
 
-// oTurret Alarm[0] Event
-alarm[0] = random_range(3*room_speed, 5*room_speed);
+// oTurret Alarm 1 Event
+alarm[1] = random_range(3*room_speed, 5*room_speed);
 
 var turret_end_x = lengthdir_x(center_to_turret_end_dist , turret_angle);
 var turret_end_y = lengthdir_y(center_to_turret_end_dist , turret_angle);
