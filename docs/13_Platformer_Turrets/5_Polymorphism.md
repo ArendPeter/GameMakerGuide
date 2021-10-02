@@ -15,7 +15,7 @@ Luckily, this is game dev course, so we can drive polymorphism home with a neat 
 
 Emergent gameplay happens when interactions between your game's systems results in interesting scenarios that you didn't explicitly intend
 
-[Spelunky](https://spelunkyworld.com/whatis.html) is a classic example of a game that really leverages emergent gameplay. Heres an example of some of the game's systems
+[Spelunky](https://spelunkyworld.com/whatis.html) is a classic example of a game that really leverages emergent gameplay (and it was made in Game Maker 😉). Heres an example of some of the game's systems
 
 * The game has a shop w/ a shop keeper. You can either pay the shop keeper for his items, or just steal them and risk the shop keepers wrath
 * One of the enemies throws boomerangs. When the boomerang doesn't come back, they walk over and pick it up
@@ -62,4 +62,10 @@ In addition to the code savings, we also get a lot of emergent gameplay. Any bul
 
 ## But is this actually a good idea?
 
-I went a little crazy up there, let's reel the conversation back in a bit. Using these technique is great if you like all the unintended side effects (emergent gameplay is good if it fits your vision for the game, otherwise those are just bugs). If you find that your objects aren't grouping together nicely for this pattern, then it might not be the right pattern for your game. Don't worry, there are other techniques for maximizing code reuse. For example, [functions](https://manual.yoyogames.com/GameMaker_Language/GML_Overview/Script_Functions.htm) are great for this. Feel free to read up on those more if you're interested. I won't be covering them in this course, but I'll use them in a ton in future courses
+I went a little crazy up there, let's reel the conversation back in a bit
+
+Using these technique is great if you like all the unintended side effects (emergent gameplay is good if it fits your vision for the game, otherwise those are just bugs). If you find that your objects aren't grouping together nicely for this pattern, then it might not be the right pattern for your game
+
+Don't worry, there are other techniques for maximizing code reuse. For example, [custom functions](https://manual.yoyogames.com/GameMaker_Language/GML_Overview/Script_Functions.htm) are great for this. You can essentially define the shared code as a custom function and then call the function in all the places that need it. We'll be covering custom functions in the next section in case you want to give this a try
+
+> **But my friends say inheritence and parenting are bad!?!?**: hmm, are you sure they're your friends? 🤓 Although to be fair, there are some critisisms of inheritence as a general pattern. Inheritence hierarchies can get hard to manage if you end up with a lot of layers (if your object has great-great-great-great-grandparents in addition to parents, then you've probably gone overboard). Also you might end up hitting edge cases on larger projects. For example, let's say you have ``oTurret`` and ``oHumanEnemy`` as parents, and then you grouped them under an ``oEnemy`` parent (grand-parent?). Now humans with flame throwers in addition to the flame turrets. They're flame throwers are probably similar but where do you put the shared code? ``oEnemy`` is their only common parent, but it would be weird to do it there since most of ``oEnemy``'s childeren are not flame throwers. These limitations is where the [composition > inheritence](https://www.youtube.com/watch?v=wfMtDGfHWpA) philosophy comes from, and that's also where the Unity component system comes from. But all that said, I find inheritence to be very intuitive way to share code and generalize my behaviours. I just try to keep my hierarchies shallow, and then rely on other patterns when I hit cases that inheritence doesn't handle well. Tbh, I've tried using the full component pattern in Game Maker before, but I've always found it to be overkill for my projects

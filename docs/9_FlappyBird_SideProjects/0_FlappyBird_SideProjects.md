@@ -7,3 +7,8 @@ has_children: true
 
 * [chips challenge](https://en.wikipedia.org/wiki/Chip%27s_Challenge)
 * doodle jump
+
+Platformer side projects
+Impossible Game
+Asteroids
+Bubble Shooter

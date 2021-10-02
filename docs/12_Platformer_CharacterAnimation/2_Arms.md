@@ -13,7 +13,7 @@ So the arms are holding a gun, and we're going to always have the arms/gun point
 
 ## point_direction
 
-The ``point_direction()`` function is the core piece to this effect. We give it x, y values for 2 points (a total of 4 parameters), and it returns the angle from the first point to the second. Let's use our debugging ``print()`` function again to get some intuition for this
+The ``point_direction()`` function is the core piece to this effect. We give it x, y values for 2 points (a total of 4 parameters), and it returns the angle from the first point to the second. Let's use our debugging ``print()`` function again to get some intuition for this (you'll probably need to copy the script from the previous project)
 
 ```
 // oPlayer Create
