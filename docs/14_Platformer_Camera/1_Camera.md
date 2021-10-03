@@ -1,15 +1,13 @@
 ---
 layout: default
-title: Cameras
+title: Camera
 nav_order: 1
-parent: Platformer | Polish
+parent: Platformer | Camera
 ---
 
 # Cameras
 
-Wait, I thought we already learned about cameras?
-
-Yep, you're right. But we haven't learned how to do it in code yet. Doing it using the room editor works for a lot of cases, but using code opens up so many more possibilities 😁
+Let's learn how to do cameras w/ GML 📷
 
 ## Terminology
 
@@ -36,7 +34,7 @@ I'm going to going with option 2, officially because I think they'll be more rel
 
 ## Setup Room
 
-We're going to repeat some of the steps from "FlappyBird | Camera". Resize the room to make it wider, then populate it accordingly. Also you'll still need to enabled view and view ports in the settings, but the similarities stop there (i.e. don't set view following, or view speed, we'll do that in code). You could enabled views / view ports in code, but I usually just do it in the room (it pains me to say it sometimes it's just easier use UIs rather than code 😭)
+We're going to repeat some of the steps from "FlappyBird | Camera". Resize the room to make it wider, and taller (we'll see why later), then populate it accordingly. Also you'll still need to enabled view and view ports in the settings, but the similarities stop there (i.e. don't set view following, or view speed, we'll do that in code). You could enabled views / view ports in code, but I usually just do it in the room (it pains me to say it sometimes it's just easier use UIs rather than code 😭)
 
 Here's what I got after making the update
 
@@ -105,7 +103,9 @@ camera_set_view_pos(view_camera[0], cam_x, cam_y);
 
 ![](../../images/platformer/camera_room_math.png)
 
-``cam_y = clamp(cam_y, 0, room_height-camera_get_view_height(view_camera[0]));``: All the logic should be the same for y
+``cam_y = clamp(cam_y, 0,
+room_height-camera_get_view_height(view_camera[0]));``: All the logic should be
+the same for y
 
 Cool, so now our logic starts with centering the player on the view, but then it adjusts the view to stay in the room
 

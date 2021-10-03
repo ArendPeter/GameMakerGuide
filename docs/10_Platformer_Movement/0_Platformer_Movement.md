@@ -11,4 +11,4 @@ Another day, another fresh project. Today we'll be making a platforming shooter 
 
 ![](../../images/platformer/platformer.gif)
 
-In this first chapte we'll go over the major elements of platformer movement
+In this first chapter we'll go over the major elements of platformer movement
