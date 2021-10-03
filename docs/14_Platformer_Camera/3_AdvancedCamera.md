@@ -220,7 +220,8 @@ When you place a few markers in the room and test it out, we should see the scre
 ``TODO``: But what about the left side?
 
 <details data-summary="How to implement TRIGGER TRANSITION TO THE RIGHT?" markdown="1">
-We can largely copy and past, but with a few critical differences
+We can largely copy and paste, but with a few critical differences
+
 ```
 ////TRIGGER TRANSITION TO THE LEFT
 
