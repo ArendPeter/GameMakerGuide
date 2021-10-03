@@ -212,4 +212,8 @@ And that should do it, now we can control our camera shake with curves 😍
 
 ![](../../images/platformer/camera_shake_with_curves.gif)
 
-I hope you enjoyed this little detour down curve lane, if you want to try more things I actually made a whole series with different curve effects [here](https://www.youtube.com/watch?v=LW6Y9_NTdA0&list=PLywxFF6tce1-Y8teVEtN_W9zXJlhGlkH2). In also includes camera transition and shake tutorials, but they use slightly different approaches. For the shake one in particular I use the curve to control ``shake_x`` / ``shake_y`` instead of the ``shake_dist`` so you can check it out to see which approach you like better
+## Animation Curve Series
+
+I hope you enjoyed this little detour down curve lane, if you want to try more things I actually made a whole series with different curve effects. It also includes camera transition and shake tutorials, but they use slightly different approaches. For the shake one in particular I use the curve to control ``shake_x`` / ``shake_y`` instead of the ``shake_dist`` so you can check it out to see which approach you like better
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/LW6Y9_NTdA0&list=PLywxFF6tce1-Y8teVEtN_W9zXJlhGlkH2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>

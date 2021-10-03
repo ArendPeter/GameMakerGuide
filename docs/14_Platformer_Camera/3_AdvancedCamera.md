@@ -331,3 +331,7 @@ Disabling the player could have been done in one line, but the nice thing about 
 
 **Whic state should we enter when we exit in_transition?**: definitly in_control. hurt or dying wouldn't make any sense
 </details>
+
+This is all just the beginning of what you can do with cameras, if you want a more advanced example, check out the video / blog from game maker station
+
+TODO: include link

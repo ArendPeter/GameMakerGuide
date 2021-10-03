@@ -51,7 +51,7 @@ speed = 6;
 
 First we set direction randomly between 0 and 360. For function documentation, I'm going to start letting you use the official Game Maker documentation instead of writing out simplified versions everytime
 
-Here are 2 ways to access the documentation
+Here are 3 ways to access the documentation
 1. Type the function name in the editor (for example ``random``), then ``right click + Keyword help`` on the code
 1. Type the function name in the editor (for example ``random``), then ``left click + F1`` on the text
 1. Go to google.com and type ``game maker <function name>`` (for example ``random``)
