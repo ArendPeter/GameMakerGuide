@@ -1,13 +1,15 @@
 ---
 layout: default
-title: Turret Explosion
+title: Particles
 nav_order: 1
-parent: Platformer | Particles
+parent: Platformer | Polish
 ---
 
-# Turret Explosion
+# Particles
 
-We already added camera shake to make the turret death pop more, let's ad particles for even more pop 💥
+Particles are everywhere, rain, smoke, dust, clouds, and more! Adding them to your game will make it look more natural and polished.
+
+Let's learn about particles!
 
 ## Particle Basics
 
@@ -21,7 +23,11 @@ There are 3 components that go into particles
 
  TODO: do I need to talk more about depth / layers at some point?
 
-Sweet, let's start with our particle setup code
+Sweet, next let's see how this translates to code
+
+## Turret Explosion
+
+We already added camera shake to make the turret death pop more, let's ad particles for even more pop 💥
 
 ```
 // oTurret Create
@@ -124,3 +130,90 @@ Here's what I came up with after play with it a bit. When working with particles
 Now we've got an awesome explosion for our turret 😎
 
 ![](../../images/platformer/turret_explosion_v2.gif)
+
+## Flames
+
+Next let's use particles to make the spark bullets actually look like flames
+
+We'll start by unchecking the visible box for ``oSpark``
+
+This is a common approach for simulating fire, water, and other effects. Just make actual bullets to handle the collisions and then use particles to make them look pretty
+
+Here's what I came up with 😜
+
+```
+//// oFlame Create
+// particles
+{
+	p_sys = part_system_create();
+
+	p_type = part_type_create();
+	part_type_shape(p_type, pt_shape_explosion);
+	part_type_color_mix(p_type, c_red, c_yellow);
+	part_type_life(p_type, 5, 15);
+	part_type_alpha3(p_type, 0, 1, 0);
+	part_type_size(p_type, .75, 1, -.01, 0);
+
+	p_emit = part_emitter_create(p_sys);
+	part_emitter_region(p_sys, p_emit, x-8, x+8, y-8, y+8, ps_shape_ellipse, ps_distr_linear);
+	part_emitter_stream(p_sys, p_emit, p_type, 2);
+}
+
+//// oFlame Step
+// particles
+{
+	part_emitter_region(p_sys, p_emit, x-8, x+8, y-8, y+8, ps_shape_ellipse, ps_distr_linear);
+}
+```
+
+``part_type_color_mix(p_type, c_red, c_yellow);``: This set the particle color to be a random mix between 2 colors. So the particles can be red, yellow, orange or any other color in between
+
+``part_emitter_region(p_sys, p_emit, x-8, x+8, y-8, y+8, ps_shape_ellipse, ps_distr_linear);``: The region roughly matches the shape of the bullet. I've also added it to the step event, that way the particles will continue to spawn from the correct location as the spark moves
+
+``part_emitter_stream(p_sys, p_emit, p_type, 2);``: I'm using stream here because I want the particles to keep spawning as the bullet moves
+
+![](../../images/platformer/flame_particles.gif)
+
+## Particle Clean Up
+
+Particles can be a little stubborn about going away sometimes. Let's add a debug key for restarting the game, and I'll show you what I mean
+
+```
+// oPlayer Step Event
+switch(state){
+	...
+}
+
+//// RESTART DEBUG KEY
+if(keyboard_check_pressed(ord("R"))){
+	game_restart();
+}
+```
+
+Now trigger the flame turret, and then restart the game
+
+![](../../images/platformer/particle_clean_up_bug.gif)
+
+What!?! 😲 Why are the particles still there!!! 😭
+
+So as I mentioned earlier, particles are independent of objects, and not just that, they're independent to the point where it's kind of extreme. Doesn't matter if destroy the object, go to a different room, or even restart the game. The particles will hang around in memory until you explicitly delete them
+
+Early on, you had to think of all these scenarios when handling particle clean up, so we'd have the same clean up code in the destroy event, room restart event, game restart event, etc. Now, luckily, Game Maker added a clean up event to help with this
+
+```
+// oTurret Clean Up Event
+part_type_destroy(p_type);
+part_emitter_destroy(p_sys, p_emit);
+part_system_destroy(p_sys);
+
+// oSpark Clean Up Event
+part_type_destroy(p_type);
+part_emitter_destroy(p_sys, p_emit);
+part_system_destroy(p_sys);
+```
+
+Now when you try the same trick, the particles should clean up properly
+
+This bug is very easy to miss, I think I've hit it in every game I've made, and it's often pretty late in development
+
+![](../../images/platformer/sixit_tunnel_bug.png)
