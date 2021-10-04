@@ -217,3 +217,24 @@ Now when you try the same trick, the particles should clean up properly
 This bug is very easy to miss, I think I've hit it in every game I've made, and it's often pretty late in development
 
 ![](../../images/platformer/sixit_tunnel_bug.png)
+
+## More Particles?
+
+I'll chill w/ the particles for now, but you can keep going as long as you like 😉, here are some other options if you're interested
+
+ * Smoke on the missile
+ * Bullet Collision
+ * Rain
+
+> **Can you have too many particles?** Technically yes, with enough particles you'll eventually hit performance issues, but designwise not really. If you have a lot of big effects your player will get really overwhelmed, but if you look for it, you'll find that modern games have tiny particles effects EVERYWHERE. It's just a great tool to make your world seem more real and alive
+
+## Particle Tools
+
+As mentioned earlier, whenever I make particles there tends to be a lot of back and forth rerunning the game to make sure the effect looks the way I want it
+
+There are tools out there which let you preview particles in real time. In theory I think they'd save a lot of time, and are probably worth using
+
+I haven't gotten around to using them myself yet (old dog, new tricks y'know), but don't let me hold you back! Here are some optoins to consider
+
+* [Particle Forge by DragoniteSpam](https://dragonite.itch.io/game-maker-particle-forge): This is a free tool from the Game Maker community (but please donate if you can)
+* [GeonFx](https://marketplace.yoyogames.com/assets/4574/geon-fx-particle-editor): This seems like a really professional one, but it also comes with a price tag
