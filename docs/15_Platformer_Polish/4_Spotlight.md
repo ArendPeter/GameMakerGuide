@@ -87,6 +87,8 @@ draw_sprite_ext(sSpotlight, 0, x, y, 1, 1, 0, col, alph);
 
 ``draw_set_color()`` / ``draw_set_alpha()``: Since ``draw_rectangle()`` doesn't take separate parameters for color, and alpha, we have to set them ahead of time using these functions. I also reset them back to the default values afterwards
 
+Weird how we get such a cool effect with 1 line, but we more than a dozen to handle this edge case. Such is life I guess 😔
+
 </details>
 
 Fixed!
