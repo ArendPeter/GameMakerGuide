@@ -50,6 +50,8 @@ Alright, so we're down from 7 interactoins to 6, can we go further? Earlier I hi
 
 We went from 6 to 5 🎉! Now we only need to handle the bullet colliding w/ the player instead of handling tha tcase for both ``oSpark``, and ``oMissile``. But we actually have a new interaction as well, and this is where emergent gameplay comes into play. The player's bullets can now hurt the player 😲. Granted, I'm not sure how that would happen with the game as it is now, but it could be interesting in the future. Like maybe one day you'll add bouncing bullets?
 
+TODO: actually make them do it as an exercize, and include code here. Also consider doing ``oEnemyBullet`` instead of ``oBullet``
+
 > **But what if I don't want the player's bullets to hurt the player?** You've got a couple of options 🤓! In addition to the general bullet parent, we could also have a ``oEnemyBullet`` which has the missile and sparks as it's children. That way you can handle movement in the general bullet, but leave the player damage to the ``oEnemyBullet``. Another option is to leave it as is but add an exception. So the if statement that handles damaging the player would include a ``and object_index != oPlayerBullet`` to verify that it's not the right bullet. Both optoins are viable depending on the situation. If you have 20 bullet types, and ``oPlayerBullet`` is the only problem case, then just add an exception. But if you find yourself adding exceptions for a lot of objects, then you're probably better off restructuring your parenting. Lot's of exception become hard to track very fast
 
 But what if we went even further 😈. Here's what it would look like if we generalized both the turrets and the players to be targetable

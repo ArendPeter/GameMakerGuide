@@ -72,3 +72,5 @@ If you want to place a group of tiles, you can select them in the tileset and pl
 Here's what I came up with after applying the tiles to my room
 
 ![](../../images/platformer/tile_final.png)
+
+TODO: insert section covering the asset layer and how you can use it for sprites that don't fit in the tile layer
