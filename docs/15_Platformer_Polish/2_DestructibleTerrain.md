@@ -7,7 +7,7 @@ parent: Platformer | Breakables
 
 # Destructable Terrain
 
-Next we'll add destructable terrain. This is a fairly simple trick, but it's definitely worth applying, as it's yet another detail that makes your world feel more real
+Next we'll add destructible terrain. This is a fairly simple trick, but it's definitely worth applying, as it's yet another detail that makes your world feel more real
 
 ## Burnable Grass
 
@@ -157,8 +157,8 @@ Burnable bushes and grass ✅
 
 Destructable terrain comes up in a lot of games, but I was specifically inspired by this [vlaambeer talk](https://www.youtube.com/watch?v=AJdEqssNZ-U). He goes over a bunch of easy tricks you can apply to make your game more polished, so it's definitely worth checking out
 
-Also, if we look at the way hollow knight does destructable terrain, you can see that a bunch of pieces fly out
+Also, if we look at the way hollow knight does destructible terrain, you can see that a bunch of pieces fly out
 
-![](../../images/platformer/hollow_knight_destructable_terrain.gif)
+![](../../images/platformer/hollow_knight_destructible_terrain.gif)
 
 Feel free to try adding that as a side exercize, I've got a video [here](https://www.youtube.com/watch?v=OVR17nInEwc) on exploding coins that can be used as a starting point
