@@ -13,7 +13,7 @@ TODO: post how they can ask more questions
 
 ## Where do I start?
 
-<details data-summary="Where do I start?" markdown="1">
+<details markdown="1">
 
 Starting with a blank project can be kind of intimidating. Here's one way you can break the project into smaller tasks
 
@@ -21,8 +21,8 @@ Starting with a blank project can be kind of intimidating. Here's one way you ca
 1. Create corresponding ``oWall``, ``oBall``, and ``oPaddle`` objects
 1. Make ``oPaddle`` move left/right
 1. Make ``oBall`` fall
-1. Add a bounce collision between ``oPaddle`` and ``oBall`` to handle bounce (mine has aiming, but you can start with a basic collision)
-1. Add a bounce collision between ``oBall`` and ``oWall``
+1. Add a collision between ``oPaddle`` and ``oBall`` to handle bounce (mine has aiming, but you can start with a basic collision)
+1. Add a collision between ``oBall`` and ``oWall`` as well
 1. Use the outside room event to make ``oBall`` reset
 1. Draw the points (I handled it from the ``oPaddle``, but you can do any object)
 1. Increase points whenever ``oBall`` collides w/ ``oPaddle``
@@ -33,7 +33,7 @@ Starting with a blank project can be kind of intimidating. Here's one way you ca
 
 ## How do I implement gravity?
 
-<details data-summary="How do I implement gravity?" markdown="1">
+<details markdown="1">
 
 Use the built in [gravity](https://manual.yoyogames.com/GameMaker_Language/GML_Reference/Asset_Management/Instances/Instance_Variables/gravity.htm) variable
 
@@ -47,7 +47,7 @@ gravity = .5;
 
 ## The ball bounces get shorter everytime, how do I make it consistent?
 
-<details data-summary="The ball bounces get shorter everytime, how do I make it consistent?" markdown="1">
+<details markdown="1">
 
 Yeah, I hit this issue too and it caught me off guard
 
@@ -60,7 +60,7 @@ Anyway, it happened to me because I was only setting the ``direction`` in the ``
 
 ## My ball keeps going through walls, how do I fix it?
 
-<details data-summary="My ball keeps going through walls, how do I fix it?" markdown="1">
+<details markdown="1">
 
 There's a couple of reasons why this could happen
 
