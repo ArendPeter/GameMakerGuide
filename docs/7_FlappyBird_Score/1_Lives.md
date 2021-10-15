@@ -86,13 +86,13 @@ So we could say that the far right heart, is only drawn in the 3 lives scenario.
 // oControl Draw GUI Event
 //// LIVES
 if(num_lives >= 1){
-    draw_sprite(10, 10, sLife)
+    draw_sprite(sLife, 0, 10, 10);
 }
 if(num_lives >= 2){
-    draw_sprite(40, 10, sLife)
+    draw_sprite(sLife, 0, 40, 10);
 }
 if(num_lives >= 3){
-    draw_sprite(70, 10, sLife)
+    draw_sprite(sLife, 0, 70, 10);
 }
 ```
 
