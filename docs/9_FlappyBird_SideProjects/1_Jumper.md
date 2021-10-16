@@ -64,11 +64,14 @@ Also, you may want to reverse the order of the sprites to make the 3rd life be o
 ## How should I handle the sides of the room?
 
 <details markdown="1">
-Initially I wanted to treat the sides of the view like a wall, and have the player stop when they hit it, but those types of collisions are a little trickier, so I didn't want to open that can of worms yet
+You have a few options
 
-Another option is to make instant death wall objects
+ * **Make Player Stop**: We haven't gone over this yet, but the easiest way to do add walls and leverage the ``solid`` property. When you mark an object as ``solid``, that means that other objects can't overlap when they collide with it. Emphasis on the *when they collide*! So if we create an ``oWall`` object which we put along the edges of the screen, and we don't want the player to stop when it hits it, we need to mark ``oWall`` as ``solid`` AND make a collision event in ``oPlayer``. The collision event doesn't need to have any code, but the event still needs to exist (it's weird, I know)
 
-I opted to extend the spikes outside the room. That way the player can leave the view if they want, but they'll still hit the spikes on the way down
+ * **Instant Wall Death**: You could also just make ``oWall`` kill the player, this is easier
+
+ * **Extend Spikes**: Maybe we don't care if the player goes outside the room? But we can't have them using that strategy to get around the spikes, so at the very least we need to extend the spikes far enough outside the room to ensure that the player can't skip them
+
 </details>
 
 ## How do I make the spikes fill the room?

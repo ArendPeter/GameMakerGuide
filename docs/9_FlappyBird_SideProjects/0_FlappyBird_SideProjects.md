@@ -23,10 +23,18 @@ To make things more challenging, include some spikes that follow the player, if 
 
 If the player runs out of lives the game restarts
 
-* [chips challenge](https://en.wikipedia.org/wiki/Chip%27s_Challenge)
-* doodle jump
+## Explorer
 
-Platformer side projects
-Impossible Game
-Asteroids
-Bubble Shooter
+![](../../images/flappy_bird/explorer.gif)
+
+Here the player explorers a series of levels, and picks up a bunch of collectables along the way
+
+The first level features a lock & key mechanic. There are yellow and red keys, and they open yellow and red doors respectively
+
+The second level let's you find shoes to navigate different types of terrain. So to get through water, you need flippers, and to walk on ice, you need skates ⛸
+
+On top of all that, there will be coins to collect 🤑
+
+And to switch things up, this game is on a grid, and you move 1 grid space at a time by pressing left/right/up/down
+
+> **WARNING**: The wall collisions might be tricky, feel free to consult the FAQ
