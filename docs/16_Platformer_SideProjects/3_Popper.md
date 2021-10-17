@@ -2,7 +2,7 @@
 layout: default
 title: Popper
 nav_order: 3
-parent: Flappy Bird | Side Projects
+parent: Platformer | Side Projects
 ---
 
 
