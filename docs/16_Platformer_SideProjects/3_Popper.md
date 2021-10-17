@@ -30,6 +30,8 @@ These are tricky, but don't worry there will be follow up FAQs
 
 ## How do I make the balloons bounce in a generic way?
 
+TODO: update this section to use place_meeting instead
+
 <details markdown="1">
 We actually had this question back when making breaker as well. The quickest way is to use ``move_bounce_all(false);``, and that's perfectly fine, but you can also code it yourself. Here's the code I linked to back in breaker (but updated to include some of the syntax we've learned since then)
 
@@ -82,7 +84,7 @@ it doesn't lock to the one that I think it should (to fix this we'd probably nee
 <details markdown="1">
 Yep, I hit this too. It's a catastrophically funny bug (<span id="years-of-game-maker"></span> years of Game Maker and there are still surprises)
 
-![](../../images/platformer/popper.gif)
+![](../../images/platformer/popper_bug.gif)
 
 For me this was happening because all my baloons were checking for collisions with other balloons. That meant that the collision logic was triggered for 2 balloons when the *bullet* balloon hit the [herd](https://www.answers.com/Q/What_is_a_group_of_balloons_called), and when the non-moving baloon updated it's position it triggered a chain reaction of collisions with other baloons
 

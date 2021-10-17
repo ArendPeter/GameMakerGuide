@@ -10,6 +10,19 @@ has_children: true
 Time for some more projects for some more practice 😁. Since this was the final module, I'll throw in an extra project for some more options (and that puts the course at a nice even 10 😉)
 
 ## Runner
+
+![](../../images/platformer/runner.gif)
+
+Now that you can make a platformer, try using that to make an auto-runner 🏃🏼‍♂️
+
+In this genre, you're x increases at a constant speed, and the only button you need is the jump button (a lot like flappy bird come to think of it 🤔)
+
+When you hit spikes, you die, when you hit the side of a wall, you die
+
+I also added some parallax to spice it up a bit
+
+Have fun 👋🏼!
+
 ## Shooter
 ## Popper
 
