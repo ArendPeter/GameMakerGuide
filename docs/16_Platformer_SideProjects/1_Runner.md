@@ -15,6 +15,7 @@ parent: Platformer | Side Projects
 1. Update ``oPlayer`` to move vertically (jump + gravity + vertical collisions)
 1. Update ``oPlayer`` to die when they hit spikes
 1. Update camera to follow the player (I have the camera offset so that the player can see more ahead)
+1. Add some parallax if you want 😊
 </details>
 
 # How do I make the rotation effect?

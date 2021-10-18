@@ -24,6 +24,17 @@ I also added some parallax to spice it up a bit
 Have fun 👋🏼!
 
 ## Shooter
+
+![](../../images/platformer/shooter.gif)
+
+Let's revisit our arcade roots, now that you've made a twin stick platformer, can you make a twin stick shooter?
+
+This game has asteroids spawning from the edges of the screen, and spaceship which can move and shoot in different directions
+
+When the asteroids get shot they should spawn a few smaller asteroids, and killing the smaller asteroids will earn you points
+
+This was a personal favorite of mine, out of all the games I made for the course, this is the only one I had difficultly putting down. Good luck 🚀!
+
 ## Popper
 
 ![](../../images/platformer/popper.gif)
