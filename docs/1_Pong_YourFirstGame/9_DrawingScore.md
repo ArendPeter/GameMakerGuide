@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Score Board
-nav_order: 8
+nav_order: 9
 parent: Pong | Your First Game
 ---
 

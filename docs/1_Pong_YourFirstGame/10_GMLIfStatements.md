@@ -1,7 +1,7 @@
 ---
 layout: default
 title: GML If Statements
-nav_order: 9
+nav_order: 10
 parent: Pong | Your First Game
 ---
 

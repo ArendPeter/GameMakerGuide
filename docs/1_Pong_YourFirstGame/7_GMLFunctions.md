@@ -1,7 +1,7 @@
 ---
 layout: default
 title: GML Functions
-nav_order: 6
+nav_order: 7
 parent: Pong | Your First Game
 ---
 

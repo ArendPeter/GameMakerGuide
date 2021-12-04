@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Adding Paddle Names
-nav_order: 7
+nav_order: 8
 parent: Pong | Your First Game
 ---
 
