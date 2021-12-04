@@ -5,6 +5,8 @@ nav_order: 8
 parent: Pong | Your First Game
 ---
 
+[anchor](##-Drawing-Self)
+
 # Adding Paddle Names
 
 This isn't exactly a standard pong feature, but it did feel like the next logic in your Game Maker journey so ima force it
