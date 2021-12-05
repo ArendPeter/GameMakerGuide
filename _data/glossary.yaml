@@ -10,3 +10,5 @@ Room: 1_Pong_YourFirstGame/4_ResourceTypes.html#rooms
 Instance: 1_Pong_YourFirstGame/4_ResourceTypes.html#objects-vs-instances
 Room Layer: 1_Pong_YourFirstGame/4_ResourceTypes.html#layers
 test: test
+
+TODO: figure out why anchors are slow

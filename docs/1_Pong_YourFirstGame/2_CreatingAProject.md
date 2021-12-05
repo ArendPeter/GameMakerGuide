@@ -24,6 +24,8 @@ Let's make a new project!
 
 Drag and Drop, or GameMaker Language (i.e. code) is first decision you'll need to make whenever you start new projects. Here's the difference
 
+<span id="referrer">null</span>
+
 * **Drag and Drop (DnD)** : This simplifies Game Maker's interface, allowing you to create your soling through dragging and dropping blocks, and connecting them to form your logic. Using DnD you can develop your games without ever writing a line of code, however you still have the option insert code snippets if you want
 * **GameMaker Language (GML)** : If you prefer writing code, this option will remove all the DnD windows, and replace them with text editors. Game Maker uses Game Maker Language, which is loosely similar to writing Javascript
 

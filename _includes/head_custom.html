@@ -48,6 +48,14 @@ function updateGMExperience(){
     }
 }
 
+function updateReferrer(){
+    var ref_element = document.getElementById("referrer");
+    if(ref_element != undefined){
+        ref_element.innerHTML = document.referrer;
+    }
+}
+
+
 function updateDetails(){
     var mainElement = document.getElementById("main-content");
     var detailsElements = mainElement.getElementsByTagName('details');
@@ -64,6 +72,7 @@ function updateDetails(){
 
 function onLoad(){
     updateGMExperience();
+	updateReferrer();
     updateDetails();
 }
 
