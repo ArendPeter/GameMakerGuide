@@ -1,6 +1,20 @@
 <meta name="parent" content="{{ page.parent }}">
 <meta name="nav_order" content="{{ page.nav_order }}">
 <script>
+function setCookieIfReferrer(name, value, referrer){
+	if(document.referrer == referrer){
+		setCookie(name, value);
+		var elem = document.getElementById("failure");
+		if(elem != undefined){
+			elem.hidden = true;
+		}
+	}else{
+		var elem = document.getElementById("success");
+		if(elem != undefined){
+			elem.hidden = true;
+		}
+	}
+}
 function setCookie(name,value,days) {
     var expires = "";
     if (days) {
