@@ -1,9 +1,11 @@
 title: Arend Peter's Game Maker Guide
 remote_theme: pmarsceill/just-the-docs
 
-search.previews: 1
-search.preview_words_before: 2
-search.preview_words_after: 2
+search_enabled: true
+search:
+    previews: 1
+    preview_words_before: 2
+    preview_words_after: 2
 
 logo: "/images/logo.png"
 
