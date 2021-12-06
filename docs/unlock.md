@@ -4,10 +4,12 @@ title: Unlock
 nav_exclude: true
 ---
 
-<span id="success">
-<img src="../images/thanks_for_paying.gif" onload="setCookie('purchased', true, 'https://www.udemy.com/'')"/>
+<span onload="setCookieIfReferrer('purchased', true, 'https://www.udemy.com/')"/>
 
-Thanks for paying!
+<span id="success">
+<img src="../images/thanks_for_paying.gif"/>
+
+Thanks for paying! Your support is deeply appreciated!
 </span>
 
 <span id="failure">
