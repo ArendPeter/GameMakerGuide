@@ -1,6 +1,10 @@
 title: Arend Peter's Game Maker Guide
 remote_theme: pmarsceill/just-the-docs
 
+search.previews: 1
+search.preview_words_before: 2
+search.preview_words_after: 2
+
 logo: "/images/logo.png"
 
 color_scheme: custom
@@ -8,5 +12,3 @@ color_scheme: custom
 aux_links:
   "Video version on Udemy":
     - "//udemy.com"
-  "More Arend Peter Courses":
-    - "//arendpeter.com"
