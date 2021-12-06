@@ -21,4 +21,4 @@ If you continue to have issues please email me at apc1993@gmail.com
 
 <button onclick="eraseCookie('purchased')">Reset cookie</button>
 
-<script> setCookieIfReferrer('purchased', true, 'https://www.udemy.com/') <script/>
+<script> setCookieIfReferrer('purchased', true, 'https://www.udemy.com/') </script>
