@@ -4,7 +4,6 @@ title: Unlock
 nav_exclude: true
 ---
 
-<span onload="setCookieIfReferrer('purchased', true, 'https://www.udemy.com/')"/>
 
 <div id="success">
 <img src="../images/thanks_for_paying.gif"/>
@@ -21,3 +20,5 @@ If you continue to have issues please email me at apc1993@gmail.com
 </div>
 
 <button onclick="eraseCookie('purchased')">Reset cookie</button>
+
+<span onload="setCookieIfReferrer('purchased', true, 'https://www.udemy.com/')"/>
