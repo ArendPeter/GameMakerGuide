@@ -4,8 +4,6 @@ title: Unlock
 nav_exclude: true
 ---
 
-<p id="referrer"></p>
-
 <p id="success">
 <img src="../images/thanks_for_paying.gif"/>
 <br>

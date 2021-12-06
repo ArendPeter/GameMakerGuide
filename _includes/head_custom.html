@@ -9,6 +9,7 @@ function setCookieIfReferrer(name, value, referrer){
 			elem.hidden = true;
 		}
 	}else{
+		console.log("Invalid referrer: "+document.referrer);
 		var elem = document.getElementById("success");
 		if(elem != undefined){
 			elem.hidden = true;
