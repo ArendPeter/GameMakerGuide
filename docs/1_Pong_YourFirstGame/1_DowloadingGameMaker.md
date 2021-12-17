@@ -16,20 +16,20 @@ Before downloading game maker you'll first need to register for an account
 ![](../../images/pong/register.gif)
 
 1. In your browser navigate to https://yoyogames.com
-1. Click "Get Started"
-1. Under "Free Trial", select "Register"
+1. Under the "GameMaker" dropdown select "Pricing"
+1. Under the "Free" tier select "Start Now, It's Free!"
 1. Continue registration process (setup account, verify email, etc.)
 
 ## Product Options
 
 At the moment there are 4 categories of Game Maker products to choose from
 
-* **Free Trial**: 30 Trial, this includes full Game Maker functionality, except you won't be able to create executables (so your friends won't be able to play your games unless they also have game maker)
-* **Desktop**: Export executables for Mac or Windows
-* **Developer**: Export executables for Desktop (which combines windows, mac, and ubuntu), Web, UWP, or Mobile (which includes android and iOS)
-* **Console**: Export executables for Playstation, Xbox, or Switch. This also has an option for Ultimate edition, which includes all platforms
+* **Free**: This gives you access to all features in Game Maker, let's you test your games from Game Maker. But if you want to export the game and share it with your friends, then GXC is your only option for the free version
+* **Creator**: Exports to Mac + Windows ( + everything from previous tiers )
+* **Indie**:  Exports to Android + iOS exports ( + everything from previous tiers )
+* **Enterprise**: Exports to everything GameMaker supports, including Playstation, XBox, and Switch
 
-For this course, I recommend starting with **Free Trial**, and then, if you're interested, purchasing one of the **Desktop** options when your trial ends. From there you can expand further if you're interested in making a game for a particular platform
+For this course, I recommend starting with **Free**, and then upgrade to one of the other tiers if you want to export to a specific platform
 
 ## Download
 
@@ -41,7 +41,7 @@ Next we can download Game Maker Studio
 1. Select "View Downloads" under the download section
 1. Select Windows or Mac depending on your machine
 
-> NOTE: Game Maker is free to download regardless of the product you chose, we'll need to login later for Game Maker to know which version we're using
+> NOTE: Game Maker is free to download regardless of the product you choose, we'll need to login later for Game Maker to know which version we're using
 
 ## Installing Game Maker Studio (for Windows)
 
@@ -49,15 +49,24 @@ Here's how we install Game Maker on Windows (if you're on mac you can skip to th
 
 ![](../../images/pong/windows_install.gif)
 
+1. Click the download button for the Windows IDE
 1. Double click the installer you downloaded (usually it'll be in your Downloads folder)
-2. If you get a prompt asking to allow the app to make changes "Yes"
-3. If game maker is already installed, hit "Ok" to remove previous version, then select Uninstall
-4. Click through the rest of the install process "I Agree", "Next", "Install", "Next", "Next", "Finish"
-5. Now when you open your start menu and search for Game Maker you should be able to open it
+1. If you get a prompt asking to allow the app to make changes "Yes"
+1. If game maker is already installed, hit "Ok" to remove previous version, then select Uninstall
+1. Click through the rest of the install process "I Agree", "Next", "Install", "Next", "Next", "Finish"
+1. Now when you open your start menu and search for Game Maker you should be able to open it
 
 ## Installing Game Maker Studio (for Mac)
 
-TODO
+Here's how you install on Mac
+
+![](../../images/pong/mac_install.gif)
+
+1. Click the download button for the Mac IDE (hit "Allow" if prompted)
+1. Double click the installer you downloaded (I clicked it directly from Safari)
+1. Click through the install process (provide your login info if prompted)
+1. Move installer to trash if prompted (doesn't really matter though)
+1. Open launch pad, scroll to the last page, and double click on Game Maker
 
 ## Login
 
@@ -67,4 +76,4 @@ When you open Game Maker for the first time you'll be prompted to login
 
 Enter the account information you created during the regitration step to continue
 
-This is important for Game Maker to know whether you're on the free trial or using one of Game Maker's other product options
+This is important for Game Maker to know which subscription tier you're on
