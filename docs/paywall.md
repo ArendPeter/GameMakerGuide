@@ -14,7 +14,7 @@ Once you buy the course, you'll have access to...
  * **All course videos on Udemy!**
  * **Downloadable Game Maker projects for the the main projects and the side projects!**
 
-[Click here](https://www.udemy.com/course/draft/4219462/?instructorPreviewMode=guest) to open Udemy and purchase the course!
+[Click here](https://www.udemy.com/course/draft/4219462/?instructorPreviewMode=guest) to open Udemy and Entroll!
 
 ## Unlocking the full "Guide To Game Maker"
 
