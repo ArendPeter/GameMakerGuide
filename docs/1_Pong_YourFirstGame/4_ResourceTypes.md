@@ -41,11 +41,11 @@ From here we can click "Edit Image", this will open the sprite editor in a new t
 
 For this course, we won't be focusing too much on making the art ( it's not really my skill), but here's a handful of sprite editor tips to help you get by
 
-| Paintbrush Tool | ![](../../images/pong/sprite_editor/paintbrush.gif) | Left and Right click | ![](../../images/pong/sprite_editor/left_right_click.gif) |
-| Brushes | ![](../../images/pong/sprite_editor/brushes.gif) | Change Color | ![](../../images/pong/sprite_editor/change_color.gif) |
-| Filled Rectangle Tool | ![](../../images/pong/sprite_editor/rectangle_filled.gif) | Rectangle Outline Tool | ![](../../images/pong/sprite_editor/rectangle_outline.gif) |
-| Filled Circle Tool | ![](../../images/pong/sprite_editor/circle_filled.gif) | Circle Outline Tool | ![](../../images/pong/sprite_editor/circle_outline.gif) |
-| Erase Tool | ![](../../images/pong/sprite_editor/erase.gif) | Line Tool | ![](../../images/pong/sprite_editor/line.gif) |
+| Paintbrush Tool | ![](../../images/sprite_editor/paintbrush.gif) | Left and Right click | ![](../../images/sprite_editor/left_right_click.gif) |
+| Brushes | ![](../../images/sprite_editor/brushes.gif) | Change Color | ![](../../images/sprite_editor/change_color.gif) |
+| Filled Rectangle Tool | ![](../../images/sprite_editor/rectangle_filled.gif) | Rectangle Outline Tool | ![](../../images/sprite_editor/rectangle_outline.gif) |
+| Filled Circle Tool | ![](../../images/sprite_editor/circle_filled.gif) | Circle Outline Tool | ![](../../images/sprite_editor/circle_outline.gif) |
+| Erase Tool | ![](../../images/sprite_editor/erase.gif) | Line Tool | ![](../../images/sprite_editor/line.gif) |
 
 To put your skills to the test, go ahead and add sBall (16x16) and sWall (64x64)
 
