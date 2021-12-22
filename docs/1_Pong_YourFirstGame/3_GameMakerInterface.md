@@ -15,13 +15,9 @@ The **workspace** and the **Asset Browser**, are the windows you'll be using mos
 
 ![](../../images/pong/workspace_and_assets.png)
 
-As our project grows, we'll continuously be adding new resources to the resource tree, and then we'll edit the resources in the workspace
+As our project grows, we'll continuously be adding new resources to the resource tree, and then we'll edit the resources in the workspace. As you edit resources, they'll generate more tabs and panes as needed
 
-> TODO: show screen shot of busy workspace, and show how workspace items correspond w/ the resource tree
-
-As you edit resources, they'll generate more tabs and panes as needed
-
-> TODO: show screen shot w/ examples of sprite editor tab, and room editor tab
+![](../../images/pong/busy_workspace.png)
 
 ## Adjusting the window layout
 

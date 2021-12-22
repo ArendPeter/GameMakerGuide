@@ -9,6 +9,14 @@ parent: Pong | Your First Game
 
 In the previous section we just had a BIG first, we ran our game for the first time 😀. Now we're going to have another big first and write our first few lines of code 😎
 
+## Grid
+
+Before we start talking about x and y, I wanted to quickly mention how to work with the grid in the room editor
+
+By default, the room editor will force you to place your instances on a 32x32 grid. If you expand the grid button, you can resize this grid or even disable it entirely
+
+![](../../images/pong/room_grid.gif)
+
 ## x / y axis
 
 Let's look back at the instance properties in the room editor. Earlier we modified the scale x property, but there's much more where that came from and we'll quickly become familiar with all of them throughout the course. The most important properties here are the x and y, so we'll dig into those next.

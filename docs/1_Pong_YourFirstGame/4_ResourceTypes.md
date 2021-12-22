@@ -31,7 +31,7 @@ If your curious, you can find the full list of word combining conventions [here]
 
 Let's make a paddle for the pong game!
 
-By default, Game Maker will use 64x64 as the sprite size. But we want our paddle to be tall and skinny so we'll also resize it to 32x128. To do this we'll hit the resize button then adjust the numbers under "Scale Image" before hitting "Apply"
+By default, Game Maker will use 64x64 as the sprite size. But we want our paddle to be tall and skinny so we'll also resize it to 32x128. To do this we'll hit the resize button then adjust the numbers under "Scale Image" before hitting "Apply" (make sure to uncheck "maintain aspect ratio" box, since that will force the 2 numbers to be the same)
 
 ![](../../images/pong/resize_sprite.gif)
 
@@ -50,6 +50,22 @@ For this course, we won't be focusing too much on making the art ( it's not real
 To put your skills to the test, go ahead and add sBall (16x16) and sWall (64x64)
 
 ![](../../images/pong/first_sprites.png)
+
+## Navigating the workspace
+
+Now that we have our first resources in the workspace, let's talk about how you can navigate the workspace
+
+![](../../images/pong/panning.gif)
+
+There's 2 main methods for navigation
+ * **Panning**: Hold the middle mouse button, and move the mouse to shift the view
+ * **Zoom**: Hold the ctrl button on the keyboard, and then scroll the mouse wheel to zoom in/out on the view
+
+The initial mouse position is VERY IMPORTANT. If you're mouse is hovering over the workspace background, then you'll be adjusting the workspace view, but if you start out in the sprite preview, you'll be adjusting the sprite preview. This is cool, since you only need to learn these tricks once, but then you get to use them repeatedly throughout game maker (including the Room Editor later on)
+
+![](../../images/pong/laptop_mode.gif)
+
+> **Latptop Mode**: If you're using a laptop touchpad, you probably don't have a good way to center click. In this case you can use Game Maker's "Laptop Mode" and use an alternate control scheme
 
 ## Objects
 
@@ -110,25 +126,12 @@ There are several more layer types, and we'll be diving into several of them, bu
 
 ## Run the game
 
-When your room's ready, you can hit the run button in the toolbar (or F5), and then we'll see our level in the game window :D
+When your room's ready, you can hit the run button in the toolbar (or F5)
+
+![](../../images/pong/run_game.png)
+
+And then we'll see our level in the game window :D
 
 ![](../../images/pong/first_game_run.png)
 
 This is a special moment, you just made something, and it's running in real life program on your computer. It's beautiful :')
-
-
-TODO:
-	add section on scrolling and zooming on the interface
-    - ctrl + scroll zoom
-    - middle click pan
-    - different contexts: demo w/ sprite editor
-    - drag windows
-    - laptop control zoom
-    - laptop alt pan
-	add note on "maintain aspect ratio"
-	add hint that ball uses circle tool
-  add note that instance layer needs to be selected to add instances
-	add note on room grid tool (also note that grid settings is saved per layer)
-![](../../images/pong/room_grid.gif)
-  insert image of game run button
-  resize classic xy
