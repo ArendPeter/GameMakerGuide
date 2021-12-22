@@ -49,7 +49,7 @@ function eraseCookie(name) {
 function isPaywalled() {
     var parent = document.head.querySelector("[name~=parent][content]").content;
     var nav_order = document.head.querySelector("[name~=nav_order][content]").content;
-    var is_free = parent == "Pong | Your First Game" || nav_order == "" || (parent == "" && parseInt(nav_order) <= 1);
+    var is_free = parent == "Course Intro" or parent == "Pong | Your First Game" || nav_order == "" || (parent == "" && parseInt(nav_order) <= 1);
     var purchased = getCookie("purchased");
     return !is_free && !purchased;
 }

@@ -1,4 +1,4 @@
-Hi! I'm Arend Peter and welcome to guidetogamemaker.com!
+Hi, and welcome to guidetogamemaker.com!
 
 ![](../images/course_banner.png)
 
