@@ -20,8 +20,8 @@ $link-color: $aqua;
 $btn-primary-color: $aqua;
 $base-button-color: $aqua; // ???
 
-$code-background-color: darken($white, 5%);
-$details-background-color: darken($white, 3%);
+$code-background-color: #C3D8D8; // lighter version of $aqua
+$details-background-color: #CBD6D6; // lighter version of $aqua
 $search-background-color: $slate;
 $table-background-color: darken($white, 3%);
 $feedback-color: darken($sidebar-color, 3%);

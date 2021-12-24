@@ -3,7 +3,7 @@
 }
 
 details{
-  background: #363636; // not sure why, but details-background-color doesn't seem to work
+  background: #CBD6D6; // lighter version of $aqua
   //border: 2px solid $link-color;
   padding: 20px;
 }
@@ -13,6 +13,7 @@ details{
 }
 
 .site-nav{
+	overflow: hidden;
 	// aqua + slate
-	scrollbar-color: #00DBDB #636668;
+	// scrollbar-color: #00DBDB #636668;
 }
