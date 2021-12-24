@@ -155,47 +155,29 @@ layout: table_wrappers
 		{%- assign titled_pages = include.pages
 	        | where_exp:"item", "item.title != nil" -%}
 
-		<p> titled pages </p>
-		{%- for node in titled_pages -%}
-			<p>{{forloop.index}} {{node.url}}</p>
-		    {%- if node.url == page.url -%}
-				<p>current {{forloop.index}}</p>
-				{%- assign current_index = forloop.index -%}
-		    {%- endif -%}
+		{%- assign string_ordered_pages = titled_pages
+	        | where_exp:"item", "item.nav_order == nil" -%}
+
+		{%- assign nav_ordered_pages = titled_pages
+	        | where_exp:"item", "item.nav_order != nil"  -%}
+
+		{%- assign number_ordered_pages = "" | split:"X" -%}
+
+		{%- for group in nav_ordered_groups -%}
+			{%- if group.name == '"' -%}
+				{%- assign string_ordered_pages = string_ordered_pages | concat: group.items -%}
+			{%- else -%}
+				{%- assign number_ordered_pages = number_ordered_pages | concat: group.items -%}
+			{%- endif -%}
 		{%- endfor -%}
-		<p> titled pages end</p>
-
-		{%- assign parent_pages = titled_pages
-	        | where_exp:"item", "item.parent == nil" -%}
-
-		<p> parent pages </p>
-		{%- for node in parent -%}
-			<p>{{forloop.index}} {{node.url}}</p>
-		    {%- if node.url == page.url -%}
-				<p>current {{forloop.index}}</p>
-				{%- assign current_index = forloop.index -%}
-		    {%- endif -%}
-		{%- endfor -%}
-		<p> parent pages end</p>
-
-	    {%- assign nav_ordered_pages = titled_pages
-	          | where_exp:"item", "item.nav_order != nil"  -%}
-
-	    {%- assign nav_ordered_groups = nav_ordered_pages
-	          | group_by_exp:"item", "item.nav_order | jsonify | slice: 0" -%}
-	    {%- assign number_ordered_pages = "" | split:"X" -%}
-	    {%- for group in nav_ordered_groups -%}
-	      {%- if group.name != '"' -%}
-	        {%- assign number_ordered_pages = number_ordered_pages | concat: group.items -%}
-	      {%- endif -%}
-	    {%- endfor -%}
 
 		{%- assign sorted_number_ordered_pages = number_ordered_pages | sort:"nav_order" -%}
 
-		{%- for node in sorted_number_ordered_pages -%}
-			<p>{{forloop.index}} {{node.url}}</p>
+		{%- assign pages_list = sorted_number_ordered_pages | concat: sorted_string_ordered_pages -%}
+
+		{%- for node in pages_list -%}
 		    {%- if node.url == page.url -%}
-				<p>current {{forloop.index}}</p>
+				<p>{{forloop.index}}</p>
 				{%- assign current_index = forloop.index -%}
 		    {%- endif -%}
 		{%- endfor -%}
