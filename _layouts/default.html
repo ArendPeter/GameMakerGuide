@@ -154,18 +154,14 @@ layout: table_wrappers
 
 		{%- assign titled_pages = include.pages
 	        | where_exp:"item", "item.title != nil" -%}
-	titled pages {{titled_pages}} <br>
 
 		{%- assign string_ordered_pages = titled_pages
 	        | where_exp:"item", "item.nav_order == nil" -%}
-		string_ordered_pages {{string_ordered_pages }} <br>
 
 		{%- assign nav_ordered_pages = titled_pages
 	        | where_exp:"item", "item.nav_order != nil"  -%}
-		nav_ordered_pages {{nav_ordered_pages }} <br>
 
 		{%- assign number_ordered_pages = "" | split:"X" -%}
-		number_ordered_pages {{number_ordered_pages }} <br>
 
 		{%- for group in nav_ordered_groups -%}
 			{%- if group.name == '"' -%}
@@ -174,14 +170,10 @@ layout: table_wrappers
 				{%- assign number_ordered_pages = number_ordered_pages | concat: group.items -%}
 			{%- endif -%}
 		{%- endfor -%}
-		number_ordered_pages {{number_ordered_pages }} <br>
-		string_ordered_pages {{string_ordered_pages }} <br>
 
 		{%- assign sorted_number_ordered_pages = number_ordered_pages | sort:"nav_order" -%}
-		sorted_number_ordered_pages {{sorted_number_ordered_pages}} <br>
 
 		{%- assign pages_list = sorted_number_ordered_pages | concat: sorted_string_ordered_pages -%}
-		pages_list {{pages_list}} <br>
 
 		{%- for node in pages_list -%}
 		    {%- if node.url == page.url -%}
