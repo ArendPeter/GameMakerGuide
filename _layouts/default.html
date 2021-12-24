@@ -154,6 +154,17 @@ layout: table_wrappers
 
 		{%- assign titled_pages = include.pages
 	        | where_exp:"item", "item.title != nil and item.parent == nil" -%}
+			
+		<p> titled pages </p>
+		{%- for node in titled_pages -%}
+			<p>{{forloop.index}} {{node.url}}</p>
+		    {%- if node.url == page.url -%}
+				<p>current {{forloop.index}}</p>
+				{%- assign current_index = forloop.index -%}
+		    {%- endif -%}
+		{%- endfor -%}
+
+			<p> titled pages end</p>
 
 	    {%- assign nav_ordered_pages = titled_pages
 	          | where_exp:"item", "item.nav_order != nil"  -%}
