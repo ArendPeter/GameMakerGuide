@@ -14,14 +14,14 @@ $border-color: $aqua;
 $body-text-color: $black;
 $body-heading-color: $black;
 $nav-child-link-color: $aqua;
-$search-result-preview-color: $old-green;
+$search-result-preview-color: #AAAAAA;
 
 $link-color: $aqua;
 $btn-primary-color: $aqua;
-$base-button-color: $old-green; // ???
+$base-button-color: $aqua; // ???
 
-$code-background-color: #222222;
-$details-background-color: #363636;
-$search-background-color: #222222;
-$table-background-color: #222222;
+$code-background-color: darken($white, 5%);
+$details-background-color: darken($white, 3%);
+$search-background-color: $slate;
+$table-background-color: darken($white, 3%);
 $feedback-color: darken($sidebar-color, 3%);
