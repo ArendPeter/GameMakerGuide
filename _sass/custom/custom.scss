@@ -3,7 +3,7 @@
 }
 
 details{
-  background: #CBD6D6; // lighter version of $aqua
+  background: #CFD3D3; // lighter version of $aqua
   //border: 2px solid $link-color;
   padding: 20px;
 }
@@ -18,4 +18,13 @@ details{
 
 ::-webkit-scrollbar-thumb {
   background: #00DBDB;
+  border-radius: 5px;
+}
+.site-nav::-webkit-scrollbar-track {
+  background: #636668;
+}
+
+.site-nav::-webkit-scrollbar-thumb {
+  background: #00DBDB;
+  border-radius: 5px;
 }
