@@ -3,7 +3,7 @@
 }
 
 details{
-  background: #CFD3D3; // lighter version of $aqua
+  background: #EDEFEF; // lighter version of $aqua
   //border: 2px solid $link-color;
   padding: 20px;
 }
@@ -20,11 +20,15 @@ details{
   background: #00DBDB;
   border-radius: 5px;
 }
-.site-nav::-webkit-scrollbar-track {
-  background: #636668;
+.site-nav{
+	&::-webkit-scrollbar-track {
+	  background: #636668;
+	}
 }
 
-.site-nav::-webkit-scrollbar-thumb {
-  background: #00DBDB;
-  border-radius: 5px;
+.site-nav{
+	&::-webkit-scrollbar-thumb {
+	  background: #00DBDB;
+	  border-radius: 5px;
+	}
 }
