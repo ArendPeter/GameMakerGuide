@@ -173,17 +173,23 @@ layout: table_wrappers
 
 		{%- assign sorted_number_ordered_pages = number_ordered_pages | sort:"nav_order" -%}
 
-		{%- assign pages_list = sorted_number_ordered_pages | concat: sorted_string_ordered_pages -%}
+		{%- assign nav_sorted_list = sorted_number_ordered_pages | concat: sorted_string_ordered_pages -%}
 
-		{%- assign parent_list = pages_list
+		{%- assign parent_list = nav_sorted_list
 	        | where_exp:"item", "item.parent == nil" -%}
 
+		{%- assign pages_list = "" | split:"X" -%}
 		{%- for node in parent_list -%}
-			<p>{{forloop.index}} {node.title}</p>
-		    {%- if node.url == page.url -%}
-				<p>{{forloop.index}}</p>
-				{%- assign current_index = forloop.index -%}
+			{%- assign pages_list = pages_list | push:node -%}
+			<p>parent {{forloop.index}} {{node.title}}</p>
+			{%- if node.has_children -%}
+				{%- assign children_list = nav_sorted_list | where: "parent", node.title -%}
+				{%- assign pages_list = pages_list | concat:children_list -%}
 		    {%- endif -%}
+		{%- endfor -%}
+
+		{%- for node in pages_list -%}
+			<p>{{forloop.index}} {{node.title}}</p>
 		{%- endfor -%}
 
 		{%- assign previous_index = current_index | minus:1 -%}
