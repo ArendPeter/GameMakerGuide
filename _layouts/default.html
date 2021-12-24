@@ -193,7 +193,7 @@ layout: table_wrappers
 		<!-- Find current page -->
 		{%- for node in pages_list -%}
 		    {%- if node.url == page.url -%}
-				{%- assign current_index = node.url -%}
+				{%- assign current_index = forloop.index -%}
 		    {%- endif -%}
 		{%- endfor -%}
 
