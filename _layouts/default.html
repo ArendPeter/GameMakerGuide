@@ -155,6 +155,13 @@ layout: table_wrappers
 		{%- assign titled_pages = include.pages
 	        | where_exp:"item", "item.title != nil" -%}
 
+		{%- assign parent_pages = titles_pages
+			| where_exp:"item", "item.parent == nil" | sort:"nav_order"-%}
+
+		{%- for node in parent_pages -%}
+			<p>{{forloop.index}} {{node.url}}</p>
+		{%- endfor -%}
+
 		{%- assign string_ordered_pages = titled_pages
 	        | where_exp:"item", "item.nav_order == nil" -%}
 
@@ -175,7 +182,7 @@ layout: table_wrappers
 
 		{%- assign pages_list = sorted_number_ordered_pages | concat: sorted_string_ordered_pages -%}
 
-		{%- for node in pages_list -%}
+		{%- for node in sorted_number_ordered_pages -%}
 			<p>{{forloop.index}} {{node.url}}</p>
 		    {%- if node.url == page.url -%}
 				<p>current {{forloop.index}}</p>
