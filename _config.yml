@@ -12,7 +12,7 @@ logo: "/images/logo.png"
 color_scheme: custom
 
 aux_links:
-    "Video version on<br><img style='width=50%;' src='https://www.udemy.com/staticx/udemy/images/v7/logo-udemy.svg'/>":
+    "Video version on<br><img style='width:50%;' src='https://www.udemy.com/staticx/udemy/images/v7/logo-udemy.svg'/>":
     - "//udemy.com"
 
 footer_content:
