@@ -151,6 +151,14 @@ layout: table_wrappers
         {% endif %}
 
 		<div class="PageNavigation">
+
+		{%- for node in pages_list -%}
+		    {%- if node.url == page.url -%}
+				<p>{{forloop.index}}</p>
+				{%- assign current_index = }
+		    {%- endif -%}
+		{%- endfor -%}
+
 			{{page.url}}
 		  {% if page.previous.url %}
 		    <a class="prev" href="{{page.previous.url}}">&laquo; {{page.previous.title}}</a>
