@@ -156,9 +156,7 @@ layout: table_wrappers
 	        | where_exp:"item", "item.title != nil" -%}
 
 		{%- assign parent_pages = titles_pages
-			| where_exp:"item", "item.parent == nil" -%}
-
-		{%- assign parent_pages = parent_pages | sort:"nav_order" -%}
+			| where_exp:"item", "item.parent == nil and item.nav_order != nil" | sort:"nav_order" -%}
 
 		{%- for node in parent_pages -%}
 			<p>{{forloop.index}} {{node.url}}</p>
