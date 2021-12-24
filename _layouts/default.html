@@ -152,6 +152,7 @@ layout: table_wrappers
 
 		<div class="PageNavigation">
 
+		<!-- Copied from nav.html -->
 		{%- assign titled_pages = include.pages
 	        | where_exp:"item", "item.title != nil" -%}
 
@@ -175,26 +176,32 @@ layout: table_wrappers
 
 		{%- assign nav_sorted_list = sorted_number_ordered_pages | concat: sorted_string_ordered_pages -%}
 
+		<!-- List of only parents -->
 		{%- assign parent_list = nav_sorted_list
 	        | where_exp:"item", "item.parent == nil" -%}
 
+		<!-- Form logically sorted page list -->
 		{%- assign pages_list = "" | split:"X" -%}
 		{%- for node in parent_list -%}
 			{%- assign pages_list = pages_list | push:node -%}
-			<p>parent {{forloop.index}} {{node.title}}</p>
 			{%- if node.has_children -%}
 				{%- assign children_list = nav_sorted_list | where: "parent", node.title -%}
 				{%- assign pages_list = pages_list | concat:children_list -%}
 		    {%- endif -%}
 		{%- endfor -%}
 
+		<!-- Find current page -->
 		{%- for node in pages_list -%}
-			<p>{{forloop.index}} {{node.title}}</p>
+		    {%- if node.url == page.url -%}
+				{%- assign current_index = node.url -%}
+		    {%- endif -%}
 		{%- endfor -%}
 
+		<!-- Calculate next/previous -->
 		{%- assign previous_index = current_index | minus:1 -%}
-		{%- assign next_index = current_index | minus:1 -%}
+		{%- assign next_index = current_index | plus:1 -%}
 
+		<!-- Add tags for next/previous -->
 		{%- for node in pages_list -%}
 		    {%- if forloop.index == previous_index -%}
 			    <a class="prev" href="{{node.url}}">&laquo; {{node.title}}</a>
@@ -203,13 +210,6 @@ layout: table_wrappers
 			    <a class="next" href="{{node.url}}">{{node.title}} &raquo;</a>
 		    {%- endif -%}
 		{%- endfor -%}
-
-			{{page.url}}
-		  {% if page.previous.url %}
-		  {% endif %}
-		  {% if page.next.url %}
-		    <a class="next" href="{{page.next.url}}">{{page.next.title}} &raquo;</a>
-		  {% endif %}
 		</div>
 
         {% capture footer_custom %}
