@@ -3,8 +3,9 @@ $header-height: 70px;
 
 $black: #000000;
 $white: #ffffff;
-$aqua: #00CCCC;
-$slate: #C1C2C3;
+$aqua: #00B8B8;
+$slate: #3C3D3E;
+$old-green: #8bc24a;
 
 $body-background-color: $white;
 $sidebar-color: $slate;
@@ -13,11 +14,11 @@ $border-color: $aqua;
 $body-text-color: $black;
 $body-heading-color: $black;
 $nav-child-link-color: $aqua;
-$search-result-preview-color: #8bc24a;
+$search-result-preview-color: $old-green;
 
 $link-color: $aqua;
 $btn-primary-color: $aqua;
-$base-button-color: #8bc24a;
+$base-button-color: $old-green; // ???
 
 $code-background-color: #222222;
 $details-background-color: #363636;
