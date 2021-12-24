@@ -16,4 +16,4 @@ aux_links:
     - "//udemy.com"
 
 footer_content:
-    "This site uses <a href="https://github.com/pmarsceill/just-the-docs">Just the Docs</a>, a documentation theme for Jekyll."
+    "This site uses <a href='https://github.com/pmarsceill/just-the-docs'>Just the Docs</a>, a documentation theme for Jekyll."
