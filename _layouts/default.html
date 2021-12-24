@@ -204,7 +204,7 @@ layout: table_wrappers
 		<!-- Add tags for next/previous -->
 		{%- for node in pages_list -%}
 		    {%- if forloop.index == previous_index -%}
-			    <a class="prev" href="{{node.url}}">&laquo; {{node.title}}</a>
+			    <a class="prev" href="{{node.url}}">&laquo; {{node.title}}</a><br>
 		    {%- endif -%}
 		    {%- if forloop.index == next_index -%}
 			    <a class="next" href="{{node.url}}">{{node.title}} &raquo;</a>
