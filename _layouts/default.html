@@ -176,8 +176,9 @@ layout: table_wrappers
 		{%- assign pages_list = sorted_number_ordered_pages | concat: sorted_string_ordered_pages -%}
 
 		{%- for node in pages_list -%}
+			<p>{{forloop.index}} {{node.url}}</p>
 		    {%- if node.url == page.url -%}
-				<p>{{forloop.index}}</p>
+				<p>current {{forloop.index}}</p>
 				{%- assign current_index = forloop.index -%}
 		    {%- endif -%}
 		{%- endfor -%}
