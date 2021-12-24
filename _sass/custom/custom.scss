@@ -12,8 +12,10 @@ details{
 	font-weight: 500;
 }
 
-.site-nav{
-	overflow: hidden;
-	// aqua + slate
-	// scrollbar-color: #00DBDB #636668;
+::-webkit-scrollbar-track {
+  background: #636668;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #00DBDB;
 }
