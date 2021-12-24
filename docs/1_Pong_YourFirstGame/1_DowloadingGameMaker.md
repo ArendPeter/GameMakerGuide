@@ -24,7 +24,7 @@ Before downloading game maker you'll first need to register for an account
 
 At the moment there are 4 categories of Game Maker products to choose from
 
-* **Free**: This gives you access to all features in Game Maker, let's you test your games from Game Maker. But if you want to export the game and share it with your friends, then GXC is your only option for the free version
+* **Free**: This gives you access to all of Game Maker's features, and let's you test your games from Game Maker. But if you want to export the game and share it with your friends, then GXC is your only option for the free version
 * **Creator**: Exports to Mac + Windows ( + everything from previous tiers )
 * **Indie**:  Exports to Android + iOS exports ( + everything from previous tiers )
 * **Enterprise**: Exports to everything GameMaker supports, including Playstation, XBox, and Switch
@@ -41,7 +41,7 @@ Next we can download Game Maker Studio
 1. Select "View Downloads" under the download section
 1. Select Windows or Mac depending on your machine
 
-> NOTE: Game Maker is free to download regardless of the product you choose, we'll need to login later for Game Maker to know which version we're using
+> NOTE: Game Maker is free to download regardless of which subscription you chose, we'll need to login later for Game Maker to know which exports you have access to
 
 ## Installing Game Maker Studio (for Windows)
 

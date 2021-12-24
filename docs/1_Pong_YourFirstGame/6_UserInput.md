@@ -16,7 +16,7 @@ Let's try making the paddle move up and down in response to the keyboard buttons
 We'll use keyboard events for this, there's actually 3 types
 
  * **Key Pressed**: This event triggers once on the exact frame that you press the key
- * **Key Released**: This event triggers once on the exact frame that you release the key
+ * **Key Up**: This event triggers once on the exact frame that you release the key (This used to be called Released, I like the old name better)
  * **Key Down**: This event triggers every frame that the key is held down (if I was naming this, I probably would have said Key Held instead but yoyogames didn't ask me)
 
 We're going to be simulating vertical movement by repeatedly adjusting our y value a little bit at a time. Which event type do you think we should use?
@@ -25,7 +25,7 @@ We're going to be simulating vertical movement by repeatedly adjusting our y val
 
 **Key Down**
 
-Since it's repeatedly updating every frame, Key Down is the way to go, Key Pressed/Released would have only activated once
+Since it's repeatedly updating every frame, Key Down is the way to go, Key Pressed/Released would have only activated once at a time
 
 Go ahead and jump into oPaddle and add events for "Key Down > Up" and "Key Down > Down" (super confusing, again I wish I could say "Key Held > Down" 😭 )
 
@@ -41,10 +41,10 @@ This is using the same variable assignment structure but there are a few extra c
 
 In this case we want to set the new position **relative** to the old position instead of setting it to a specific number, so that's why we need to include y on the right side
 
-This also further highlights the differences with the mathematical equals sign, since the left/right side are clearly unequal. The GML equals sign is actually saying "set the new y value to be the old y value - 4". In fact, let's add that as a comment
+This also further highlights the differences with the mathematical equals sign, since the left/right side are clearly unequal. The GML equals sign is actually saying "set the new y value to be the old y value minus 4". In fact, let's add that as a comment
 
 ```
-// set the new y value to be the old y value - 4
+// set the new y value to be the old y value minus 4
 y = y - 4;
 ```
 
@@ -80,22 +80,22 @@ y = y + 4;
 
 Great work! Now when we test it, we should be able to move both individually
 
-Feel free to swap out 4 with a different number to find a speed that feels better
-
 ![](../../images/pong/paddle_move.gif)
+
+Feel free to swap out 4 with a different number to find a speed that feels better
 
 ## Ball movement (w/ hspeed and vspeed)
 
 Now it's time to get the ball rolling (hehe)
 
-We're using a different movement approach for the ball. Instead of directly setting it's x/y position every frame, we'll set it's speed in the beginning, and then let game maker update it's x/y for us. Add the following to oBall's create event (new variables, yay!)
+We're using a different movement approach for the ball. Instead of directly setting it's x/y position every frame, we'll set the speed in it's create event, and then let game maker update it's x/y for us. Add the following to oBall's create event (new variables, yay!)
 
 ```
 hspeed = 4;
 vspeed = 4;
 ```
 
-The hspeed and vspeed variables represent how fast the ball is moving in the horizontal and vertical directions respectively. In a more literal sense, it represents how much we want the x/y values to change each frame. That said doing the following in the step event should get you exact same results
+The hspeed and vspeed variables represent how fast the ball is moving in the horizontal and vertical directions respectively. In a more literal sense, it represents how much we want the x/y values to change each frame. That said doing the following in the step event should get you the exact same results
 
 ```
 // NOTE: don't actually add this to your project, this is just a example
@@ -119,9 +119,9 @@ Because we're doing both at the same time we end up with a diagonal effect
 
 ## Collisions
 
-So we've got the ball rolling, but now it just keeps on rolling forever w/o any respect to walls or physics of any kind. To fix this we need collisions
+So we've got the ball rolling, but now it just keeps on rolling forever without any respect to walls or physics of any kind. To fix this we need collisions
 
-In ``oBall`` add a collision event w/ ``oWall``. When this happens we want to reflect the ball's vertical motion, luckily there's a clever way to do that using the techniques we already know and love (or at least know, love will come w/ time)
+In ``oBall`` add a collision event with ``oWall``. When this happens we want to reflect the ball's vertical motion, luckily there's a clever way to do that using the techniques we already know and love (or at least know, love will come with time)
 
 ```
 vspeed = -vspeed;
@@ -134,11 +134,13 @@ Let's think through the cases
 
 So that works!
 
-<details data-summary="Using the same technique can you add horizontal collisions w/ the paddes?" markdown="1">
+But we still need collisions with the paddles, can you do it?
+
+<details data-summary="Using the same technique can you add horizontal collisions with the paddes?" markdown="1">
 
 Should just be a matter of different collision events using the hspeed variable instead of vspeed
 
-You can add 2 collision events to the ball (one for both paddles) and use the following code for both
+You can add 2 collision events to the ball (one for each paddle) and use the following code for both
 
 ``hspeed = -hspeed;``
 

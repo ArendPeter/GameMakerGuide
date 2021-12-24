@@ -11,9 +11,9 @@ Game Maker has many different resource types to work with, but some are more imp
 
 ## Sprites
 
-**Sprites** are essentially pictures / images. In general, the term usually refers to small, 2D, pixel art images, however in Game Maker all images (character art, backgrounds, tilesets, etc), are initially imported as sprites.
+**Sprites** are essentially pictures / images. In general, the term usually refers to small, 2D, pixel art images, however in Game Maker all images (character art, backgrounds, tilesets, etc), are initially created as sprites.
 
-There's a lot of ways to create sprites, but my prefered method is to right click on the sprites folder and select "Create > Sprite" (if you want to be fancy you can also hit alt + s). This will spawn a sprite resource window in your workspace. We'll name the first sprite ``sPaddle``
+There's a lot of ways to create sprites, but my prefered method is to right click on the sprites folder and select "Create > Sprite" (if you want to be fancy you can also hit ALT+S). This will spawn a sprite resource window in your workspace. We'll name the first sprite ``sPaddle``
 
 ![](../../images/pong/create_sprite.gif)
 
@@ -25,7 +25,7 @@ As a side note, the sprites folder, and folders in general, don't really mean an
 
 We can name resources whatever we want in Game Maker, but most Game Maker users like to follow a convention depending on the resources. I start my names with lower case letter(s) for the type, then I capitalize the first letter of the name (this is called camel case). For example, ``sPaddle``, ``oPaddle``, and ``rmMenu`` are names for a sprite, object, and room respectively. I've also seen people use the snake case convention ``spr_paddle``, ``obj_paddle``, and ``rm_menu`` (this is more common than mine, but I like the shorter names).
 
-If your curious, you can find the full list of word combining conventions [here](https://en.wikipedia.org/wiki/Naming_convention_(programming)#Examples_of_multiple-word_identifier_formats)
+> 🤓 If your curious, you can find the full list of word combining conventions [here](https://en.wikipedia.org/wiki/Naming_convention_(programming)#Examples_of_multiple-word_identifier_formats)
 
 ## Sprite Editor
 
@@ -47,7 +47,7 @@ For this course, we won't be focusing too much on making the art ( it's not real
 | Filled Circle Tool | ![](../../images/sprite_editor/circle_filled.gif) | Circle Outline Tool | ![](../../images/sprite_editor/circle_outline.gif) |
 | Erase Tool | ![](../../images/sprite_editor/erase.gif) | Line Tool | ![](../../images/sprite_editor/line.gif) |
 
-To put your skills to the test, go ahead and add sBall (16x16) and sWall (64x64)
+To put your skills to the test, go ahead and add ``sBall`` (16x16) and ``sWall`` (64x64)
 
 ![](../../images/pong/first_sprites.png)
 
@@ -63,15 +63,15 @@ There's 2 main methods for navigation
 
 The initial mouse position is VERY IMPORTANT. If you're mouse is hovering over the workspace background, then you'll be adjusting the workspace view, but if you start out in the sprite preview, you'll be adjusting the sprite preview. This is cool, since you only need to learn these tricks once, but then you get to use them repeatedly throughout game maker (including the Room Editor later on)
 
-![](../../images/pong/laptop_mode.gif)
+![](../../images/pong/laptop_mode.png)
 
 > **Latptop Mode**: If you're using a laptop touchpad, you probably don't have a good way to center click. In this case you can use Game Maker's "Laptop Mode" and use an alternate control scheme
 
 ## Objects
 
-Next we'll add objects for each of the sprites. You can think of objects as sprites w/ brains. We'll be spending most of the course working inside objects making them smarter, but for now we'll just make empty objects with sprites attached
+Next we'll add objects for each of the sprites. You can think of objects as sprites with brains. We'll be spending most of the course working inside objects making them smarter, but for now we'll just make empty objects with sprites attached
 
-Similar to the sprites, right click on the folder and select "Create > Object" to create an object (or hit (ALT + O) if you want to show off ). From there we'll name the first one ``oPaddle``
+Similar to the sprites, right click on the folder and select "Create > Object" to create an object (or hit ALT+O if you want to show off ). From there we'll name the first one ``oPaddle``
 
 ![](../../images/pong/create_object.gif)
 
@@ -85,7 +85,7 @@ Rinse and repeat for ``oBall``, ``oWall``, and ``oEnemyPaddle`` (enemy paddle wi
 
 ## Rooms
 
-Rooms are essentially levels, it represents what will be shown on the screen. We can place a bunch of objects, sprites, and other resources here to form levels, menus and any other room we can think of. (side note: most other game engines refer to rooms as "Scenes" )
+Rooms are essentially levels, it represents what we'll be shown on the screen. We can place a bunch of objects, sprites, and other resources here to form levels, menus or any other room we can think of. (side note: most other game engines refer to rooms as "Scenes" )
 
 We'll just use the default room for now. When we click in there, we can drag objects from our asset browser into the room (oh and make sure you have the Instances layer selected, we'll get more into layers later). Go ahead and added the 2 paddles and a ball
 
@@ -93,7 +93,7 @@ We'll just use the default room for now. When we click in there, we can drag obj
 
 ## Objects vs Instances
 
-When I add objects to the room, they're not technically objects anymore. They're instances. You can see this my double clicking on the instances. You get an instance window, and they have a different name. You can think of objects as a blueprints, and instances as creations (or instantiations) of the blueprints. This distinction is important because we can see each instance has properties, and instances can have different properties despite coming from the same object
+When I add objects to the room, they're not technically objects anymore. They're instances. You can verify this by double clicking on the instances. You get an instance window, and they have a different name. You can think of objects as a blueprints, and instances as creations (or instantiations) of the blueprints. This distinction is important because we can see each instance has properties, and instances can have different properties despite coming from the same object
 
 As an example, let's stretch some walls to span the top and bottom of the room. When we do this you can see the scale properties can be different for each instance.
 
@@ -122,16 +122,16 @@ As a test to see the layer order in action, we can swap the order of the Backgro
 
 ![](../../images/pong/layer_order.gif)
 
-There are several more layer types, and we'll be diving into several of them, but sticking to these 2 will be sufficient for now
+There are several more layer types, and we'll be diving into most of them, but sticking to these 2 will be sufficient for now
 
 ## Run the game
 
-When your room's ready, you can hit the run button in the toolbar (or F5)
+When your room's ready, you can hit the run button in the toolbar (or F5) to start the game
 
 ![](../../images/pong/run_game.png)
 
-And then we'll see our level in the game window :D
+Then we'll see our level in the game window 😍
 
 ![](../../images/pong/first_game_run.png)
 
-This is a special moment, you just made something, and it's running in real life program on your computer. It's beautiful :')
+This is a special moment, you just made something, and it's running in real life program on your computer. It's beautiful 🥲

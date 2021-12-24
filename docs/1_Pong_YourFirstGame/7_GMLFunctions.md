@@ -31,10 +31,10 @@ Well, `game_restart` is a function, and can always tell functions apart from var
 
 Here's my working definition for functions:
 
-> **function**: a command that does 1 or more of the following
-1. Takes inputs
-2. Performs an action
-3. Gives back outputs
+> **function**: a command that does one or more of the following
+ * Takes inputs
+ * Performs an action
+ * Gives back outputs
 
 In our case `game_restart` performs an action (it restarts the game), but it does so without taking inputs or giving back outputs
 
@@ -56,7 +56,7 @@ Key Down would be a little weird. Remember key down triggers on every frame wher
 
 For Key Press vs Key Released, there's an argument for both. Key Press will trigger faster, but sometimes I'll use Key Released if I want to communicate what you're interacting with before the action occurs.
 
-For example, if I setup the spacebar to be a keyboard shortcut for a play button, I might use Key Released, and then also use Key Down to perform a short hover animation on the button. This way you can see which button you're trigger before it triggers
+For example, if I setup the spacebar to be a keyboard shortcut for a play button, I might use Key Released, and then also use Key Down to perform a short hover animation on the button. This way you can see which button you're triggering before it triggers
 
 In this case we're not providing feedback anyway, so Key Press is probably ideal
 
@@ -72,19 +72,19 @@ Our collision logic assumes that the event will only be triggered once, but in r
 
 In our example the flipping horizontal direction on vertical collisions isn't enough un-collide the ball on the next frame. As a result the horizontal speed gets continuously flipped, and the ball stalls horizontally untile the collision/overlap ends
 
-To fix this, I'll update the logic to force collisions with ``oPaddle``, and ``oEnemyPaddle``, to explicitly force the ball to move right and left respectively.
+To fix this, I'll update the logic to force collisions with ``oPaddle`` and ``oEnemyPaddle``, to explicitly force the ball to move right and left respectively.
 
 Here's oBall's collision event w/ oEnemyPaddle:
 
 ```
-hspeed = abs(hspeed)
+hspeed = abs(hspeed);
 ```
 
-This uses abs() which takes the existing hspeed, and then outputs a positive version, Effectively forcing the ball to move to the right regardless of the current hspeed. Here's some more formal abs() documentation
+This uses ``abs()`` which takes the existing ``hspeed``, and then outputs a positive version, Effectively forcing the ball to move to the right regardless of the current hspeed. Here's some more formal ``abs()`` documentation
 
 > **abs()**: Short for "absolute value", it returns the positive version of the number
 * Input: an input number
-* Action: if the number if negative, multiply it by -1 (2 negatives make a positive 😉), otherwise leave it unchanged
+* Action: if the number is negative, multiply it by -1 (2 negatives make a positive 😉), otherwise leave it unchanged
 * Ouptut: positive version of the number
 
 Then we can use similar same logic to force left movement when the ball hits the player's paddle
@@ -92,7 +92,7 @@ Then we can use similar same logic to force left movement when the ball hits the
 Here's oBall's collision event w/ oPaddle:
 
 ```
-hspeed = -abs(hspeed)
+hspeed = -abs(hspeed);
 ```
 
 When testing it out, this edge case should be fixed
@@ -111,7 +111,7 @@ hspeed = choose(-4, 4);
 vspeed = choose(-4, 4);
 ```
 
-Introducing the choose function! This takes in a series of inputs, randomly "chooses" one, and then gives it back. So our hspeed and vspeed can both be either -4 or 4
+Introducing the ``choose()`` function! This takes in a series of inputs, randomly "chooses" one, and then gives it back. So our hspeed and vspeed can both be either -4 or 4
 
 Here's a more formal definition:
 
@@ -122,13 +122,15 @@ Here's a more formal definition:
 
 Also note how we're using variable assignment and functions together in the same line. We're taking the output from choose, and then using the assignment operator to direct that output toward one of our variables
 
-Now here's what it looks like when we press restart
+Now here's what it looks like when we press restart (i.e. the R key)
 
 ![](../../images/pong/ball_random_start.gif)
 
 But it seems a little odd that it only goes diagonal. We certainly don't want it to go vertical (that would be a VERY long wait), but maybe horizontal? Why don't you give it a try?
 
 <details data-summary="Update the code to have horizontal as possible direction" markdown="1">
+
+Moving horizontally, means our vertical speed is zero. So adding 0 to the ``vspeed`` choices should do the trick
 
 ```
 hspeed = choose(-2, 2);
@@ -164,7 +166,7 @@ When I (meaning me the ball), go outside the room:
   Self destruct (it's that or wander in the endless space outside the room forever)
 ```
 
-For the event, outside room should be pretty self explanatory. It'll be triggered once x/y value of the instance goes out the dimensions of the room
+For the event, **Outside Room** should be pretty self explanatory. It'll be triggered once the ``x``/``y`` value of the instance goes out the dimensions of the room
 
 Here are the new variables:
 
@@ -174,7 +176,7 @@ Here are the new variables:
 
 > ``layer``: represents the current layer of the object (so far that's always been the "Instances" layer, but we can just refer to the layer variable in case that changes)
 
-> **Fun Fact**: I guess oBall is technically a variable? But you should think of it as a asset. And as a fun fact, you can refert to any of the assets in the asset browser in code. Here we used oBall, but if you type out any of the other ones (like sPaddle?) they should all be highlighted the same
+> **Fun Fact**: I guess ``oBall`` is technically a variable? But you should think of it as a asset. And as a fun fact, you can refert to any of the assets in the asset browser in code. Here we used ``oBall``, but if you type out any of the other ones (like ``sPaddle``?) they should all be highlighted the same
 
 and here's the functions:
 
@@ -188,7 +190,7 @@ and here's the functions:
 * Action: Destroys the current instance (ahem 🤓, technically it won't get destroyed until the current frame is completed. I guarantee you'll forget this and then relearn it the hard way when you hit a weird bug, but I figured I'd mention it anyway)
 * Ouptut: nadda
 
-Testing this out should work, when a ball leaves the room, it will destroy it's self and new ball will show up at the start allowing the game to continue
+Testing this out should work. When a ball leaves the room, it will destroy it's self and a new ball will show up at the start allowing the game to continue
 
 ![](../../images/pong/ball_outside_room.gif)
 

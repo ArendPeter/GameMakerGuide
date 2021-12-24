@@ -11,11 +11,11 @@ Game Makers interface is made up of a bunch of windows, let's dive into them!
 
 ## Window Types
 
-The **workspace** and the **Asset Browser**, are the windows you'll be using most often. There are several other types, and we'll learn about them as we go. By default your Asset Browser will be on the right side with your workspace taking the bulk of the Game Maker window
+The **Workspace** and the **Asset Browser**, are the windows you'll be using most often. There are several other types, and we'll learn about them as we go. By default your Asset Browser will be on the right side with your workspace taking the bulk of the Game Maker window
 
 ![](../../images/pong/workspace_and_assets.png)
 
-As our project grows, we'll continuously be adding new resources to the resource tree, and then we'll edit the resources in the workspace. As you edit resources, they'll generate more tabs and panes as needed
+As our project grows, we'll continuously add new resources to the Asset Browser, and then we'll edit the resources in the workspace. As you edit resources, they'll generate more tabs and panes as needed
 
 ![](../../images/pong/busy_workspace.png)
 

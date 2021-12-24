@@ -7,19 +7,7 @@ has_children: true
 
 # Course Intro
 
-Hi, welcome to the Arend Peter Teaches Game Maker course
-
-## What is this
-
-This website serves as the text book for my video based course on Udemy. So you can use it as a reference while following the videos, or, if you prefer reading, you can skip the videos, and just follow along with the book
-
-The course will go over all the basics of Game Maker, here's some of the skills you'll learn by the end
-
- * **Work with Game Maker resources**: In particular sprites, objects, rooms, fonts, sounds, and tile sets will all be included
- * **Basic GML programming**: Game Maker has it's own programming language, and you'll know how to work with the 50 most common variables and functions
- * **End-to-end games**: Setup your game end to end, including multiple levels, as well as a menu, and a win state
- * **Game Polish**: I've released multiple sucessful titles with Game Maker along w/ my friends at star garden games. I'll show you the tricks that go into making your games look professional and polished
- * **Software Principles**: I used to work as a full time software engineer. I pass some of that experience on so that you can write clean code that's easy to update, and easy to scale as your game grows
+Here's an overview of the course
 
 ## What We'll Make
 
@@ -51,12 +39,13 @@ Then once we've made Flappy Bird, you can try making Doodle Jump, and Chip's Cha
 ![](../../images/pong/doodle_jump_final.gif)
 ![](../../images/pong/chips_challenge_final.gif)
 
-Then finally once we've made a polish platformer together, you can try making Geometry Dash style auto-runner, and a top down shooting game with waves of enemies
+Then finally once we've made a polished platformer together, you can try making Geometry Dash style auto-runner, an asteroid style shooting game shooting game with waves of enemies, and another shooting game where you aim at baloons and try to get combos
 
-![](../../images/pong/doodle_jump_final.gif)
-![](../../images/pong/chips_challenge_final.gif)
+![](../../images/pong/runner_final.gif)
+![](../../images/pong/shooter_final.gif)
+![](../../images/pong/popper_final.gif)
 
-I've created demos for all 9 of these games (either downloadable or in browser), head over to our itch page to play them
+I've created demos for all 10 of these games (either downloadable or in browser), head over to our itch page to play them
 
 ## What if you get stuck?
 

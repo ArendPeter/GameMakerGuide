@@ -19,13 +19,13 @@ By default, the room editor will force you to place your instances on a 32x32 gr
 
 ## x / y axis
 
-Let's look back at the instance properties in the room editor. Earlier we modified the scale x property, but there's much more where that came from and we'll quickly become familiar with all of them throughout the course. The most important properties here are the x and y, so we'll dig into those next.
+Let's look back at the instance properties in the room editor. Earlier we modified the scale x property, but there's much more where that came from and we'll quickly become familiar with all of them throughout the course. The most important properties here are the x and y, so we'll dig into those first
 
-You were probably wondering what the X by Scale X meant. x and y are pretty much just short hands for horizontal and vertical respectively. So why didn't they call it horizontal scale, and vertical scale instead? Well we refer to horizontal and vertical so often that it quickly becomes tedious to type, so we end of w/ x and y instead (can't be much shorter than that!)
+You were probably wondering what the X by Scale X meant. x and y are pretty much just short hands for horizontal and vertical respectively. So why didn't they call it horizontal scale, and vertical scale instead? Well, Game Maker refer to horizontal and vertical so often that it quickly becomes tedious to type, so we end of w/ x and y instead (can't be much shorter than that!)
 
 ![](../../images/pong/inspector_example.png)
 
-So with that said the x and y variables represent where each instance is positioned in the room horizontally and vertically. If you drag one of your instances to the right you can see that the x increases. Similarly if you drag the instance down you see that y increases. I can also set the x and y directly in the instance properties.
+With that said, the x and y variables represent where each instance is positioned in the room horizontally and vertically. If you drag one of your instances to the right you can see that the x increases. Similarly if you drag the instance down you see that y increases. I can also set the x and y directly in the instance properties.
 
 ![](../../images/pong/xy_inspector.gif)
 
@@ -35,11 +35,11 @@ If I set it to x = 0, and y = 0, where do you think the instance will move to? (
 
 If you said, top left corner, you would be right! Since moving right and down made both variables bigger, that meant that moving left and up makes them smaller, and since x = 0 and y = 0 is the smallest number you can have without going negative (and you can go negative by the way), it makes sense for that to be the top left corner
 
-This is can be really confusing because it's different from what you'll learn in your math and physics classes. In school, going up increases y (not down), and the x = 0 and y = 0 point is in the bottom left (not top left). So make sure flip the switch back to "up is more" when you go back to school, I'd hate for this course to hurt your grades
+This can be really confusing because it's different from what you'll learn in your math and physics classes. In school, going up increases y (not down), and the x = 0 and y = 0 point is in the bottom left (not top left). So make sure flip the switch back to "up is more" when you go back to school, I'd hate for this course to hurt your grades
 
 ![](../../images/pong/xy_classic.png)
 
-Another handy trick for viewing x, y is to look at the bottom left of the room editor. There you see 2 numbers (for example (841, 592)). Those represent the x, y position under your mouse cursor, and you can that to again verify the following:
+Another handy trick for viewing x, y is to look at the bottom left of the room editor. There you see 2 numbers (for example (841, 592)). Those represent the x, y position under your mouse cursor, and you can use that to again verify the following:
 
  * Moving the mouse left decreases x
  * Moving the mouse right increases x
@@ -53,7 +53,7 @@ Another handy trick for viewing x, y is to look at the bottom left of the room e
 
 ## Events
 
-We're very close to digging into code, but first we need to understand events. Code is our tool to describe "What" should happen, but events show us "When" it should happen. For example, if we go to the ball object, and click "Add Event" we can see lot of options.
+We're very close to digging into code, but first we need to understand events. Code is our tool to describe "What" should happen, but events show us "When" it should happen. For example, if we go to the ball object, and click "Add Event" we can see lots of options
 
 ![](../../images/pong/add_event.gif)
 
@@ -101,7 +101,7 @@ If you said "center leftish", you'd be right!!
 Before we move on to adjusting more variables, I have some more details to share on assigning variables
 
  * **Assignment Operator**: In code, we call `=` the Assignment Operator. We can think of the variable name on the left as an empty box, and the assignment variable moves the value on the right into the box on the left. Unlike math there's no rule that the left side has start out with the same value as the right (although they will be the same once the assignment has been completed). For now these differences are subtle, but they'll be important to understand later
- * **Semi Colons**: The semi colon `;` marks the end of the statement, think of it like the period at the end of a sentence, it represents the end of a complete thought 😊. We use them here for the assignment statement, but we'll also need it on all future statements. Interestingly, you can actually remove semi colons, and your code will probably still work fine. However there's some specific situations where things could break, and if you hit those situations, it will be VERY hard to find the issue. For this reason yoyogames STRONGLY recommends using semi colons, so this is a good habit to keep
+ * **Semi Colons**: The semi colon `;` marks the end of the statement, think of it like the period at the end of a sentence, it represents the end of a complete thought 😊. We use them here for the assignment statement, but we'll also need it on all future statements. Interestingly, you can actually remove semi colons, and your code will probably still work fine. However there's some specific situations where things could break, and if you hit those situations, it will be VERY hard to find the issue. For this reason yoyogames STRONGLY recommends using semi colons, so this is a good habit to keep up
  * **Spacing**: I included a single space on either side of the equal sign, but I don't have a space before the semi colon. I almost always do it this way to keep things consistent, but Game Maker doesn't actually care at all. You can add as many spaces, tabs, or even new lines around you code, and Game Maker will handle it the same. This will be particularly useful when we start getting into functions later. Below are some examples of how we could rewrite our assignment statement
 
 ```
@@ -123,7 +123,7 @@ x
 ;
 ```
 
-As another exercise, why don't you setting the x / y in the create event to position to the ball in the exact center of the room? This is a tad open ended, so be ready to do a bit of thinking and tinkering
+As another exercise, why don't you try setting the x / y in the create event to position to the ball in the exact center of the room? This is a tad open ended, so be ready to do a bit of thinking and tinkering
 
 <details data-summary="How do you put it in the exact center?" markdown="1">
 
@@ -138,7 +138,7 @@ To do this you need to figure out the width/height of the room, and then divide 
 
 One way is to hover your mouse, or move an object, to figure out the x,y position at the bottom right corner of the room. Since the top left is (0, 0) the bottom right will be (width, height) (where you replace width, height with whatever the actual width/height is)
 
-Another way is to inspect the room properties (located below the layers and layer properites by default). There you'll see that the default room width and height are 1366, and 768 respectively, but you can change them here if you want to.
+Another way is to inspect the room properties (located below the layers and layer properites by default). There you'll see that the default room width and height are 1366, and 768 respectively, but you can change them here if you want to
 
 Yet another way, (and if you got this you're really ahead of the curve, since I haven't taught this yet), is to find the variables for room width and height. Then you can do the math directly in code, and you'll end up with this
 
@@ -165,7 +165,7 @@ Here's an example of a comment in our code, try adding it to your ball's create 
 
 Sorry that was a little mean, nothing actually happens
 
-But that's the beauty of comments, you can enter // and then fill the rest of the line with whatever you want, and Game Maker won't care!
+But that's the beauty of comments, you can enter ``//`` and then fill the rest of the line with whatever you want, and Game Maker won't care!
 
 I recommend you use these as much as you can (especially when you're starting out). Code can be very confusing, so leverage comments to describe what your code is doing. This way future-you can come back to the code and still understand what it's doing
 

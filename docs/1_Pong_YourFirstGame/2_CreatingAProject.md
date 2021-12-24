@@ -7,7 +7,7 @@ parent: Pong | Your First Game
 
 # Creating a new project (DnD vs GML)
 
-This step will go into creating a new project, Drag and Drop versus GameMaker Language
+This step will go into creating a new project and Drag and Drop versus GameMaker Language
 
 ## Create a new project
 
@@ -17,17 +17,19 @@ Let's make a new project!
 
 1. Open Game Maker, this will take you to the start page
 1. Select "New" under the "Getting Started"
-1. Select GameMaker Language
+1. Select "New Blank" for the template
+1. Select GML
 1. Save the project as "Pong"
+1. Hit "Let's Go"
 
-## Drag and Drop versus GameMaker Language
+## DnD versus GML
 
 Drag and Drop, or GameMaker Language (i.e. code) is first decision you'll need to make whenever you start new projects. Here's the difference
 
-* **Drag and Drop (DnD)** : This simplifies Game Maker's interface, allowing you to create your soling through dragging and dropping blocks, and connecting them to form your logic. Using DnD you can develop your games without ever writing a line of code, however you still have the option insert code snippets if you want
+* **Drag and Drop (DnD)** : This simplifies Game Maker's interface, allowing you to create your game soley through dragging and dropping blocks, and connecting them to form your logic. Using DnD you can develop your games without ever writing a line of code, however you still have the option insert code snippets if you so choose
 * **GameMaker Language (GML)** : If you prefer writing code, this option will remove all the DnD windows, and replace them with text editors. Game Maker uses Game Maker Language, which is loosely similar to writing Javascript
 
-For my courses we'll be choosing **GameMaker Language**. DnD is definitely easier to learn if you're trying to pick it up on your own, but GML is also perfectly fine to start with if you're being guided through it. I prefer coding, and for the course I felt it would be smoother for your to start with GML rather than switch to DnD to GML later and relearn the basics
+For my courses we'll be choosing **GML**. DnD is definitely easier to learn if you're trying to pick it up on your own, but GML is also perfectly fine to start with if you're being guided through it. I prefer coding, and for the course I felt it would be smoother for you to start with GML rather than switch from DnD to GML later and relearn the basics
 
 GML also serves as a great gateway into other programming languages. At this point I have experience with over a dozen different programming languages, but GML was my first, and mastering GML first made it easy for me to pickup more standard languages like Java and Python after that. With that in mind, I'll be linking what we learn in GML to more general programming concepts whenever possible
 
