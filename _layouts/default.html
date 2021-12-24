@@ -153,8 +153,8 @@ layout: table_wrappers
 		<div class="PageNavigation">
 
 		{%- assign titled_pages = include.pages
-	        | where_exp:"item", "item.title != nil and item.parent == nil" -%}
-			
+	        | where_exp:"item", "item.title != nil" -%}
+
 		<p> titled pages </p>
 		{%- for node in titled_pages -%}
 			<p>{{forloop.index}} {{node.url}}</p>
@@ -163,8 +163,20 @@ layout: table_wrappers
 				{%- assign current_index = forloop.index -%}
 		    {%- endif -%}
 		{%- endfor -%}
+		<p> titled pages end</p>
 
-			<p> titled pages end</p>
+		{%- assign parent_pages = titled_pages
+	        | where_exp:"item", "item.parent == nil" -%}
+
+		<p> parent pages </p>
+		{%- for node in parent -%}
+			<p>{{forloop.index}} {{node.url}}</p>
+		    {%- if node.url == page.url -%}
+				<p>current {{forloop.index}}</p>
+				{%- assign current_index = forloop.index -%}
+		    {%- endif -%}
+		{%- endfor -%}
+		<p> parent pages end</p>
 
 	    {%- assign nav_ordered_pages = titled_pages
 	          | where_exp:"item", "item.nav_order != nil"  -%}
