@@ -16,19 +16,11 @@ details{
   background: #636668;
 }
 
+::-webkit-scrollbar {
+	width: 100px;
+}
+
 ::-webkit-scrollbar-thumb {
   background: #00DBDB;
   border-radius: 5px;
-}
-.site-nav{
-	&::-webkit-scrollbar-track {
-	  background: #636668;
-	}
-}
-
-.site-nav{
-	&::-webkit-scrollbar-thumb {
-	  background: #00DBDB;
-	  border-radius: 5px;
-	}
 }
