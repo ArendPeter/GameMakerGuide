@@ -12,5 +12,5 @@ logo: "/images/logo.png"
 color_scheme: custom
 
 aux_links:
-  "Video version on Udemy":
+  "Video version on <img src='https://www.udemy.com/staticx/udemy/images/v7/logo-udemy-inverted.svg'/>":
     - "//udemy.com"
