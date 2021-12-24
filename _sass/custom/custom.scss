@@ -12,15 +12,25 @@ details{
 	font-weight: 500;
 }
 
-::-webkit-scrollbar-track {
+
+::-webkit-scrollbar {
+	width: 10px;
+}
+
+.site-nav::-webkit-scrollbar-thumb {
+  background: #00DBDB;
+  border-radius: 5px;
+}
+
+.site-nav::-webkit-scrollbar-track {
   background: #636668;
 }
 
-::-webkit-scrollbar {
-	width: 100px;
+.main-content::-webkit-scrollbar-thumb {
+  background: #C3D8D8;
+  border-radius: 5px;
 }
 
-::-webkit-scrollbar-thumb {
-  background: #00DBDB;
-  border-radius: 5px;
+.main-content::-webkit-scrollbar-track {
+  background: #FFFFFF;
 }
