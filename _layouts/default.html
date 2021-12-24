@@ -175,7 +175,11 @@ layout: table_wrappers
 
 		{%- assign pages_list = sorted_number_ordered_pages | concat: sorted_string_ordered_pages -%}
 
-		{%- for node in pages_list -%}
+		{%- assign parent_list = pages_list
+	        | where_exp:"item", "item.parent == nil" -%}
+
+		{%- for node in parent_list -%}
+			<p>{{forloop.index}} {node.title}</p>
 		    {%- if node.url == page.url -%}
 				<p>{{forloop.index}}</p>
 				{%- assign current_index = forloop.index -%}
