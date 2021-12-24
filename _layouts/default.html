@@ -150,8 +150,8 @@ layout: table_wrappers
           </ul>
         {% endif %}
 
-
 		<div class="PageNavigation">
+			{{page.url}}
 		  {% if page.previous.url %}
 		    <a class="prev" href="{{page.previous.url}}">&laquo; {{page.previous.title}}</a>
 		  {% endif %}
