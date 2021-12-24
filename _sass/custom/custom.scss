@@ -14,23 +14,25 @@ details{
 
 
 ::-webkit-scrollbar {
-	width: 10px;
+	width: 6px;
 }
 
 .site-nav::-webkit-scrollbar-thumb {
   background: #00DBDB;
-  border-radius: 5px;
+  border-radius: 3px;
+  border: 3px solid rgba(0, 0, 0, 0);
 }
 
 .site-nav::-webkit-scrollbar-track {
   background: #636668;
 }
 
-.main-content::-webkit-scrollbar-thumb {
+.main-content-wrap::-webkit-scrollbar-thumb {
   background: #C3D8D8;
-  border-radius: 5px;
+  border-radius: 3px;
+  border: 3px solid rgba(0, 0, 0, 0);
 }
 
-.main-content::-webkit-scrollbar-track {
+.main-content-wrap::-webkit-scrollbar-track {
   background: #FFFFFF;
 }
