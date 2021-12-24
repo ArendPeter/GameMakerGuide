@@ -152,16 +152,58 @@ layout: table_wrappers
 
 		<div class="PageNavigation">
 
+		{%- assign titled_pages = include.pages
+	        | where_exp:"item", "item.title != nil" -%}
+	titled pages {{titled_pages}} <br>
+
+		{%- assign string_ordered_pages = titled_pages
+	        | where_exp:"item", "item.nav_order == nil" -%}
+		string_ordered_pages {{string_ordered_pages }} <br>
+
+		{%- assign nav_ordered_pages = titled_pages
+	        | where_exp:"item", "item.nav_order != nil"  -%}
+		nav_ordered_pages {{nav_ordered_pages }} <br>
+
+		{%- assign number_ordered_pages = "" | split:"X" -%}
+		number_ordered_pages {{number_ordered_pages }} <br>
+
+		{%- for group in nav_ordered_groups -%}
+			{%- if group.name == '"' -%}
+				{%- assign string_ordered_pages = string_ordered_pages | concat: group.items -%}
+			{%- else -%}
+				{%- assign number_ordered_pages = number_ordered_pages | concat: group.items -%}
+			{%- endif -%}
+		{%- endfor -%}
+		number_ordered_pages {{number_ordered_pages }} <br>
+		string_ordered_pages {{string_ordered_pages }} <br>
+
+		{%- assign sorted_number_ordered_pages = number_ordered_pages | sort:"nav_order" -%}
+		sorted_number_ordered_pages {{sorted_number_ordered_pages}} <br>
+
+		{%- assign pages_list = sorted_number_ordered_pages | concat: sorted_string_ordered_pages -%}
+		pages_list {{pages_list}} <br>
+
 		{%- for node in pages_list -%}
 		    {%- if node.url == page.url -%}
 				<p>{{forloop.index}}</p>
-				{%- assign current_index = }
+				{%- assign current_index = forloop.index -%}
+		    {%- endif -%}
+		{%- endfor -%}
+
+		{%- assign previous_index = current_index | minus:1 -%}
+		{%- assign next_index = current_index | minus:1 -%}
+
+		{%- for node in pages_list -%}
+		    {%- if forloop.index == previous_index -%}
+			    <a class="prev" href="{{node.url}}">&laquo; {{node.title}}</a>
+		    {%- endif -%}
+		    {%- if forloop.index == next_index -%}
+			    <a class="next" href="{{node.url}}">{{node.title}} &raquo;</a>
 		    {%- endif -%}
 		{%- endfor -%}
 
 			{{page.url}}
 		  {% if page.previous.url %}
-		    <a class="prev" href="{{page.previous.url}}">&laquo; {{page.previous.title}}</a>
 		  {% endif %}
 		  {% if page.next.url %}
 		    <a class="next" href="{{page.next.url}}">{{page.next.title}} &raquo;</a>
