@@ -17,6 +17,10 @@ details{
 	width: 12px;
 }
 
+.site-nav{
+	padding-top: 0rem;
+}
+
 .site-nav::-webkit-scrollbar-thumb {
 	background: #00DBDB;
 	border: 3px solid rgba(0, 0, 0, 0);
@@ -38,7 +42,7 @@ details{
 }
 
 .aux-nav, .aux-nav-list, .aux-nav-list-item{
-	width: 200px;
+	width: 150px;
 }
 
 .site-button{
@@ -51,4 +55,8 @@ details{
 
 .site-button.a{
 	width: 100%;
+}
+
+.main-header{
+	height: 90px;
 }
