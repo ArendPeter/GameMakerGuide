@@ -12,5 +12,8 @@ logo: "/images/logo.png"
 color_scheme: custom
 
 aux_links:
-  "Video version on<br><img src='https://www.udemy.com/staticx/udemy/images/v7/logo-udemy.svg'/>":
+    "Video version on<br><img src='https://www.udemy.com/staticx/udemy/images/v7/logo-udemy.svg'/>":
     - "//udemy.com"
+
+footer_content:
+    "This site uses <a href="https://github.com/pmarsceill/just-the-docs">Just the Docs</a>, a documentation theme for Jekyll."
