@@ -18,21 +18,21 @@ details{
 }
 
 .site-nav::-webkit-scrollbar-thumb {
-  background: #00DBDB;
-  border-radius: 3px;
-  border: 3px solid rgba(0, 0, 0, 0);
+	background: #00DBDB;
+	border: 3px solid rgba(0, 0, 0, 0);
+	background-clip: padding-box;
 }
 
 .site-nav::-webkit-scrollbar-track {
-  background: #636668;
+	background: #636668;
 }
 
-.main-content-wrap::-webkit-scrollbar-thumb {
-  background: #C3D8D8;
-  border-radius: 3px;
-  border: 3px solid rgba(0, 0, 0, 0);
+::-webkit-scrollbar-thumb {
+	background: #C3D8D8;
+	border: 3px solid rgba(0, 0, 0, 0);
+	background-clip: padding-box;
 }
 
-.main-content-wrap::-webkit-scrollbar-track {
-  background: #FFFFFF;
+::-webkit-scrollbar-track {
+	background: #FFFFFF;
 }
