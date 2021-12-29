@@ -48,7 +48,7 @@ layout: table_wrappers
       </a>
     </div>
 	{% if site.search_enabled != false %}
-      <div class="search">
+      <div class="search mobile">
         <div class="search-input-wrap">
           <input type="text" id="search-input" class="search-input" tabindex="0" placeholder="Search {{ site.title }}" aria-label="Search {{ site.title }}" autocomplete="off">
           <label for="search-input" class="search-label"><svg viewBox="0 0 24 24" class="search-icon"><use xlink:href="#svg-search"></use></svg></label>
@@ -58,7 +58,7 @@ layout: table_wrappers
     {% endif %}
 	{% if site.aux_links %}
         <nav aria-label="Auxiliary" class="aux-nav">
-          <ul class="aux-nav-list">
+          <ul class="aux-nav-list mobile">
             {% for link in site.aux_links %}
               <li class="aux-nav-list-item">
                 <a href="{{ link.last }}" class="site-button"

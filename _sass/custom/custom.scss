@@ -17,9 +17,16 @@ details{
 	width: 12px;
 }
 
+@include mq(md) {
+  .mobile {
+    display: none;
+  }
+}
+
 .site-nav{
 	padding-top: 0rem;
 }
+
 
 .site-nav::-webkit-scrollbar-thumb {
 	background: #00DBDB;
