@@ -23,6 +23,16 @@ details{
   }
 }
 
+.main-header{
+	display: none;
+}
+
+@include mq(md) {
+  .desktop {
+    display: flex;
+  }
+}
+
 .site-nav{
 	padding-top: 0rem;
 }
