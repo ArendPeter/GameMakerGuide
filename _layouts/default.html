@@ -150,67 +150,70 @@ layout: table_wrappers
           </ul>
         {% endif %}
 
-		<div class="page-navigation">
 
-		<!-- Copied from nav.html to get list of nav pages-->
-		{%- assign titled_pages = include.pages
-	        | where_exp:"item", "item.title != nil" -%}
+	    {%- if page.nav_order != nil -%}
+			<div class="page-navigation">
 
-		{%- assign string_ordered_pages = titled_pages
-	        | where_exp:"item", "item.nav_order == nil" -%}
+			<!-- Copied from nav.html to get list of nav pages-->
+			{%- assign titled_pages = include.pages
+		        | where_exp:"item", "item.title != nil" -%}
 
-		{%- assign nav_ordered_pages = titled_pages
-	        | where_exp:"item", "item.nav_order != nil"  -%}
+			{%- assign string_ordered_pages = titled_pages
+		        | where_exp:"item", "item.nav_order == nil" -%}
 
-		{%- assign number_ordered_pages = "" | split:"X" -%}
+			{%- assign nav_ordered_pages = titled_pages
+		        | where_exp:"item", "item.nav_order != nil"  -%}
 
-		{%- for group in nav_ordered_groups -%}
-			{%- if group.name == '"' -%}
-				{%- assign string_ordered_pages = string_ordered_pages | concat: group.items -%}
-			{%- else -%}
-				{%- assign number_ordered_pages = number_ordered_pages | concat: group.items -%}
-			{%- endif -%}
-		{%- endfor -%}
+			{%- assign number_ordered_pages = "" | split:"X" -%}
 
-		{%- assign sorted_number_ordered_pages = number_ordered_pages | sort:"nav_order" -%}
+			{%- for group in nav_ordered_groups -%}
+				{%- if group.name == '"' -%}
+					{%- assign string_ordered_pages = string_ordered_pages | concat: group.items -%}
+				{%- else -%}
+					{%- assign number_ordered_pages = number_ordered_pages | concat: group.items -%}
+				{%- endif -%}
+			{%- endfor -%}
 
-		{%- assign nav_sorted_list = sorted_number_ordered_pages | concat: sorted_string_ordered_pages -%}
+			{%- assign sorted_number_ordered_pages = number_ordered_pages | sort:"nav_order" -%}
 
-		<!-- List of only parents -->
-		{%- assign parent_list = nav_sorted_list
-	        | where_exp:"item", "item.parent == nil" -%}
+			{%- assign nav_sorted_list = sorted_number_ordered_pages | concat: sorted_string_ordered_pages -%}
 
-		<!-- Form logically sorted page list -->
-		{%- assign pages_list = "" | split:"X" -%}
-		{%- for node in parent_list -%}
-			{%- assign pages_list = pages_list | push:node -%}
-			{%- if node.has_children -%}
-				{%- assign children_list = nav_sorted_list | where: "parent", node.title -%}
-				{%- assign pages_list = pages_list | concat:children_list -%}
-		    {%- endif -%}
-		{%- endfor -%}
+			<!-- List of only parents -->
+			{%- assign parent_list = nav_sorted_list
+		        | where_exp:"item", "item.parent == nil" -%}
 
-		<!-- Find current page -->
-		{%- for node in pages_list -%}
-		    {%- if node.url == page.url -%}
-				{%- assign current_index = forloop.index -%}
-		    {%- endif -%}
-		{%- endfor -%}
+			<!-- Form logically sorted page list -->
+			{%- assign pages_list = "" | split:"X" -%}
+			{%- for node in parent_list -%}
+				{%- assign pages_list = pages_list | push:node -%}
+				{%- if node.has_children -%}
+					{%- assign children_list = nav_sorted_list | where: "parent", node.title -%}
+					{%- assign pages_list = pages_list | concat:children_list -%}
+			    {%- endif -%}
+			{%- endfor -%}
 
-		<!-- Calculate next/previous -->
-		{%- assign previous_index = current_index | minus:1 -%}
-		{%- assign next_index = current_index | plus:1 -%}
+			<!-- Find current page -->
+			{%- for node in pages_list -%}
+			    {%- if node.url == page.url -%}
+					{%- assign current_index = forloop.index -%}
+			    {%- endif -%}
+			{%- endfor -%}
 
-		<!-- Add tags for next/previous -->
-		{%- for node in pages_list -%}
-		    {%- if forloop.index == previous_index -%}
-			    <a class="prev" href="{{node.url}}">&laquo; {{node.title}}</a><br>
-		    {%- endif -%}
-		    {%- if forloop.index == next_index -%}
-			    <a class="next" href="{{node.url}}">{{node.title}} &raquo;</a>
-		    {%- endif -%}
-		{%- endfor -%}
-		</div>
+			<!-- Calculate next/previous -->
+			{%- assign previous_index = current_index | minus:1 -%}
+			{%- assign next_index = current_index | plus:1 -%}
+
+			<!-- Add tags for next/previous -->
+			{%- for node in pages_list -%}
+			    {%- if forloop.index == previous_index -%}
+				    <a class="prev" href="{{node.url}}">&laquo; {{node.title}}</a>
+			    {%- endif -%}
+			    {%- if forloop.index == next_index -%}
+				    <a class="next" href="{{node.url}}">{{node.title}} &raquo;</a>
+			    {%- endif -%}
+			{%- endfor -%}
+			</div>
+	    {%- endif -%}
 
         {% capture footer_custom %}
           {%- include footer_custom.html -%}
