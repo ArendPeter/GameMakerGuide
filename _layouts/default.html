@@ -150,9 +150,9 @@ layout: table_wrappers
           </ul>
         {% endif %}
 
-		<div class="PageNavigation">
+		<div class="page-navigation">
 
-		<!-- Copied from nav.html -->
+		<!-- Copied from nav.html to get list of nav pages-->
 		{%- assign titled_pages = include.pages
 	        | where_exp:"item", "item.title != nil" -%}
 
