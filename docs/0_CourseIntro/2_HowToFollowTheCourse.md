@@ -11,7 +11,7 @@ So this course exists in video form, as well as text form, and you can mix and m
 
 ## Syntax
 
-Code snippets and keyboard shortcuts will be highlighted ``like this`` and programming concepts and/or glossary terms will be bolded **like this** 
+Code snippets and keyboard shortcuts will be highlighted ``like this`` and programming concepts and/or glossary terms will be bolded **like this**
 
 I'll also include larger code snippets like this
 
@@ -31,17 +31,15 @@ If the there's preexisting code in the event I'll either include it in the snipp
 
 ## 🤓 Deep dives
 
-Since this I've been programming and making games for a long time, I'll frequently want to go on tangents digging into some of the finer details of what I've discussed
+Since I've been programming and making games for a long time, I'll frequently want to go on tangents digging into some of the finer details of what we've discussed
 
-Generally as an instructor, I would be afraid to lose people in the way, especially if some students are already having a hard time with the more critical concepts. So I won't include those tangents for videos, except maybe as an occasional optional video
+These tangents won't be included in the video. There's enough new material as is, and I don't want to confuse people who are already having a hard time with the core concepts
 
 But text is a different story, it's a lot easier for people to skip over sections on text. So I'm marking the deep dives with a 🤓, so you know to either skip or buckle up
 
 ## Pop Quizes
 
-I like how Udemy gives me the option to supply quizes. They can keep people thinking and enaged, and can also serve as checkpoints so people know if they *really* understand the concept or not
-
-So to simulate that I'll be including expandable areas in the text book. Like this
+Small quizes are really powerful. They can keep people thinking and enaged, and can also serve as checkpoints so people know if they *really* understand the concept or not. To simulate that I'll be including expandable areas in the text book. Like this
 
 <details data-summary="What does 🤓 mean in the text book?" markdown="1">
 
@@ -51,4 +49,4 @@ It means I'm about to go into a deep dive on the tangential topic, but you shoul
 
 </details>
 
-With each of these expandable areas, I recomend you pause to think about the question for a bit before checking the answer
+With each of these expandable areas, I recommend you pause to think about the question for a bit before checking the answer

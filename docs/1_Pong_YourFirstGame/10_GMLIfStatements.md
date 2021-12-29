@@ -19,7 +19,7 @@ instance_create_layer(xstart, ystart, layer, oBall);
 instance_destroy();
 ```
 
-This is a little tricky since there's actually 2 different actions we could posibly take, either we increase the player score, or we increase the enemy score, but how do we tell it which one? If we were writing it out in english iour logic might look something like this
+This is a little tricky since there's actually 2 different actions we could possibly take, either we increase the player score, or we increase the enemy score, but how do we tell it which one? If we were writing it out in english our logic might look something like this
 
 ```
 if the ball is on the left side of the room then increase the oScoreBoard's player_score variable
@@ -55,7 +55,7 @@ When we test it, we should see the score go up when the player scores 😄
 
 ![](../../images/pong/player_scoring.gif)
 
-Awesome! Now we have a couple things to break on that new code addition
+Awesome! Now we have a couple things to break down on that new code addition
 
 ## Comparison operators
 
@@ -78,15 +78,15 @@ There are several ways to format conditions for our if statements. A common appr
 
 So we've translated the if portion of our statement from english to gml, but there's another tricky part of the statement. The **'s**
 
-We're currently working within the oBall object, and it doesn't have player_score varaible (only oScoreBoard does), so if we try to reference player_score from oBall normally, we'll get the "not set before reading" error that we saw when adding Paddle Names
+We're currently working within the ``oBall`` object, and it doesn't have a ``player_score`` variable (only ``oScoreBoard`` does), so if we try to reference ``player_score`` from ``oBall`` normally, we'll get the "not set before reading" error that we saw when adding Paddle Names
 
-This is why we need an **'s** equivalent in our code, we want to access oScoreBoard**'s** player_score variable, instead of oBall. To do this we simply replace **'s** with a **.**. So then we end up with the following line for increasing the player_score
+This is why we need an **'s** equivalent in our code, we want to access ``oScoreBoard`` **'s** ``player_score`` variable, instead of ``oBall`` **'s**. To do this we simply replace **'s** with a **.**. So then we end up with the following line for increasing the player_score
 
 ```
 oScoreBoard.player_score = oScoreBoard.player_score + 1;
 ```
 
-> NOTE: All the variables we've been working with so far are considered "instance variables", that's why we can access the variable from within the instance, but not from other instances. I wanted to clarify, that "instance", is just one type of scoping for variables. Later we'll also talk about "temporary variables" which are only scoped to the current event. Game Maker also technically supports global variables (variables that can be accessed from anywhere). However global variables tend to be a bad idea (for various reason, I won't get into), so they're use is deprecated, and may even be removed in future versions of Game Maker
+> NOTE: All the variables we've been working with so far are considered **instance variables**, that's why we can access the variable from within the instance, but not from other instances. I wanted to clarify, that "instance", is just one type of scoping for variables. Later we'll also talk about **temporary variables** which are only scoped to the current event. Game Maker also technically supports **global variables** (variables that can be accessed from anywhere). However global variables tend to be a bad idea (for various reason, I won't get into), so their use is deprecated, and may even be removed in future versions of Game Maker
 
 ## Tab management
 
@@ -99,7 +99,9 @@ if( x < 0 ) {
 }
 ```
 
-To drive this point home, here's a more complicated if statement, one with tabbing and one without. Which one is easier to read? (note: there's several things we haven't learned yet, so don't worry if you don't understand parts of it)
+To drive this point home, here's a more complicated set of if statements, one with tabbing and one without. Which one is easier to read?
+
+>> NOTE: This snippet uses a lot of concepts we haven't learned yet, so don't worry about understanding the code. I only want you to focus on the tabs
 
 ```
 if(keyboard_check(vk_right)){
