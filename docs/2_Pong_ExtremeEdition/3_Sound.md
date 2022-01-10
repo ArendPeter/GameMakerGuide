@@ -101,6 +101,8 @@ if( x > 1366 ) { // 1366 is the width of the room
 
 </details>
 
+<br>
+
 <details data-summary="Can you figure out how to add the bounce sound?" markdown="1">
 
 It's just once line of code, but we're bouncing with a lot of things so we need to tag it onto a lot of events

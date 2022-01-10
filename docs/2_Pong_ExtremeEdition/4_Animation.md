@@ -7,7 +7,7 @@ parent: Pong | Extreme Edition
 
 # Animation
 
-Pong doesn't necessarily need animation, but since we're doing the extreme addition (and since this is a game maker course first), let's try adding some animation
+Pong doesn't necessarily need animation, but since we're doing the extreme addition (and since this is a Game Maker course first), let's try adding some animation
 
 ## Animate ball
 
@@ -42,9 +42,9 @@ Now let's duplicate the initial ball frame, so that we can use that as a startin
 
 ![](../../images/pong/copy_paste_animation_frames.gif)
 
-Now we can edit each frame to form our animation, and hit the play button to preview. Wonderful!
-
 ### Create Animation
+
+Now we can edit each frame to form our animation, and hit the play button to preview. Wonderful!
 
 ![](../../images/pong/animation_creation.gif)
 
@@ -52,9 +52,11 @@ Cool, so you'll notice that I went with a pretty simple animation. I selected a 
 
 This is definitely not my strong suit, so feel free to try your own ideas if you don't want to copy mine
 
-Now when you test the game you should see the ball animates continuously. Cool 😁! Now let's make it smarter to only animate when it bounces against things
+Now when you test the game you should see the ball animates continuously. Sweeet 😁!
 
 ![](../../images/pong/animated_gameplay.gif)
+
+Next let's make it smarter to only animate when it bounces against things
 
 ## Animation Logic
 
@@ -75,7 +77,7 @@ image_speed = 0;
 
 Now it should be stuck to white again, just like before we added the animation
 
-``image_speed`` just represents how fast we're animating. A speed of 1 means it's using the animation speed specified in the sprite. (by default that's 30 fps, so one frame per step if you haven't updated your game's room_speed)
+``image_speed`` just represents how fast we're animating. A speed of 1 means it's using the animation speed specified in the sprite. (by default that's 30 fps, so one frame per step if you haven't updated your game's ``room_speed``)
 
 ### Start the Animation on bounce
 
@@ -99,7 +101,7 @@ Now when we test it, it animates on bounce, but then it just keeps animating, hm
 
 ### Stop the Animation once it's done animating
 
-Let's make sure that we go back to normal once the animation stops. The key trick here is the **Animation End Event** (which is under **Other** btw) this will trigger whenever the current animation get to the end (at the point where it would normally reset)
+Let's make sure that we go back to normal once the animation stops. The key trick here is the **Animation End Event** (which is under **Other** btw) this will trigger whenever the current animation gets to the end (at the point where it would normally reset)
 
 ```
 // oBall Animation End Event
@@ -112,7 +114,6 @@ So updating image_speed to 0 will make it stop animating, but to make sure it st
 ``image_index`` let's us do that, and yes, 0 is indeed the first frame of the animation. You'll notice starting with 0 is somewhat of a trend in programming, you'll get used to it 😉
 
 
-**TODO**
 ![](../../images/pong/animate_on_bounce.gif)
 
 Now we've got a little ball animation to add some pop to our game 🍾. There are many more animations you could add, but I'll leave that to you. Feel free to experiment to your hearts content 😁

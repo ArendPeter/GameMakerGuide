@@ -17,15 +17,11 @@ Here's the power ups we'll be adding
 
 ## New Sprites
 
-First off we'll need sprites for all these power ups, here are links to the images I used
+First off we'll need sprites for all these power ups. I just drew some super quick images for those, but I'm sure you can do better
 
-**TODO**: add links
+![](../../images/pong/power_up_sprites.png)
 
-* [sExtraBall](link)
-* [sGrowBall](link)
-* [sFasterPaddle](link)
-
-Download them, and make sprites (maybe you can try importing them by dragging from your desktop like I did in the sound section? (TODO: link))
+> Don't worry, we'll be using actually pretty art in the upcoming games, I just figured we could use Pong as an oppurtunity to learn the sprite editor and our own art skills
 
 ## New Objects
 
