@@ -9,7 +9,7 @@ parent: Pong | Extreme Edition
 
 Now that we've got the basics implemented for our pong game, we're going to add some more mechanics to make our gameplay more deep and interesting
 
-To start we'll allow paddles to "aim" the ball. In particular we want the ball to bounce at a sharper angle, whenver hit use the edge of our paddle, thus making it harder for the other player
+To start we'll allow paddles to "aim" the ball. In particular we want the ball to bounce at a sharper angle whenever it hits the edge of our paddle, thus making it harder for the other player
 
 
 ## Introducing direction/speed (and Cartesian vs Polar)
@@ -18,19 +18,19 @@ Before we get into that, I want to chat a bit about different ways to represent 
 
 So far we've done this by representing our postition/speed in terms of it's horitzontal and vertical components (x, y, hspeed, vspeed). This system is called Cartesian
 
-> **Quick side story** the cartesian (x/y) coordinate system was invented a French Mathematician named René Descartes (get it, *Cart*esian, Des*cart*es). Supposedly he invented it while lying in bed. He saw a fly on the ceiling and was trying to figure out how he could represent the fly's position on the ceiling (what a nerd)
+> **Quick side story** 🤓 the cartesian (x/y) coordinate system was invented a French Mathematician named René Descartes (get it, **Cart**esian, Des**cart**es). Supposedly he invented it while lying in bed. He saw a fly on the ceiling and was trying to figure out how he could represent the fly's position on the ceiling (what a nerd)
 
-Polar is a different system. Here we represent using an angle and a distance. As an example think of if your friend was giving you directions. If you're in NY City, they might say walk 5 blocks east, and 2 blocks north (the cartesian method). But if you're on a open field, they might say look toward that mountain in the distance (angle), and walk a half mile (distance).
+Polar is a different system. Here we represent position using an angle and a distance. As an example think of if your friend was giving you directions. If you're in New York City, they might say walk 5 blocks east, and 2 blocks north (the cartesian method). But if you're on a open field, they might say look toward that mountain in the distance (angle), and walk a half mile (distance).
 
-In math, angle and distance are represented with r and θ, but this isn't used for postition in Game Maker. Currently x/y represents how much you would have to walk horizontally and vertically from the (0,0) point to reach your current position. A r/θ system for position would be harder to work with
+In math, angle and distance are represented with r and θ (pronounced "theta"), but this isn't used for postition in Game Maker. Currently x/y represents how much you would have to walk horizontally and vertically from the (0,0) point to reach your current position. A r/θ system for position would be harder to work with
 
-> **Fun Fact** for me the coolest thing about polar coordinates, is the pretty pictures you get when you start plotting polar functions. For example sin curves looking kind of boring using a cartesian plot, but they turn into pretty flowers on polar plots. Something to look forward to when you get to your math classes in late high school / early college ;)
+> **Fun Fact** 🤓 for me the coolest thing about polar coordinates, is the pretty pictures you get when you start plotting polar functions. For example sin curves looking kind of boring using a cartesian plot, but they turn into pretty flowers on polar plots. Something to look forward to when you get to your math classes in late high school / early college ;)
 
 ![](../../images/pong/wolfram_polar.png)
 
-So position is weird, but speed is a different story. hspeed/vspeed represents our horizontal and vertical velocity, but that actually isn't super intuitive. If your friend asks how fast your driving, have you ever said "I'm driving 20 mph to the east, and 20 mph north". NO! You'd say "I'm going 28(ish) mph, and I know this wasn't part of your question, but that's in the the north east direction in case you're curious". Game Maker has the speed/direction vartiables for this purpuse
+So position is weird, but speed is a different story. ``hspeed`` and ``vspeed`` represent our horizontal and vertical velocity, but that actually isn't super intuitive. If your friend asks how fast your driving, have you ever said "I'm driving 20 mph to the east, and 20 mph north". NO! You'd say "I'm going 28(ish) mph, and I know this wasn't part of your question, but that's in the the north east direction in case you're curious". Game Maker has the ``speed`` and ``direction`` variables for this purpuse
 
-Sorry I kind of geeked out there, all you really needed to know is that direction and speed are new variables you can use instead of x/y
+Sorry I kind of geeked out there, all you really needed to know is that ``direction`` and ``speed`` are new variables you can use instead of ``hspeed`` and ``vspeed``
 
 ## Start ball at random direction
 
@@ -54,17 +54,17 @@ First we set direction randomly between 0 and 360. For function documentation, I
 Here are 3 ways to access the documentation
 1. Type the function name in the editor (for example ``random``), then ``right click + Keyword help`` on the code
 1. Type the function name in the editor (for example ``random``), then ``left click + F1`` on the text
-1. Go to google.com and type ``game maker <function name>`` (for example ``random``)
+1. Go to https://www.google.com and type ``game maker <function name>`` (for example ``random``)
 
-That should take you to [this page](https://manual.yoyogames.com/GameMaker_Language/GML_Reference/Maths_And_Numbers/Number_Functions/random.htm). This only thing to keep in mind when reading it is that they use the term "returns" instead of "outputs". return is the standard term in programming circles, I just thought output was a more clear term when explaining it the first time
+All of the different approaches should take you to the same place, [this page](https://manual.yoyogames.com/GameMaker_Language/GML_Reference/Maths_And_Numbers/Number_Functions/random.htm). This only thing to keep in mind when reading is that they use the term "returns" instead of "outputs". return is the standard term in programming circles, I just thought output was a more clear term when explaining it the first time
 
-So from reading the manual we see that random will return a random number between 0 and 360. I chose 360, because that's the largest number direction can have, and using random will allow the ball to randomly start in any direction. Here's a chart giving you an idea of how those numbers represent direction
+So from reading the manual we see that ``random`` will return a ``random`` number between 0 and 360. I chose 360, because that's the largest number direction can have, and using ``random`` will allow the ball to randomly start in any direction. Here's a chart giving you an idea of how those numbers represent direction
 
 ![](../../images/pong/direction_circle.png)
 
-So direction = 0 would make the ball go right, 90 would make it go up, etc
+So ``direction = 0;`` would make the ball go right, 90 would make it go up, etc
 
-Then we set to speed to make the ball actually move in that direction (otherwise it won't move at all)
+Then we set to ``speed`` to make the ball actually move in that direction (otherwise it won't move at all)
 
 When we test this out, we should see more variation in the ball's starting direction
 
@@ -72,7 +72,9 @@ When we test this out, we should see more variation in the ball's starting direc
 
 ## oEnemy Paddle Collision
 
-When the ball collides the the enemy paddle, let's break it down into multiple scenarios depending on where the ball hit the paddle
+Now that we can set an arbitrary direction, let's use that knowledge to alter the direction depending on where the ball hits the paddle
+
+When the ball collides with the enemy paddle let's break it down into multiple scenarios
 
 ![](../../images/pong/paddle_3_regions.png)
 
@@ -114,7 +116,8 @@ if(<conditionA>){
 }
 ```
 
-For the conditions I'm using col_y. Since x/y values actually correspond to the top left corner of the sprite (this is the default, but it can be changed). We can do this math to determine where on the paddle the ball is. 0 is the top, and 128 is the bottom (if you check ``sPaddle``, you'll see that it's 128 units tall)
+
+``col_y = y - oEnemyPaddle.y;``: For the conditions I'm using ``col_y``. Since the ``x`` and ``y`` values actually correspond to the top left corner of the sprite (this is the default, but it can be changed). We can do this math to determine where on the paddle the ball is. 0 is the top, and 128 is the bottom (if you check ``sPaddle``, you'll see that it's 128 units tall)
 
 ![](../../images/pong/paddle_3_regions_w_math.png)
 
@@ -204,7 +207,7 @@ Now that we've refactored the ball to use speed direction, we can pretty easily 
 speed += 1; // same as speed = speed + 1;
 ```
 
-Wait what 😲, what's ``+=``? Ah mb, ``+=`` is a handy short hand when you want to add (or subtract, multiply, etc) to a variable without directly setting it to a value. You may have already noticed that we do this sort of thing ALOT ``<variable> = <variable> + <some number>``. Well using this syntax you can do the same thing with fewer keystrokes 😎 ``<variable> += <some nubmer>``
+Wait what 😲, what's ``+=``? Ah mb, ``+=`` is a handy short hand when you want to add (or subtract, multiply, etc) to a variable without directly setting it to a value. You may have already noticed that we do this sort of thing A LOT ``<variable> = <variable> + <some number>``. Well using this syntax you can do the same thing with fewer keystrokes 😎 ``<variable> += <some nubmer>``
 
 And there is equivalent sytaxes for the other operations
 
