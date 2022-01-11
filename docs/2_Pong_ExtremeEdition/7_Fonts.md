@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Fonts
-nav_order: 6
+nav_order: 7
 parent: Pong | Extreme Edition
 ---
 
