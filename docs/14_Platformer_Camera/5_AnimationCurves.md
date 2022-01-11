@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Animation Curves
-nav_order: 4
+nav_order: 5
 parent: Platformer | Camera
 ---
 
