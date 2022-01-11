@@ -23,16 +23,20 @@ Then we can name the sound ``sndMusic`` and you can hit "choose sound file" to s
 
 ![](../../images/pong/name_sound.png)
 
-Now the music is in Game Maker, but we need to add a line of code to actually play it. It doesn't really matter where we add that line, but we seem to be doing everything in `oBall` so let's just continue there
+Now the music is in Game Maker, but we need to add a line of code to actually play it. It doesn't really matter where we add that line, but we seem to be doing everything in ``oPlayer`` so let's just continue there
 
 ```
-// oBall Create Event
+// oPlayer Create Event
 
 ... // INSERT PREVIOUS CODE HERE
 
 // play music
 audio_play_sound(sndMusic, 0, true);
 ```
+
+> Note: I originally put the music in ``oBall`` (since it didn't really matter), but then I hit problems when I added the multi-ball power up. If you have multiple instances playing music then you'll have the music playing multiple times and it will sound bad
+
+> Deeper Note: 🤓 On a deeper note, it's pretty common to have lines of code that just need to be called once, but aren't associated with any particular object. I usually make a separate invisible object called ``oControl`` or ``oPersistent``. Sometimes I even make a bunch of control objects to keep things more organized, for example, in this case I might add the music line in the oMusicControl object, but I would only do that if there's a lot of music logic
 
 The ``audio_play_sound`` takes 3 parameters: which sound to play, the priority, and whether or not it should loop. The sound is just the resource we just created. The priority won't matter too much unless we're playing a lot of sounds, so I'll just put ``0``. For the final parameter, we'll say ``true`` (good thing we just learned about booleans 😉) since we want the music to continuously loop whenever we reach the end of the song
 
@@ -74,8 +78,9 @@ if( x > 1366 ) { // 1366 is the width of the room
 ...
 ```
 
-Again, this is pretty much the same as the music except that we don't want to make the sfx loop (hence the ``true`` was replaced with a ``false``). Now I've got 2 challenges for you 😉
+Again, this is pretty much the same as the music except that we don't want to make the sfx loop (hence the ``true`` was replaced with a ``false``).
 
+Now I've got 2 challenges for you 😉
 
 <details data-summary="Can you update the score logic to use the += syntax?" markdown="1">
 

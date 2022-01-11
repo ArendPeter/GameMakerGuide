@@ -29,9 +29,6 @@ draw_text(800, 93, player_score);
 
 > **Copy/Paste tip**: The 2 lines in the draw event look pretty similar, so when typing that could be a good time to use copy/paste. You can do that by selecting the text and right click + copy (or pressing ctrl + c) to copy. Then you can paste it using right click + paste (or pressing ctrl + v). I did this when typing the code, but for short sections of code like this I actually recommend you retype it (it's better for the learning process). But that said, for longer sections of code I would definitely copy/paste instead, at that point it's too tedius to be worth it for learning alone
 
-This is prety similar to the process we followed for drawing text, so I'll let you refer back there for details
-https://guidetogamemaker.com/docs/1_Pong_YourFirstGame/'../0_Pong_YourFirstGame/5_GMLBasics.html#x--y-axis'
-
 To figure out the positions for the score, I used my mouse to check positions in the room editor [see details here](5_GMLBasics.html#x--y-axis)
 
 ## Marker sprite

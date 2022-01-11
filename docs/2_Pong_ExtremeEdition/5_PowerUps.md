@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Power Ups
+title: Spawning Power Ups
 nav_order: 5
 parent: Pong | Extreme Edition
 ---
@@ -29,7 +29,7 @@ Now make objects for each of the sprites (``oGrowBall``, ``oExtraBall``, ``oFast
 
 <details data-summary="Make the power ups die when they hit the ball" markdown="1">
 
-Just gotta add instance_destroy() to the ball collision event
+Just gotta add ``instance_destroy();`` to all the ball collision events
 
 ```
 // oGrowBall Collision w/ oBall Event
@@ -42,22 +42,19 @@ instance_destroy();
 instance_destroy();
 ```
 
-Hopefully you remember us using ```instance_destroy()``` in the previous chapter 😉, if not don't worry about it, fluency will come w/ time
+Hopefully you remember us using ```instance_destroy()``` in the previous chapter 😉, if not don't worry about it, fluency will come with time
 
 </details>
 
-TODO: change music to only play in the player paddle (can't do ball anymore since there's going to be multiple)
-TODO: maybe also add explanation of the oControl/oPersistent pattern
-
-You can place some in the room temporarily to verify that they work as expected, but be sure to remove them afterwards, we don't want the powerups to be there right away
+You can place some in the room temporarily to verify that they work as expected, but be sure to remove them afterwards, we don't want the power ups to be there right away
 
 ## Spawning Power Ups
 
 To spawn the power ups we're going to use **Alarms**
 
-Alarms in game maker work the same as alarms in real life (although timers actually a better analogy, so I'll use that). Let's say you just put a cake in the oven, and you want to make sure you take it out on time. In this case you'd set a timer for maybe 60 minutes , then when it goes off you'll take it out. (I still remember a time when I'd actually do this with a physical timer, but those seem to be a thing of the past now 😢)
+Alarms in game maker work the same as alarms in real life (although a timer actually a better analogy, so I'll use that). Let's say you just put a cake in the oven, and you want to make sure you take it out on time. In this case you'd set a timer for maybe 60 minutes , then when it goes off you'd take it out. (I still remember a time when I'd actually do this with a physical timer, but those seem to be a thing of the past now 😢)
 
-Same in Game Maker. In our case, we don't want the power ups to spawn right away. Maybe we'll wait 4 seconds first? In this case we can set the Game Maker Alarm to 120 steps (30 steps per second for 4 seconds is 30*4=120), and then can have our spawning code in the alarm event so that the power up will spawn when the alarm goes off. Here's the code
+Same in Game Maker! In our case, we don't want the power ups to spawn right away. Maybe we'll wait 4 seconds first? In this case we can set the Game Maker Alarm to 120 steps (30 steps per second for 4 seconds is 30*4=120), and then can have our spawning code in the alarm event so that the power up will spawn when the alarm goes off. Here's the code
 
 ```
 //oPaddle Create Event
@@ -73,17 +70,15 @@ instance_create_layer(
 alarm[0] = 300; // 10 seconds
 ```
 
-``alarm[0]`` is pretty much the only new thing here. Those square brackets are kind of odd (and they'll come up more later), but for now you can think of it as part of the variable name. Using that variable we can set alarm 0 to 120 steps. Then it'll count down every stuff until, 4 seconds later, the variable will reach 0 and then trigger the alarm 0 event.
+``alarm[0] = 120;``: This is pretty much the only new thing here. Those square brackets are kind of odd (and they'll come up more later), but for now you can think of it as part of the variable name. Using that variable we can set alarm 0 to 120 steps. Then it'll count down every step until, 4 seconds later, the variable will reach 0 and then trigger the alarm 0 event
 
-In the alarm 0 event we spawn a power up, and then reset ``alarm[0]`` to 300. Resting ``alarm[0]`` will ensure that the alarm triggers every 10 seconds after the first time that the event triggers
+In the **Alarm 0** event we spawn a power up, and then reset ``alarm[0]`` to 300. Reseting ``alarm[0]`` will ensure that the alarm triggers every 10 seconds after the first time that the event triggers
 
-> **sttill want to know more about the ``[]``?** 🤓 oh ok, if you're really want to know what the square brackets mean, I guess I can give you a sneak peak. ``[]`` are used when you're using array variables. Essentially if you have a bunch of variables that are similar (like a bunch of alarm variables for example), then it can be nice to group them together, into an array. You can sort of think of arrays as a list of variables (lists usually refer to something different in programming, but the difference between arrays and lists is a tad technical), and you can use the number to indicate which one you're refering to. As usually with programming, lists tend to start at 0 and then count up from there. Refering to variables by their array index (i.e. the number), let's you do a lot of cool tricks but we'll get into those later (probably in a later course tbh)
+> **But what about the ``0``?**, Good question! you can actually have multiple alarms if you wanted to. Here we're setting alarm 0, and we're triggering the corresponding event, but I could also set a bunch of other alarms if I wanted to (game maker currently supports 0-11, which is a total of 12, although I'm pretty sure I've never needed more than 4)
 
-"But what about the ``0``?", Good question! you can actually have multiple alarms if you wanted to. Here we're setting alarm 0, and we're triggering the corresponding event, but I could also set a bunch of other alarms if I wanted to (game maker currently supports 0-11, which is a total of 12, although I'm pretty sure I've ever needed more than 4)
+> **I still want to know more about the ``[]``?** 🤓 oh ok, if you really want to know what the square brackets mean, I guess I can give you a sneak peak. ``[]`` are used with array variables. Essentially if you have a bunch of variables that are similar (like a bunch of alarm variables for example), then it can be nice to group them together into an array. You can sort of think of arrays as a list of variables (lists usually refer to something different in programming, but the difference between arrays and lists is a tad technical), and you can use the number to indicate which one you're refering to. As usual with programming, arrays tend to start at 0 and then count up from there. Refering to variables by their array index (i.e. the number), let's you do a lot of cool tricks but we'll get into those later (probably in a later course tbh)
 
-We've got somewhat of a revival of all the functions we've learned. ``instance_create_layer``, ``random``, and ``choose`` functions that we learned back in the GML Functions, **TODO** link, section
-
-Using those functions we can create an instance randomly in the room, and have the instance object be randomly chosen from ``oGrowBall``, ``oExtraBall``, or ``oPaddleSpeed``
+``instance_create_layer(...);``: We've got somewhat of a revival of all the functions we've learned. The ``instance_create_layer()``, ``random()``, and ``choose()`` functions that we learned back in the [GML Functions section](7_GMLFunctions.html#randomize-ball-speed-featuring-choose). Using those functions we can create an instance randomly in the room, and have the instance object be randomly chosen from ``oGrowBall``, ``oExtraBall``, or ``oPaddleSpeed``
 
 When you test it out, you should see the power up show up every few seconds 😊
 

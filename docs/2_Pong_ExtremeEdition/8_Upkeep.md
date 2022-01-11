@@ -143,7 +143,7 @@ Games are fun when they feel fair (I guess mario cart is an exception 😜), and
 
 Take some time to play around with what we've got, here are some questions you can ask yourself to get started
 
-1. Are the powerups too strong or too weak?
+1. Are the power ups too strong or too weak?
 2. Does the AI seem fair? Should it be slower or faster?
 3. How does the aiming feel? Do players feel like they have enough control?
 
