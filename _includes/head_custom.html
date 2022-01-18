@@ -2,19 +2,20 @@
 <meta name="nav_order" content="{{ page.nav_order }}">
 <script>
 function setCookieIfReferrer(name, value, referrer){
-	if(document.referrer == referrer){
+	// NOTE: I'm disabling the referrer logic, it wasn't working consistently so it wasn't worth the pain
+	// if(document.referrer == referrer){
 		setCookie(name, value);
 		var elem = document.getElementById("failure");
 		if(elem != undefined){
 			elem.hidden = true;
 		}
-	}else{
-		console.log("Invalid referrer: "+document.referrer);
-		var elem = document.getElementById("success");
-		if(elem != undefined){
-			elem.hidden = true;
-		}
-	}
+	// }else{
+	// 	console.log("Invalid referrer: "+document.referrer);
+	// 	var elem = document.getElementById("success");
+	// 	if(elem != undefined){
+	// 		elem.hidden = true;
+	// 	}
+	// }
 }
 
 function setCookie(name,value,days) {
